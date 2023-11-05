@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {AllImages} from '../../assets/images';
+import {Routes} from '../routes/index';
 
 function App(): JSX.Element {
   // place the provider store outside the route component when integrating routes
@@ -18,7 +19,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-      <ScrollView>
+      {/* <ScrollView>
         <ImageBackground
           source={AllImages.AppBg}
           style={{height: 800, width: 'auto'}}>
@@ -37,7 +38,8 @@ function App(): JSX.Element {
             />
           </View>
         </ImageBackground>
-      </ScrollView>
+      </ScrollView> */}
+      <Routes/>
     </SafeAreaView>
   );
 }
