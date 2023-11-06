@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Login() {
+export const Login = () => {
   return (
-    <View  style={{backgroundColor:'red'}}>
-      <Text style={{backgroundColor:'black',height:100}}>Login saddsaed</Text>
+    <View>
+      <Text style={{height:100}}>Login saddsaed</Text>
     </View>
   )
 }

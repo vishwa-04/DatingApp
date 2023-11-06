@@ -4,42 +4,17 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
-  Text,
   View,
 } from 'react-native';
 import {AllImages} from '../../assets/images';
-import {Routes} from '../routes/index';
+import { Routes } from '../routes/Router';
 
 function App(): JSX.Element {
-  // place the provider store outside the route component when integrating routes
-  // <Provider store={store}>
-  //   <Toast />
-  //   <App />
-  // </Provider>;
+
 
   return (
-    <SafeAreaView>
-      {/* <ScrollView>
-        <ImageBackground
-          source={AllImages.AppBg}
-          style={{height: 800, width: 'auto'}}>
-          <View style={{flex: 1}}>
-            <Image
-              source={AllImages.Logo}
-              style={{
-                resizeMode: 'contain',
-                height: 300,
-                width: 300,
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                marginBottom: 'auto',
-                marginTop: 'auto',
-              }}
-            />
-          </View>
-        </ImageBackground>
-      </ScrollView> */}
-      <Routes/>
+    <SafeAreaView style={{ flex: 1 }}> 
+      <Routes />
     </SafeAreaView>
   );
 }
