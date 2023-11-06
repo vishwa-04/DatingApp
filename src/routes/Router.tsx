@@ -16,7 +16,7 @@ export const Routes = (): React.JSX.Element => {
             screenOptions={{
               animation: 'none',
               orientation: 'portrait',
-              headerShown: true,
+              headerShown: false,
             }}>
            
                 <NativeStack.Screen

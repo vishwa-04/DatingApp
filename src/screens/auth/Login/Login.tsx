@@ -1,12 +1,15 @@
-import {View, Text} from 'react-native';
+import { Text,View} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
+import AuthBackground from '../../../components/common/AuthBackground'
 
 export const Login = () => {
   const tailwind = useTailwind();
   return (
-    <View style={tailwind('bg-red-500')}>
-      <Text style={{height: 100}}>Login saddsaed</Text>
+    <AuthBackground>
+    <View>
+      <Text style={{height:100}}>Login saddsaed</Text>
     </View>
+    </AuthBackground>
   );
 };
