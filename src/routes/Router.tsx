@@ -18,13 +18,14 @@ export const Routes = (): React.JSX.Element => {
             screenOptions={{
               animation: 'none',
               orientation: 'portrait',
-              headerShown: false,
+              headerShown: true,
             }}>
             {NativeStackRouteList.map((item, index) => {
               return (
                 <NativeStack.Screen
                   name={item.name}
                   component={item.component}
+                  key={index}
                 />
               );
             })}
@@ -61,12 +62,12 @@ export const AuthStackNavigator = ({
         screenOptions={{
           orientation: 'portrait',
           animation: 'none',
-          headerShown: false,
+          headerShown: true,
         }}>
         {NativeAuthStackRouteList.map((item, index) => {
           return (
             <AuthStack.Screen
-              key={item.name}
+              key={index}
               name={item.name}
               component={item.component}
             />
