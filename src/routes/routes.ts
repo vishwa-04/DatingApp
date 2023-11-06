@@ -1,7 +1,7 @@
-import Login from "src/screens/auth/Login/Login";
-import OtpScreen from "src/screens/auth/OTP/OtpScreen";
-import Register from "src/screens/auth/Register/Register";
-import WelcomeScreen from "src/screens/auth/Welcome/WelcomeScreen";
+import Login from "../screens/auth/Login/Login";
+import OtpScreen from"../screens/auth/OTP/OtpScreen";
+import Register from "../screens/auth/Register/Register";
+// import WelcomeScreen from "src/screens/auth/Welcome/WelcomeScreen";
 import { RootAuthStackParamList, RootBottomTabParamList, RootStackParamList } from "src/types/navigation";
 // import {AuthStackNavigator} from './Routes'
 
@@ -11,7 +11,7 @@ export const NativeStackRouteList: Array<{
 }> = [
   {
     name: 'Auth',
-    component: AuthStackNavigator,
+    component: Login,
   },
   // {
   //   name: 'BottomNavBar',
@@ -24,10 +24,10 @@ export const NativeAuthStackRouteList: Array<{
   name: keyof RootAuthStackParamList;
   component: (...event: any) => React.JSX.Element;
 }> = [
-  {
-    name: 'Login',
-    component: Login,
-  },
+  // {
+  //   name: 'Login',
+  //   component: Login,
+  // },
   {
     name: 'Register',
     component: Register,
@@ -45,7 +45,7 @@ export const NativeAuthStackRouteList: Array<{
 ];
 
 
-export { AuthStackNavigator };
+// export { AuthStackNavigator };
 // export const NativeBottomRouteList: Array<{
 //   name: keyof RootBottomTabParamList;
 //   component: (...event: any) => React.JSX.Element;
