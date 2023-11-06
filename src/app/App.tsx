@@ -7,15 +7,17 @@ import {
   View,
 } from 'react-native';
 import {AllImages} from '../../assets/images';
-import { Routes } from '../routes/Router';
+import {Routes} from '../routes/Router';
+import {TailwindProvider} from 'tailwind-rn';
+import utilities from '../../tailwind.json';
 
 function App(): JSX.Element {
-
-
   return (
-    <SafeAreaView style={{ flex: 1 }}> 
-      <Routes />
-    </SafeAreaView>
+    <TailwindProvider utilities={utilities}>
+      <SafeAreaView style={{flex: 1}}>
+        <Routes />
+      </SafeAreaView>
+    </TailwindProvider>
   );
 }
 
