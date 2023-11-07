@@ -5,7 +5,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../types/navigation';
 import {Login} from '../screens/auth/Login/Login';
 import {Register} from '../screens/auth/Register/Register';
-import { Welcome } from '../screens/auth/Welcome/WelcomeScreen';
+import {Welcome} from '../screens/auth/Welcome/WelcomeScreen';
+import {OtpScreen} from '../screens/auth/OTP/OtpScreen';
 import { Gender } from '../screens/gender/Gender';
 import {Birthday} from '../screens/birthday/Birthday'
 
@@ -14,7 +15,7 @@ export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="Birthday"
+        initialRouteName="Welcome"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',
@@ -22,6 +23,7 @@ export const Routes = (): React.JSX.Element => {
         }}>
         <NativeStack.Screen name={'Welcome'} component={Welcome} />
         <NativeStack.Screen name={'Login'} component={Login} />
+        <NativeStack.Screen name={'OtpLoginScreen'} component={OtpScreen} />
         <NativeStack.Screen name={'Register'} component={Register} />
         <NativeStack.Screen name={'Gender'} component={Gender} />
         <NativeStack.Screen name={'Birthday'} component={Birthday} />

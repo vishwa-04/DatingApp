@@ -15,14 +15,11 @@ export const Welcome = () => {
       style={{height: 800, width: 'auto'}}>
       <ScrollView>
         {/* <div className='gap-'></div>/ */}
-        <View
-          style={tw(
-            'flex flex-col justify-between items-center h-full gap-64',
-          )}>
+        <View style={tw('flex-col justify-between items-center gap-80')}>
           <View>
             <Image
               source={AllImages.Logo}
-              style={tw('h-64 w-36 mx-auto my-auto object-cover')}
+              style={tw('h-80 w-52 mx-auto my-auto object-cover')}
             />
           </View>
           <View style={tw('flex justify-center items-center gap-3')}>
@@ -31,7 +28,7 @@ export const Welcome = () => {
                 navigation.navigate('Register');
               }}
               style={tw(
-                'py-2 px-32 text-[#4B164C] bg-white rounded-xl font-semibold text-base',
+                'py-3 px-32 text-[#4B164C] bg-white rounded-3xl font-semibold text-base',
               )}>
               <Text>I'm new here</Text>
             </TouchableOpacity>
@@ -41,9 +38,9 @@ export const Welcome = () => {
                 navigation.navigate('Login');
               }}
               style={tw(
-                'py-2 px-24 bg-transparent text-white rounded-xl font-semibold text-base border-2 border-white cursor-pointer',
+                'py-3 px-24 bg-transparent text-white rounded-3xl font-semibold text-base border border-white cursor-pointer',
               )}>
-              <Text>I've Been here before</Text>
+              <Text style={tw('text-white')}>I've Been here before</Text>
             </TouchableOpacity>
           </View>
         </View>
