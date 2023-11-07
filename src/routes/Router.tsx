@@ -15,7 +15,7 @@ export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="Welcome"
+        initialRouteName="Birthday"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',

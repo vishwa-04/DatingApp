@@ -14,16 +14,16 @@ export const Gender = ({
   return (
     <View style={tw('flex-1 items-center')}>
       <View style={tw('pt-[20%] w-full')}>
-        <Text style={tw('text-center text-black text-l mb-4')}>Choose Gender</Text>
+        <Text style={tw('text-center text-black text-center mb-4')}>Choose Gender</Text>
       </View>
       <View style={tw('flex-row justify-around w-full flex-grow')}>
         <TouchableOpacity style={tw('items-center')}>
           <Image source={AllImages.Male} style={tw('h-40 w-40')} />
-          <Text style={tw('text-l text-black text-center')}>Male</Text>
+          <Text style={tw('text-left text-black text-center')}>Male</Text>
         </TouchableOpacity>
         <TouchableOpacity style={tw('items-center')}>
           <Image source={AllImages.Female} style={tw('h-40 w-40')} />
-          <Text style={tw('text-l text-black text-center')}>Female</Text>
+          <Text style={tw('text-left text-black text-center')}>Female</Text>
         </TouchableOpacity>
       </View>
       <View style={tw('w-full px-6 pb-6')}>
