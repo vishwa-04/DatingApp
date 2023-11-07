@@ -1,5 +1,8 @@
 export const AllImages={
     AppBg:require('../images/LovelineBg.png'),
     Logo:require('../images/LoveLinelogo.png'),
-    Mask:require('../images/Mask.png')
+    Mask:require('../images/Mask.png'),
+    Male:require('../images/Male.png'),
+    Female:require('../images/Female.png')
+
 }

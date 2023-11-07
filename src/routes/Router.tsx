@@ -6,13 +6,15 @@ import {RootStackParamList} from '../types/navigation';
 import {Login} from '../screens/auth/Login/Login';
 import {Register} from '../screens/auth/Register/Register';
 import { Welcome } from '../screens/auth/Welcome/WelcomeScreen';
+import { Gender } from '../screens/gender/Gender';
+import {Birthday} from '../screens/birthday/Birthday'
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
 export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="Login"
+        initialRouteName="Birthday"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',
@@ -21,6 +23,9 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'Welcome'} component={Welcome} />
         <NativeStack.Screen name={'Login'} component={Login} />
         <NativeStack.Screen name={'Register'} component={Register} />
+        <NativeStack.Screen name={'Gender'} component={Gender} />
+        <NativeStack.Screen name={'Birthday'} component={Birthday} />
+      
       </NativeStack.Navigator>
     </NavigationContainer>
   );

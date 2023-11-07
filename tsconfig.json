@@ -3,19 +3,19 @@
   "compilerOptions": {
     "jsx": "react",
     "baseUrl": ".",
-    // "paths": {
-    //   "@assets": ["assets/index"],
-    //   "@app": ["src/app/index"],
-    //   "@components": ["src/components/index"],
-    //   "@localization": ["src/localization/index"],
-    //   "@redux/*": ["src/redux/*"],
-    //   "@routes": ["src/routes/index"],
-    //   "@screens": ["src/screens/index"],
-    //   "@services": ["src/services/index"],
-    //   "@storage": ["src/storage/index"],
-    //   "@types": ["src/types/index"],
-    //   "@utils": ["src/utils/index"],
-    //   "@validations": ["src/validations/index"]
-    // }
+    "paths": {
+      "@assets": ["assets/index"],
+      "@app": ["src/app/index"],
+      "@components": ["src/components/index"],
+      "@localization": ["src/localization/index"],
+      "@redux/*": ["src/redux/*"],
+      "@routes": ["src/routes/index"],
+      "@screens": ["src/screens/index"],
+      "@services": ["src/services/index"],
+      "@storage": ["src/storage/index"],
+      "@types": ["src/types/index"],
+      "@utils": ["src/utils/index"],
+      "@validations": ["src/validations/index"]
+    }
   }
 }

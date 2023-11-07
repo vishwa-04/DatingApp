@@ -1,6 +1,7 @@
 import {View, Text, ImageBackground, Image} from 'react-native';
 import React from 'react';
 import {AllImages} from '../../../../assets/images';
+
 import {useTailwind} from 'tailwind-rn';
 import {ScrollView, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
