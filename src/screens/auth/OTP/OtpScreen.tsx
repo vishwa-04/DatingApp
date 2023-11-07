@@ -1,10 +1,40 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+import React from 'react';
+import AuthBackground from '../../../components/common/AuthBackground';
+import {useTailwind} from 'tailwind-rn';
+import {useNavigation} from '@react-navigation/native';
 
-export default function OtpScreen() {
+export const OtpScreen = () => {
+  const tw = useTailwind();
+  const navigation = useNavigation();
+
   return (
-    <View>
-      <Text>OtpScreen</Text>
-    </View>
-  )
-}
+    <AuthBackground
+      header="Enter Your OTP"
+      para="What's your phone number"
+      onbackFunc={() => navigation.goBack()}>
+      <View style={tw('flex justify-between absolute top-52 w-full gap-80')}>
+        <View
+          style={tw(
+            'flex justify-between h-48 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
+          )}>
+          <TextInput style={tw('h-10 rounded-3xl border')} />
+          <View style={tw('flex-row justify-center gap-1')}>
+            <Text style={tw('text-black')}>Didn’t receive OTP?</Text>
+            <Text style={tw('text-[#4B164C]')}>Resend</Text>
+          </View>
+          <TouchableOpacity
+            style={tw(
+              'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
+            )}>
+            <Text style={tw('text-white text-center')}>Verify & Continue</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={tw('flex-row justify-center gap-1')}>
+          <Text style={tw('text-black')}>Already sign in?</Text>
+          <Text style={tw('text-[#4B164C]')}>Login</Text>
+        </View>
+      </View>
+    </AuthBackground>
+  );
+};
