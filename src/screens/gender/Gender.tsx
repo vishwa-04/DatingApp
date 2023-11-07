@@ -32,7 +32,7 @@ export const Gender = ({
         </View>
         <TouchableOpacity
           style={tw('py-3 bg-[#4B164C] rounded-3xl items-center')}
-          onPress={() => {/* navigation or action */}}>
+          onPress={() => {navigation.navigate('Birthday')}}>
           <Text style={tw('text-white text-lg')}>Continue</Text>
         </TouchableOpacity>
       </View>
