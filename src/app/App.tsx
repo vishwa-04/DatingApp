@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   ImageBackground,
@@ -10,12 +10,14 @@ import {AllImages} from '../../assets/images';
 import {Routes} from '../routes/Router';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from '../../tailwind.json';
+import {Splash} from '../screens/splash/Splash';
 
 function App(): JSX.Element {
+  const [loading, setLoading] = useState<boolean>(true);
   return (
     <TailwindProvider utilities={utilities}>
       <SafeAreaView style={{flex: 1}}>
-        <Routes />
+        {loading ? <Splash setLoading={setLoading} /> : <Routes />}
       </SafeAreaView>
     </TailwindProvider>
   );
