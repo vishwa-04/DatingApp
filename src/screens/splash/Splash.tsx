@@ -33,18 +33,17 @@ export const Splash = ({
   }, [fadeAnim, setLoading]);
 
   return (
-    <ScrollView contentContainerStyle={tw('flex-grow')}>
-      <View
-        style={tw(
-          'flex-1 flex-col justify-between items-center h-full gap-64 bg-black',
-        )}>
-        <Animated.View style={{opacity: fadeAnim}}>
+    // <div className='h-'></div>
+      <Animated.View style={{opacity: fadeAnim}}>
+        <View
+          style={tw(
+            'flex-col justify-center bg-white',
+          )}>
           <Image
-            source={AllImages.Logo}
-            style={tw('h-64 w-36 mx-auto my-auto object-cover')}
+            source={AllImages.SplashScreen}
+            style={tw('h-full w-full m-auto object-cover')}
           />
-        </Animated.View>
-      </View>
-    </ScrollView>
+        </View>
+      </Animated.View>
   );
 };

@@ -37,7 +37,7 @@ const AuthBackground = ({header, para, children}: ScreenWrapperProps) => {
     <View style={tw('flex-1 relative')}>
       <View
         style={tw(
-          'flex justify-center bg-[#DF8CD1] h-[100%] rounded-br-3xl rounded-bl-3xl px-2 text-white gap-5',
+          'flex justify-center bg-[#DF8CD1] h-64 rounded-br-3xl rounded-bl-3xl px-2 text-white gap-5',
         )}>
         {/* <TouchableOpacity style={tw('absolute top-4')}>
           <Image source={AllImages.LeftArrow} style={{width: 20, height: 20}} />
