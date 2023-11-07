@@ -3,10 +3,13 @@ import React from 'react';
 import AuthBackground from '../../../components/common/AuthBackground';
 import {useTailwind} from 'tailwind-rn';
 import {useNavigation} from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../../types/navigation';
 
-export const OtpScreen = () => {
+export const OtpScreen = ({
+  navigation
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
-  const navigation = useNavigation();
 
   return (
     <AuthBackground
@@ -24,6 +27,7 @@ export const OtpScreen = () => {
             <Text style={tw('text-[#4B164C]')}>Resend</Text>
           </View>
           <TouchableOpacity
+          onPress={()=>{navigation.navigate('Gender')}}
             style={tw(
               'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
             )}>

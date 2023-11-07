@@ -2,10 +2,13 @@ import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import AuthBackground from '../../../components/common/AuthBackground';
-import {useNavigation} from '@react-navigation/native';
 import {GoogleAuth} from '../../../components/common/GoogleAuth';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../../types/navigation';
 
-export const Register = () => {
+export const Register = ({
+  navigation
+}: NativeStackScreenProps<RootStackParamList>) => {
   let objScreen = {
     Register: 'register',
     Password: 'password',
@@ -13,7 +16,6 @@ export const Register = () => {
   };
   const tw = useTailwind();
   const [screen, setScreen] = useState(objScreen.Register);
-  const navigation = useNavigation();
 
   return (
     <AuthBackground
@@ -45,7 +47,7 @@ export const Register = () => {
               )}>
               <Text
                 style={tw('text-white text-center')}
-                onPress={() => setScreen(objScreen.Password)}>
+                onPress={() => {setScreen(objScreen.Password)}}>
                 Continue
               </Text>
             </TouchableOpacity>
