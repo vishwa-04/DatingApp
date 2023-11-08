@@ -24,9 +24,9 @@ export const UserProfile = () => {
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-5')}>
         <View style={tw('mt-28')}>
-          <View style={tw('flex-row justify-start items-center gap-3 ')}>
+          <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.AccountDetail}
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
@@ -34,38 +34,38 @@ export const UserProfile = () => {
             </Text>
           </View>
           <HorizontalLine />
-          <View style={tw('flex-row justify-start items-center gap-3 ')}>
+          <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.Setting}
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
-              Account Detail
+            Settings
             </Text>
           </View>
           <HorizontalLine />
-          <View style={tw('flex-row justify-start items-center gap-3 ')}>
+          <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.ConatctUs}
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
-              Account Detail
+            ConatctUs
             </Text>
           </View>
           <HorizontalLine />
-          <View style={tw('flex-row justify-start items-center gap-3 ')}>
+          <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.BlockedUsers}
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
-              Account Detail
+            Blocked Users
             </Text>
           </View>
           <HorizontalLine />
         </View>
-        <View style={tw('mt-8 gap-8')}>
+        <View style={tw('mt-20 gap-3')}>
           <TouchableOpacity
             style={tw(
               'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',

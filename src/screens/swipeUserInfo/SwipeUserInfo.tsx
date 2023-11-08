@@ -11,7 +11,7 @@ export const SwipeUserInfo = () => {
     <View style={tw('relative')}>
       {/* <div className="top- justify-between font- text-" /> */}
       <Image
-        source={AllImages.Tinder}
+        source={AllImages.UserSwipe}
         style={tw('w-full h-full object-cover')}
       />
       <View
@@ -24,25 +24,25 @@ export const SwipeUserInfo = () => {
                 Olivia jension
               </Text>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Verified}
                 style={tw('w-7 h-7 object-cover')}
               />
             </View>
             <View style={tw('flex-row justify-start gap-2')}>
               <Image
-                source={AllImages.SplashScreen}
-                style={tw('w-5 h-5 object-cover')}
+                source={AllImages.Location}
+                style={tw('w-5 h-6 object-cover')}
               />
               <Text>Dubai</Text>
             </View>
           </View>
           <View style={tw('flex-row justify-center items-center gap-2')}>
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.Flag}
               style={tw('w-5 h-5 object-cover')}
             />
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.UserIcon}
               style={tw('w-5 h-5 object-cover')}
             />
             <Text style={tw('font-medium text-base')}>28</Text>
@@ -51,14 +51,14 @@ export const SwipeUserInfo = () => {
         <HorizontalLine />
         <View style={tw('flex-row justify-between items-center py-2')}>
           <Text style={tw('font-medium text-sm text-[#161616]')}>
-            Jesica arnold
+          Occupation
           </Text>
-          <View style={tw('flex-row justify-end items-center')}>
+          <View style={tw('flex-row justify-end items-center gap-2')}>
             <Image
-              source={AllImages.SplashScreen}
+              source={AllImages.Plus}
               style={tw('w-7 h-7 object-cover')}
             />
-            <Text style={tw('font-medium text-sm')}> Jesica arnold</Text>
+            <Text style={tw('font-medium text-sm')}>Art Manager</Text>
           </View>
         </View>
         <HorizontalLine />
@@ -80,7 +80,7 @@ export const SwipeUserInfo = () => {
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Flag}
                 style={tw('w-5 h-5 object-cover')}
               />
               <Text style={tw('text-center')}>Beaches</Text>
@@ -90,7 +90,7 @@ export const SwipeUserInfo = () => {
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Flag}
                 style={tw('w-5 h-5 object-cover')}
               />
               <Text style={tw('text-center')}>Beaches</Text>
@@ -100,7 +100,7 @@ export const SwipeUserInfo = () => {
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Flag}
                 style={tw('w-5 h-5 object-cover')}
               />
               <Text style={tw('text-center')}>Beaches</Text>
@@ -110,7 +110,7 @@ export const SwipeUserInfo = () => {
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Flag}
                 style={tw('w-5 h-5 object-cover')}
               />
               <Text style={tw('text-center')}>Beaches</Text>
@@ -120,7 +120,7 @@ export const SwipeUserInfo = () => {
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Flag}
                 style={tw('w-5 h-5 object-cover')}
               />
               <Text style={tw('text-center')}>Beaches</Text>
@@ -130,7 +130,7 @@ export const SwipeUserInfo = () => {
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
               <Image
-                source={AllImages.SplashScreen}
+                source={AllImages.Flag}
                 style={tw('w-5 h-5 object-cover')}
               />
               <Text style={tw('text-center')}>Beaches</Text>
