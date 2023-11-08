@@ -8,7 +8,6 @@ import {
 import React from 'react';
 import {AllImages} from '../../../assets/images/index';
 import {useTailwind} from 'tailwind-rn';
-import {HorizontalLine} from '../../components/common/HorizontalLine';
 
 export const BlindDate = () => {
   const tw = useTailwind();
@@ -20,49 +19,60 @@ export const BlindDate = () => {
       <TouchableOpacity style={tw('absolute top-5 mx-3')}>
         <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
       </TouchableOpacity>
-      {/* <div className='rounded-full mt- font- w-18 h-'></div> */}
+      {/* <div className='rounded-full mt- font-normal w-18 text- w-'></div> */}
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-3')}>
         <View style={tw('mt-60 gap-2')}>
           <View
             style={tw(
-              'flex-row justify-between items-center bg-[#b928a0] rounded-xl p-3',
+              'flex-row justify-between items-center bg-[#b928a0] rounded-2xl p-3',
             )}>
             <View style={tw('gap-3')}>
-              <Text>dbjhfbjk</Text>
-              <Text>dbjhfbjk</Text>
+              <Text style={tw('font-extrabold text-base text-white')}>
+                Telepath
+              </Text>
+              <Text style={tw('font-normal text-xs text-center text-white')}>
+                No waiting. Start voice chat now
+              </Text>
               <TouchableOpacity
                 style={tw(
-                  'p-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                  'p-2 bg-white rounded-3xl font-semibold text-base w-20',
                 )}>
-                <Text style={tw('text-white text-center')}> STart</Text>
+                <Text
+                  style={tw('text-[#B928A0] text-center font-bold text-xs')}>
+                  Start
+                </Text>
               </TouchableOpacity>
             </View>
             <Image
-              source={AllImages.Male}
-              style={tw('h-20 w-16 object-cover rounded-full')}
+              source={AllImages.TelePhone}
+              style={tw('h-20 w-16 object-cover px-3')}
             />
           </View>
           <View style={tw('flex-row justify-between gap-2')}>
             <View
               style={tw(
-                'flex-row justify-start items-center gap-2 h-16 rounded-xl bg-[#ffb3f2] w-1/2',
+                'flex-row justify-start items-center gap-2 h-16 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
               )}>
               <Image
-                source={AllImages.Male}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                source={AllImages.Alarm}
+                style={tw('h-10 w-10 object-cover')}
               />
-              <Text>dbjhfbjk</Text>
+              <Text style={tw('font-bold text-xs text-[#B928A0]')}>
+                Love line Clic
+              </Text>
             </View>
             <View
               style={tw(
-                'flex-row justify-start items-center gap-2 h-16 rounded-xl bg-[#ffb3f2] w-1/2',
+                'flex-row justify-start items-center gap-2 h-16 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
               )}>
               <Image
-                source={AllImages.Male}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                source={AllImages.DatingQuiz}
+                style={tw('h-10 w-10 object-cover ')}
               />
-              <Text>dbjhfbjk</Text>
+              <Text style={tw('font-bold text-xs text-[#B928A0]')}>
+                Dating Quiz
+              </Text>
             </View>
           </View>
         </View>
@@ -73,7 +83,11 @@ export const BlindDate = () => {
             source={AllImages.Male}
             style={tw('h-40 w-40 object-cover rounded-full')}
           />
-          <Text style={tw('font-medium text-sm')}>Jesica arnold</Text>
+          <Text
+            style={tw('font-normal text-xs text-center px-5 py-3 text-black')}>
+            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
+            consectetur
+          </Text>
         </View>
       </View>
     </ImageBackground>

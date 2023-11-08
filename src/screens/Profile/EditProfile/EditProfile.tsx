@@ -17,7 +17,7 @@ export const EditProfile = () => {
               source={AllImages.FirstName}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-            <Text style={tw('font-medium text-sm')}>First Name</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>First Name</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>
@@ -27,7 +27,7 @@ export const EditProfile = () => {
               source={AllImages.Nationality}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-            <Text style={tw('font-medium text-sm')}>Nationality</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Nationality</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>
@@ -37,7 +37,7 @@ export const EditProfile = () => {
               source={AllImages.Emirates}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-            <Text style={tw('font-medium text-sm')}>Emirates</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Emirates</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>
@@ -47,7 +47,7 @@ export const EditProfile = () => {
               source={AllImages.Age}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-            <Text style={tw('font-medium text-sm')}>Age</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Age</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>
@@ -57,7 +57,7 @@ export const EditProfile = () => {
               source={AllImages.Occupation}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-            <Text style={tw('font-medium text-sm')}>Occupation</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Occupation</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>
@@ -70,7 +70,7 @@ export const EditProfile = () => {
               source={AllImages.Email}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-            <Text style={tw('font-medium text-sm')}>Email</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Email</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>
@@ -80,7 +80,7 @@ export const EditProfile = () => {
               source={AllImages.Phone}
               style={tw('h-5 w-5 object-cover rounded-full')}
             /> 
-            <Text style={tw('font-medium text-sm')}>Phone</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Phone</Text>
           </View>
           <Text>bsdjbfsd</Text>
         </View>

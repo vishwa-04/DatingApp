@@ -41,4 +41,7 @@ export const AllImages={
     MessageNotification:require('../images/MessageNotification.png'),
     FriendRequestNotification:require('../images/FriendRequestNotification.png'),
     LocationSecond:require('../images/LocationSecond.png'),
+    TelePhone:require('../images/TelePhone.png'),
+    Alarm:require('../images/Alarm.png'),
+    DatingQuiz:require('../images/DatingQuiz.png'),
 }

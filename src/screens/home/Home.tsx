@@ -18,14 +18,14 @@ export const Home = () => {
           Lorem Ipsum has been the industry's
         </Text>
         <Text
-          style={tw('font-normal text-xs text-black leading-4 text-center px-3')}>
+          style={tw('font-normal text-xs text-black text-center px-3')}>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s,
         </Text>
       </View>
       <View style={tw('flex-col justify-between gap-3 px-5 bg-transparent')}>
         <Text
-          style={tw('font-semibold text-sm text-black leading-6 text-center')}>
+          style={tw('font-normal text-xs text-[#636363] text-center')}>
           Lorem Ipsum has been the industry's
         </Text>
         <TouchableOpacity

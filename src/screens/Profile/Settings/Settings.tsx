@@ -17,7 +17,7 @@ export const Settings = () => {
                 source={AllImages.Feedback}
                 style={tw('h-5 w-5 object-cover rounded-full')}
               />
-              <Text style={tw('font-medium text-sm')}>Feedback</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>Feedback</Text>
             </View>
             <Image
               source={AllImages.Polygon}
@@ -30,7 +30,7 @@ export const Settings = () => {
                 source={AllImages.Help}
                 style={tw('h-5 w-5 object-cover rounded-full')}
               />
-              <Text style={tw('font-medium text-sm')}>Help</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>Help</Text>
             </View>
             <Image
               source={AllImages.Polygon}
@@ -43,7 +43,7 @@ export const Settings = () => {
                 source={AllImages.Notification}
                 style={tw('h-5 w-5 object-cover rounded-full')}
               />
-              <Text style={tw('font-medium text-sm')}>Notification</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>Notification</Text>
             </View>
             <Image
               source={AllImages.Polygon}
@@ -56,7 +56,7 @@ export const Settings = () => {
                 source={AllImages.PrivacyPolicy}
                 style={tw('h-5 w-5 object-cover rounded-full')}
               />
-              <Text style={tw('font-medium text-sm')}>Privacy Policy</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>Privacy Policy</Text>
             </View>
             <Image
               source={AllImages.Polygon}
@@ -69,7 +69,7 @@ export const Settings = () => {
                 source={AllImages.TermsOfService}
                 style={tw('h-5 w-5 object-cover rounded-full')}
               />
-              <Text style={tw('font-medium text-sm')}>Terms Of Service</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>Terms Of Service</Text>
             </View>
             <Image
               source={AllImages.Polygon}

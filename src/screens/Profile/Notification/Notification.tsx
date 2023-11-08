@@ -17,7 +17,7 @@ export const Notification = () => {
               source={AllImages.AllowPushNotification}
               style={tw('h-8 w-8 object-cover ')}
             />
-            <Text style={tw('font-medium text-sm')}>Allow Push Notifications</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Allow Push Notifications</Text>
           </View>
           <ToggleButton />
         </View>
@@ -27,7 +27,7 @@ export const Notification = () => {
               source={AllImages.MessageNotification}
               style={tw('h-8 w-8 object-cover ')}
             />
-            <Text style={tw('font-medium text-sm')}>Message Notifications</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Message Notifications</Text>
           </View>
           <ToggleButton />
         </View>
@@ -37,7 +37,7 @@ export const Notification = () => {
               source={AllImages.FriendRequestNotification}
               style={tw('h-8 w-8 object-cover ')}
             />
-            <Text style={tw('font-medium text-sm')}>Friend Request Notification</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Friend Request Notification</Text>
           </View>
           <ToggleButton />
         </View>
@@ -47,7 +47,7 @@ export const Notification = () => {
               source={AllImages.LocationSecond}
               style={tw('h-8 w-8 object-cover ')}
             />
-            <Text style={tw('font-medium text-sm')}>Location</Text>
+            <Text style={tw('font-medium text-base text-[#161616]')}>Location</Text>
           </View>
           <ToggleButton />
         </View>
