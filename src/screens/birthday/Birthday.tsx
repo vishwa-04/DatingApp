@@ -86,12 +86,14 @@ export const Birthday = () => {
         />
       </View>
       <View style={tw('w-full px-6 pb-6 absolute bottom-0')}>
-      <TouchableOpacity
+        <TouchableOpacity
           style={tw('py-3 bg-[#4B164C] rounded-3xl items-center')}
-          onPress={() => {/* navigation or action */}}>
+          onPress={() => {
+            /* navigation or action */
+          }}>
           <Text style={tw('text-white text-lg')}>Continue</Text>
         </TouchableOpacity>
-        </View>
+      </View>
     </View>
   );
 };
