@@ -24,7 +24,7 @@ export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="Notification"
+        initialRouteName="BlindDate"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',

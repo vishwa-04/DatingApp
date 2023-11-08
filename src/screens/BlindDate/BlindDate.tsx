@@ -22,7 +22,7 @@ export const BlindDate = () => {
       {/* <div className='rounded-full mt- font-normal w-18 text- w-'></div> */}
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-3')}>
-        <View style={tw('mt-60 gap-2')}>
+        <View style={tw('mt-60 gap-5')}>
           <View
             style={tw(
               'flex-row justify-between items-center bg-[#b928a0] rounded-2xl p-3',
