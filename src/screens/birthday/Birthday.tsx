@@ -27,7 +27,7 @@ export const Birthday = () => {
 
   return (
     <View style={tw('flex-1 justify-center items-center')}>
-       <View style={tw('items-center px-4')}>
+       <View style={tw('items-center px-3')}>
       {/* Heading and description */}
       <View style={tw('w-80')}>
         <Text style={tw('text-center text-[#4B164C] font-bold text-2xl mb-4')}>
