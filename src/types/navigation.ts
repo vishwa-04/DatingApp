@@ -17,4 +17,14 @@ export type RootStackParamList = {
   Quiz:undefined
   StartChatting:undefined
   Calling:undefined
+  BottomNavBar: undefined;
 };
+
+
+export type RootBottomTabParamList = {
+    Card: undefined;
+    Star: undefined;
+    Smile: undefined;
+    Message: undefined;
+    User: undefined;
+  };
