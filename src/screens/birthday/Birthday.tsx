@@ -27,14 +27,16 @@ export const Birthday = () => {
 
   return (
     <View style={tw('flex-1 justify-center items-center')}>
-      <View style={tw('items-center px-4')}>
+      <View style={tw('items-center px-3')}>
         {/* Heading and description */}
         <View style={tw('w-80')}>
+          {/* <div className='font-normal text-xs text-2xl'></div> */}
           <Text
             style={tw('text-center text-[#4B164C] font-bold text-2xl mb-4')}>
-            When’s your birthday
+            When's your birthday
           </Text>
-          <Text style={tw('text-center text-[#4B164C] font-bold mb-4')}>
+          <Text
+            style={tw('text-center text-[#847c7c] font-semibold text-xs mb-4')}>
             Your age information will be updated on your profile page and this
             will be displayed publicly on your dashboard
           </Text>
@@ -87,12 +89,14 @@ export const Birthday = () => {
         />
       </View>
       <View style={tw('w-full px-6 pb-6 absolute bottom-0')}>
+        <Text style={tw('text-center text-[#847c7c] font-normal text-xs mb-3')}>
+          Your age information will be updated
+        </Text>
         <TouchableOpacity
-          style={tw('py-3 bg-[#4B164C] rounded-3xl items-center')}
-          onPress={() => {
-            /* navigation or action */
-          }}>
-          <Text style={tw('text-white text-lg')}>Continue</Text>
+          style={tw(
+            'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+          )}>
+          <Text style={tw('text-white text-center')}>Continue</Text>
         </TouchableOpacity>
       </View>
     </View>

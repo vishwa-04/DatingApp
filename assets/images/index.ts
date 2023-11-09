@@ -44,4 +44,7 @@ export const AllImages={
     TelePhone:require('../images/TelePhone.png'),
     Alarm:require('../images/Alarm.png'),
     DatingQuiz:require('../images/DatingQuiz.png'),
+    StartChattingUser:require('../images/StartChattingUser.png'),
+    StartChattingLike:require('../images/StartChattingLike.png'),
+    QuizTrue:require('../images/QuizTrue.png'),
 }

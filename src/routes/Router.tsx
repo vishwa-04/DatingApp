@@ -18,13 +18,16 @@ import {EditProfile} from '../screens/Profile/EditProfile/EditProfile';
 import {Settings} from '../screens/Profile/Settings/Settings';
 import {Notification} from '../screens/Profile/Notification/Notification';
 import {BlindDate} from '../screens/BlindDate/BlindDate';
+import {Quiz} from '../screens/Quiz/Quiz';
+import {StartChatting} from '../screens/StartChatting/StartChatting';
+import {Calling} from '../screens/Calling/Calling';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
 export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="BlindDate"
+        initialRouteName="Calling"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',
@@ -45,6 +48,9 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'Settings'} component={Settings} />
         <NativeStack.Screen name={'Notification'} component={Notification} />
         <NativeStack.Screen name={'BlindDate'} component={BlindDate} />
+        <NativeStack.Screen name={'Quiz'} component={Quiz} />
+        <NativeStack.Screen name={'StartChatting'} component={StartChatting} />
+        <NativeStack.Screen name={'Calling'} component={Calling} />
       </NativeStack.Navigator>
     </NavigationContainer>
   );

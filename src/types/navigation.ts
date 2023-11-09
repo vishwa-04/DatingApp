@@ -14,4 +14,7 @@ export type RootStackParamList = {
   Settings: undefined;
   Notification: undefined;
   BlindDate: undefined;
+  Quiz:undefined
+  StartChatting:undefined
+  Calling:undefined
 };
