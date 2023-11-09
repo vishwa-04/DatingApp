@@ -14,6 +14,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {UserProfile} from '../screens/Profile/UserProfile';
 import {LikePage} from '../screens/likepage/LikePage';
 import {ChatList} from '../screens/chat/ChatList';
+import {ChatDetail} from '../screens/chat/ChatDetail';
 import {CardSwipe} from '../screens/cardswipe/CardSwipe';
 import {BlindDate} from '../screens/blindDate/BlindDate';
 
@@ -35,6 +36,7 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'Gender'} component={Gender} />
         <NativeStack.Screen name={'Birthday'} component={Birthday} />
         <NativeStack.Screen name={'BottomNavBar'} component={BottomTabNavigator} />
+        <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
 
       </NativeStack.Navigator>
     </NavigationContainer>

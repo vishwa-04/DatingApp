@@ -113,7 +113,7 @@ const NavigationIcon = React.memo(
 
     let fieldBlock = (
       <>
-        {isFocused && <View style={style.bottomBarLine} />}
+        {isFocused && <View/>}
         <Image
           source={isFocused ? icon[0] : icon[1]}
           style={{

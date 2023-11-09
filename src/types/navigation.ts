@@ -7,6 +7,7 @@ OtpLoginScreen:undefined
 Gender:undefined
 Birthday:undefined
 BottomNavBar: undefined;
+ChatDetail:undefined
 };
 
 export type RootBottomTabParamList = {
