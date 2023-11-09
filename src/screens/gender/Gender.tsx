@@ -13,7 +13,8 @@ export const Gender = ({
   return (
     <View style={tw('flex-1 items-center')}>
       <View style={tw('pt-[30%] w-full')}>
-        <Text style={tw('text-center text-black text-xl font-bold mb-10')}>
+        {/* <div className="font-normal text-sm text-[#636363]" /> */}
+        <Text style={tw('text-center text-black text-sm font-semibold mb-10')}>
           Choose Gender
         </Text>
       </View>
@@ -21,15 +22,15 @@ export const Gender = ({
         <TouchableOpacity style={tw('items-center')}>
           <Image source={AllImages.Male} style={tw('h-40 w-40')} />
           <View style={tw('mt-3')}>
-          <Text style={tw('text-l text-black text-center font-bold')}>
-            Male
-          </Text>
+            <Text style={tw('text-center text-black text-sm font-semibold')}>
+              Male
+            </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={tw('items-center')}>
           <Image source={AllImages.Female} style={tw('h-40 w-40')} />
           <View style={tw('mt-3')}>
-            <Text style={tw('text-l text-black text-center font-bold')}>
+            <Text style={tw('text-center text-black text-sm font-semibold')}>
               Female
             </Text>
           </View>
@@ -37,14 +38,15 @@ export const Gender = ({
       </View>
       <View style={tw('w-full px-6 pb-6')}>
         <View style={tw('items-center mb-3 text-black')}>
-          <Text>Press continue to continue</Text>
+          <Text style={tw('font-normal text-sm text-[#636363]')}>
+            Press continue to continue
+          </Text>
         </View>
         <TouchableOpacity
-          style={tw('py-3 bg-[#4B164C] rounded-3xl items-center')}
-          onPress={() => {
-            navigation.navigate('Birthday');
-          }}>
-          <Text style={tw('text-white text-lg')}>Continue</Text>
+          style={tw(
+            'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+          )}>
+          <Text style={tw('text-white text-center')}>Continue</Text>
         </TouchableOpacity>
       </View>
     </View>
