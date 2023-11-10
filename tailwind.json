@@ -104,6 +104,46 @@
 			"top": -4
 		}
 	},
+	"top-16": {
+		"style": {
+			"top": 64
+		}
+	},
+	"top-[67px]": {
+		"style": {
+			"top": 67
+		}
+	},
+	"top-[66px]": {
+		"style": {
+			"top": 66
+		}
+	},
+	"top-[65px]": {
+		"style": {
+			"top": 65
+		}
+	},
+	"left-[150px]": {
+		"style": {
+			"left": 150
+		}
+	},
+	"left-[153px]": {
+		"style": {
+			"left": 153
+		}
+	},
+	"left-[155px]": {
+		"style": {
+			"left": 155
+		}
+	},
+	"left-[156px]": {
+		"style": {
+			"left": 156
+		}
+	},
 	"z-50": {
 		"style": {
 			"zIndex": 50
@@ -514,6 +554,11 @@
 	"flex-wrap": {
 		"style": {
 			"flexWrap": "wrap"
+		}
+	},
+	"items-end": {
+		"style": {
+			"alignItems": "flex-end"
 		}
 	},
 	"items-center": {

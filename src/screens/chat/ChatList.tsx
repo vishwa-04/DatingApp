@@ -46,20 +46,20 @@ const MatchComponent = ({item}: {item: Item}) => (
 export const ChatList = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
-  const tw = useTailwind();
+  const tw = useTailwind();z
   return (
     <View style={tw('flex-1 items-center bg-[#DF8CD1]')}>
-      {/* <div className="w-6 h-6 font-normal text-sm text-[595f67]" /> */}
-      <View style={tw('items-center h-[20%] relative')}>
+      {/* <div className="w-6 h-6 font-normal text-sm text-[595f67] top-" /> */}
+      <View style={tw('items-end h-[20%] relative')}>
         <TextInput
           placeholder="Search"
           style={tw(
             'my-auto bg-white w-80 rounded-3xl px-12 font-normal text-sm text-[#595f67]',
           )}
         />
-        <Image
-          source={AllImages.QuizTrue}
-          style={tw('h-6 w-6 absolute top-14 left-4')}
+        <Imagex1
+          source={AllImages.Search}
+          style={tw('h-6 w-6 absolute top-[65px] left-4')}
         />
       </View>
       <View

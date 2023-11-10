@@ -82,6 +82,38 @@
   top: -0.25rem
 }
 
+.top-16 {
+  top: 4rem
+}
+
+.top-\[67px\] {
+  top: 67px
+}
+
+.top-\[66px\] {
+  top: 66px
+}
+
+.top-\[65px\] {
+  top: 65px
+}
+
+.left-\[150px\] {
+  left: 150px
+}
+
+.left-\[153px\] {
+  left: 153px
+}
+
+.left-\[155px\] {
+  left: 155px
+}
+
+.left-\[156px\] {
+  left: 156px
+}
+
 .z-50 {
   z-index: 50
 }
@@ -407,6 +439,10 @@
 
 .flex-wrap {
   flex-wrap: wrap
+}
+
+.items-end {
+  align-items: flex-end
 }
 
 .items-center {
