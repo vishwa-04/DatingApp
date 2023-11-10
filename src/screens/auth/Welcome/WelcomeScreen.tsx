@@ -3,12 +3,15 @@ import React from 'react';
 import {AllImages} from '../../../../assets/images';
 
 import {useTailwind} from 'tailwind-rn';
-import {ScrollView, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { TouchableOpacity} from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../types/navigation';
 
-export const Welcome = () => {
+export const Welcome = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
+
   const tw = useTailwind();
-  const navigation = useNavigation();
   return (
     <ImageBackground source={AllImages.AppBg} style={tw('h-full')}>
       {/* <div className='gap-'></div>/ */}

@@ -47,4 +47,7 @@ export const AllImages={
     StartChattingUser:require('../images/StartChattingUser.png'),
     StartChattingLike:require('../images/StartChattingLike.png'),
     QuizTrue:require('../images/QuizTrue.png'),
+    Password:require('../images/Password.png'),
+    PasswordEyeShut:require('../images/PasswordEyeShut.png'),
+
 }

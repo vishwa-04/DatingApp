@@ -40,7 +40,7 @@ export const UserProfile = () => {
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
-            Settings
+              Settings
             </Text>
           </View>
           <HorizontalLine />
@@ -50,7 +50,7 @@ export const UserProfile = () => {
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
-            ConatctUs
+              ConatctUs
             </Text>
           </View>
           <HorizontalLine />
@@ -60,16 +60,16 @@ export const UserProfile = () => {
               style={tw('w-7 h-7 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
-            Blocked Users
+              Blocked Users
             </Text>
           </View>
           <HorizontalLine />
         </View>
-        <View style={tw('mt-20 gap-3')}>
+      </View>
+      <View style={tw('flex-1 justify-end py-16 px-3')}>
+        <View style={tw('gap-3 ')}>
           <TouchableOpacity
-            style={tw(
-              'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
-            )}>
+            style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
             <Text style={tw('text-white text-center')}> Log out</Text>
           </TouchableOpacity>
           <Text style={tw('text-[#4B164C] text-center font-medium text-sm')}>

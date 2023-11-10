@@ -35,27 +35,29 @@ export const Register = ({
           : () => setScreen(objScreen.Password)
       }>
       {screen === objScreen.Register ? (
-        <View
-          style={tw('flex-1 justify-between absolute top-52 w-full gap-52')}>
+        <>
           <View
-            style={tw(
-              'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
-            )}>
-            <TextInput style={tw('h-10 rounded-3xl border')} />
-            <TouchableOpacity
+            style={tw('flex-1 justify-between absolute top-52 w-full')}>
+            <View
               style={tw(
-                'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <Text
-                style={tw('text-white text-center')}
-                onPress={() => {
-                  setScreen(objScreen.Password);
-                }}>
-                Continue
-              </Text>
-            </TouchableOpacity>
+              <TextInput style={tw('h-10 rounded-3xl border')} />
+              <TouchableOpacity
+                style={tw(
+                  'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                )}>
+                <Text
+                  style={tw('text-white text-center')}
+                  onPress={() => {
+                    setScreen(objScreen.Password);
+                  }}>
+                  Continue
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={tw('flex-1 justify-between items-center gap-2')}>
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
             <View style={tw('flex-row justify-center gap-1')}>
               <Text style={tw('text-black')}>Already sign in?</Text>
@@ -66,18 +68,16 @@ export const Register = ({
               </Text>
             </View>
           </View>
-        </View>
+        </>
       ) : screen === objScreen.Password ? (
+        <>
         <View
-          style={tw('flex-1 justify-between absolute top-52 w-full gap-52')}>
+          style={tw('flex-1 justify-between absolute top-52 w-full')}>
           <View
             style={tw(
               'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
             )}>
             <TextInput style={tw('h-10 rounded-3xl border')} />
-            <Text style={tw('text-[#4B164C] text-center')}>
-              Forgot Password?
-            </Text>
             <TouchableOpacity
               style={tw(
                 'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
@@ -91,7 +91,8 @@ export const Register = ({
               </Text>
             </TouchableOpacity>
           </View>
-          <View style={tw('flex-1 justify-between items-center gap-2')}>
+        </View>
+        <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
             <View style={tw('flex-row justify-center gap-1')}>
               <Text style={tw('text-black')}>Already sign in?</Text>
@@ -102,7 +103,7 @@ export const Register = ({
               </Text>
             </View>
           </View>
-        </View>
+        </>
       ) : (
         <View style={tw('flex justify-between absolute top-52 w-full')}>
           <View

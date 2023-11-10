@@ -26,7 +26,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {LikePage} from '../screens/likepage/LikePage';
 import {ChatList} from '../screens/chat/ChatList';
 import {ChatDetail} from '../screens/chat/ChatDetail';
-import {CardSwipe} from '../screens/cardswipe/CardSwipe';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
 export const Routes = (): React.JSX.Element => {
@@ -83,8 +82,8 @@ export const BottomTabNavigator = () => {
         tabBarActiveTintColor: '#4B164C',
         tabBarInactiveTintColor: 'rgba(0,0,0,0.9)',
       }}>
-      <BottomTab.Screen name={'Card'} component={CardSwipe} />
-      <BottomTab.Screen name={'Star'} component={LikePage} />
+      <BottomTab.Screen name={'Card'} component={Home} />
+      <BottomTab.Screen name={'Star'} component={Like} />
       <BottomTab.Screen name={'Smile'} component={BlindDate} />
       <BottomTab.Screen name={'Message'} component={ChatList} />
       <BottomTab.Screen name={'User'} component={UserProfile} />
