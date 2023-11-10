@@ -4,6 +4,7 @@ export type RootStackParamList = {
   Welcome: undefined;
   OtpLoginScreen: undefined;
   Gender: undefined;
+  ForgotPassword: undefined;
   Birthday: undefined;
   Home: undefined;
   Swipe: undefined;
@@ -14,18 +15,17 @@ export type RootStackParamList = {
   Settings: undefined;
   Notification: undefined;
   BlindDate: undefined;
-  Quiz:undefined
-  StartChatting:undefined
-  Calling:undefined
+  Quiz: undefined;
+  StartChatting: undefined;
+  Calling: undefined;
   BottomNavBar: undefined;
-ChatDetail:undefined
+  ChatDetail: undefined;
 };
 
-
 export type RootBottomTabParamList = {
-    Card: undefined;
-    Star: undefined;
-    Smile: undefined;
-    Message: undefined;
-    User: undefined;
-  };
+  Card: undefined;
+  Star: undefined;
+  Smile: undefined;
+  Message: undefined;
+  User: undefined;
+};

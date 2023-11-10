@@ -6,6 +6,7 @@ import {Login} from '../screens/auth/Login/Login';
 import {Register} from '../screens/auth/Register/Register';
 import {Welcome} from '../screens/auth/Welcome/WelcomeScreen';
 import {OtpScreen} from '../screens/auth/OTP/OtpScreen';
+import {ForgotPassword} from '../screens/auth/ForgotPassword/ForgotPassword';
 import {Gender} from '../screens/gender/Gender';
 import {Birthday} from '../screens/birthday/Birthday';
 import {Home} from '../screens/home/Home';
@@ -43,6 +44,10 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'OtpLoginScreen'} component={OtpScreen} />
         <NativeStack.Screen name={'Register'} component={Register} />
         <NativeStack.Screen name={'Gender'} component={Gender} />
+        <NativeStack.Screen
+          name={'ForgotPassword'}
+          component={ForgotPassword}
+        />
         <NativeStack.Screen name={'Birthday'} component={Birthday} />
         <NativeStack.Screen name={'Home'} component={Home} />
         <NativeStack.Screen name={'Swipe'} component={Swipe} />
@@ -56,7 +61,10 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'Quiz'} component={Quiz} />
         <NativeStack.Screen name={'StartChatting'} component={StartChatting} />
         <NativeStack.Screen name={'Calling'} component={Calling} />
-        <NativeStack.Screen name={'BottomNavBar'} component={BottomTabNavigator} />
+        <NativeStack.Screen
+          name={'BottomNavBar'}
+          component={BottomTabNavigator}
+        />
         <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
       </NativeStack.Navigator>
     </NavigationContainer>

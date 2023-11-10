@@ -2,12 +2,11 @@ import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import React from 'react';
 import AuthBackground from '../../../components/common/AuthBackground';
 import {useTailwind} from 'tailwind-rn';
-import {useNavigation} from '@react-navigation/native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../types/navigation';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../types/navigation';
 
 export const OtpScreen = ({
-  navigation
+  navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
@@ -16,7 +15,7 @@ export const OtpScreen = ({
       header="Enter Your OTP"
       para="What's your phone number"
       onbackFunc={() => navigation.goBack()}>
-      <View style={tw('flex justify-between absolute top-52 w-full gap-80')}>
+      <View style={tw('flex justify-between absolute top-52 w-full gap-64')}>
         <View
           style={tw(
             'flex justify-between h-48 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
@@ -27,7 +26,9 @@ export const OtpScreen = ({
             <Text style={tw('text-[#4B164C]')}>Resend</Text>
           </View>
           <TouchableOpacity
-          onPress={()=>{navigation.navigate('Gender')}}
+            onPress={() => {
+              navigation.navigate('Home');
+            }}
             style={tw(
               'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
             )}>

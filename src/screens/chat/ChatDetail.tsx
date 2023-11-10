@@ -1,6 +1,6 @@
 import {AllIcons} from '../../../assets/icons';
 import React, {useState, useCallback, useEffect} from 'react';
-import {TextInput, View, Image, Text} from 'react-native';
+import {View, Image, Text} from 'react-native';
 import {Bubble, GiftedChat, IMessage} from 'react-native-gifted-chat';
 import {useTailwind} from 'tailwind-rn';
 
@@ -28,7 +28,7 @@ export const ChatDetail = () => {
       GiftedChat.append(previousMessages, messages),
     );
   }, []);
-  const renderBubble = (props:any) => {
+  const renderBubble = (props: any) => {
     return (
       <Bubble
         {...props}
@@ -53,8 +53,6 @@ export const ChatDetail = () => {
       />
     );
   };
-
-  
 
   return (
     <View style={tw('flex-1 items-center bg-[#DF8CD1]')}>

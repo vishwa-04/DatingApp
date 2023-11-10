@@ -43,10 +43,14 @@ export const Gender = ({
           </Text>
         </View>
         <TouchableOpacity
-          style={tw(
-            'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
-          )}>
-          <Text style={tw('text-white text-center')}>Continue</Text>
+          style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
+          <Text
+            style={tw('text-white text-center')}
+            onPress={() => {
+              navigation.navigate('Birthday');
+            }}>
+            Continue
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

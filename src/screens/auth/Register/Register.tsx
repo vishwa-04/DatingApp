@@ -3,11 +3,11 @@ import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import AuthBackground from '../../../components/common/AuthBackground';
 import {GoogleAuth} from '../../../components/common/GoogleAuth';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../types/navigation';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../types/navigation';
 
 export const Register = ({
-  navigation
+  navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   let objScreen = {
     Register: 'register',
@@ -35,7 +35,8 @@ export const Register = ({
           : () => setScreen(objScreen.Password)
       }>
       {screen === objScreen.Register ? (
-        <View style={tw('flex justify-between absolute top-52 w-full gap-72')}>
+        <View
+          style={tw('flex-1 justify-between absolute top-52 w-full gap-52')}>
           <View
             style={tw(
               'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
@@ -43,11 +44,13 @@ export const Register = ({
             <TextInput style={tw('h-10 rounded-3xl border')} />
             <TouchableOpacity
               style={tw(
-                'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
               )}>
               <Text
                 style={tw('text-white text-center')}
-                onPress={() => {setScreen(objScreen.Password)}}>
+                onPress={() => {
+                  setScreen(objScreen.Password);
+                }}>
                 Continue
               </Text>
             </TouchableOpacity>
@@ -65,7 +68,8 @@ export const Register = ({
           </View>
         </View>
       ) : screen === objScreen.Password ? (
-        <View style={tw('flex justify-between absolute top-52 w-full gap-72')}>
+        <View
+          style={tw('flex-1 justify-between absolute top-52 w-full gap-52')}>
           <View
             style={tw(
               'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
@@ -76,7 +80,7 @@ export const Register = ({
             </Text>
             <TouchableOpacity
               style={tw(
-                'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
               )}>
               <Text
                 style={tw('text-white text-center')}
@@ -89,7 +93,6 @@ export const Register = ({
           </View>
           <View style={tw('flex-1 justify-between items-center gap-2')}>
             <GoogleAuth />
-
             <View style={tw('flex-row justify-center gap-1')}>
               <Text style={tw('text-black')}>Already sign in?</Text>
               <Text
@@ -101,7 +104,7 @@ export const Register = ({
           </View>
         </View>
       ) : (
-        <View style={tw('flex justify-between absolute top-52 w-full gap-72')}>
+        <View style={tw('flex justify-between absolute top-52 w-full')}>
           <View
             style={tw(
               'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
@@ -109,10 +112,10 @@ export const Register = ({
             <TextInput style={tw('h-10 rounded-3xl border')} />
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('OtpLoginScreen');
+                navigation.navigate('Gender');
               }}
               style={tw(
-                'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
               )}>
               <Text style={tw('text-white text-center')}>Continue</Text>
             </TouchableOpacity>
