@@ -254,6 +254,11 @@
 			"height": 64
 		}
 	},
+	"h-2": {
+		"style": {
+			"height": 8
+		}
+	},
 	"h-2/3": {
 		"style": {
 			"height": "66.666667%"
@@ -364,11 +369,6 @@
 			"height": "100%"
 		}
 	},
-	"h-2": {
-		"style": {
-			"height": 8
-		}
-	},
 	"w-1/2": {
 		"style": {
 			"width": "50%"
@@ -382,6 +382,11 @@
 	"w-16": {
 		"style": {
 			"width": 64
+		}
+	},
+	"w-2": {
+		"style": {
+			"width": 8
 		}
 	},
 	"w-20": {
@@ -474,11 +479,6 @@
 			"width": "100%"
 		}
 	},
-	"w-2": {
-		"style": {
-			"width": 8
-		}
-	},
 	"flex-1": {
 		"style": {
 			"flexGrow": 1,
@@ -551,6 +551,11 @@
 			"gap": 4
 		}
 	},
+	"gap-14": {
+		"style": {
+			"gap": 56
+		}
+	},
 	"gap-2": {
 		"style": {
 			"gap": 8
@@ -591,29 +596,19 @@
 			"gap": 256
 		}
 	},
-	"gap-14": {
-		"style": {
-			"gap": 56
-		}
-	},
 	"gap-y-3": {
 		"style": {
 			"rowGap": 12
 		}
 	},
-	"gap-y-6": {
-		"style": {
-			"rowGap": 24
-		}
-	},
-	"gap-y-7": {
-		"style": {
-			"rowGap": 28
-		}
-	},
 	"gap-y-4": {
 		"style": {
 			"rowGap": 16
+		}
+	},
+	"gap-y-6": {
+		"style": {
+			"rowGap": 24
 		}
 	},
 	"rounded-2xl": {
