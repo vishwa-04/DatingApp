@@ -15,7 +15,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.FirstName}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>First Name</Text>
           </View>
@@ -25,7 +25,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.Nationality}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>Nationality</Text>
           </View>
@@ -35,7 +35,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.Emirates}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>Emirates</Text>
           </View>
@@ -45,7 +45,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.Age}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>Age</Text>
           </View>
@@ -55,7 +55,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.Occupation}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>Occupation</Text>
           </View>
@@ -68,7 +68,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.Email}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>Email</Text>
           </View>
@@ -78,7 +78,7 @@ export const EditProfile = () => {
           <View style={tw('flex-row justify-between gap-2')}>
             <Image
               source={AllImages.Phone}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             /> 
             <Text style={tw('font-medium text-base text-[#161616]')}>Phone</Text>
           </View>

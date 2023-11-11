@@ -9,7 +9,6 @@ export const SwipeUserInfo = () => {
 
   return (
     <View style={tw('relative')}>
-      {/* <div className="top- justify-between font- text-" /> */}
       <Image
         source={AllImages.UserSwipe}
         style={tw('w-full h-full object-cover')}
@@ -37,10 +36,7 @@ export const SwipeUserInfo = () => {
             </View>
           </View>
           <View style={tw('flex-row justify-center items-center gap-2')}>
-            <Image
-              source={AllImages.Flag}
-              style={tw('w-5 h-5 object-cover')}
-            />
+            <Image source={AllImages.Flag} style={tw('w-5 h-5 object-cover')} />
             <Image
               source={AllImages.UserIcon}
               style={tw('w-5 h-5 object-cover')}
@@ -51,13 +47,10 @@ export const SwipeUserInfo = () => {
         <HorizontalLine />
         <View style={tw('flex-row justify-between items-center py-2')}>
           <Text style={tw('font-medium text-sm text-[#161616]')}>
-          Occupation
+            Occupation
           </Text>
           <View style={tw('flex-row justify-end items-center gap-2')}>
-            <Image
-              source={AllImages.Plus}
-              style={tw('w-7 h-7 object-cover')}
-            />
+            <Image source={AllImages.Plus} style={tw('w-7 h-7 object-cover')} />
             <Text style={tw('font-medium text-sm')}>Art Manager</Text>
           </View>
         </View>

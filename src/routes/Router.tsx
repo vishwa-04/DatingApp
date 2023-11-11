@@ -23,7 +23,6 @@ import {StartChatting} from '../screens/StartChatting/StartChatting';
 import {Calling} from '../screens/Calling/Calling';
 import {CustomBottomTabBar} from '../components/common/BottomTab/CustomBottomBar';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {LikePage} from '../screens/likepage/LikePage';
 import {ChatList} from '../screens/chat/ChatList';
 import {ChatDetail} from '../screens/chat/ChatDetail';
 
@@ -32,7 +31,7 @@ export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="ChatDetail"
+        initialRouteName="Welcome"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',

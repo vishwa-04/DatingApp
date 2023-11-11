@@ -55,4 +55,6 @@ export const AllImages={
     TripleDot:require('../images/TripleDot.png'),
     CallUserPhoto:require('../images/CallUserPhoto.png'),
     CallingBottom:require('../images/CallingBottom.png'),
+    BlindDateBackground:require('../images/BlindDateBackground.png'),
+    CallingUserBackground:require('../images/CallingUserBackground.png'),
 }

@@ -23,10 +23,9 @@ export const BlindDate = () => {
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-3')}>
         <View style={tw('mt-60 gap-5')}>
-          <View
-            style={tw(
-              'flex-row justify-between items-center bg-[#b928a0] rounded-2xl p-3',
-            )}>
+          <ImageBackground
+            source={AllImages.BlindDateBackground}
+            style={tw('flex-row justify-between items-center p-3')}>
             <View style={tw('gap-3')}>
               <Text style={tw('font-extrabold text-base text-white')}>
                 Telepath
@@ -48,15 +47,15 @@ export const BlindDate = () => {
               source={AllImages.TelePhone}
               style={tw('h-20 w-16 object-cover px-3')}
             />
-          </View>
+          </ImageBackground>
           <View style={tw('flex-row justify-between gap-2')}>
             <View
               style={tw(
-                'flex-row justify-start items-center gap-2 h-16 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
+                'flex-row justify-start items-center gap-2 h-20 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
               )}>
               <Image
                 source={AllImages.Alarm}
-                style={tw('h-10 w-10 object-cover')}
+                style={tw('h-14 w-12 object-cover')}
               />
               <Text style={tw('font-bold text-xs text-[#B928A0]')}>
                 Love line Clic
@@ -64,11 +63,11 @@ export const BlindDate = () => {
             </View>
             <View
               style={tw(
-                'flex-row justify-start items-center gap-2 h-16 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
+                'flex-row justify-start items-center gap-2 h-20 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
               )}>
               <Image
                 source={AllImages.DatingQuiz}
-                style={tw('h-10 w-10 object-cover ')}
+                style={tw('h-14 w-16 object-cover')}
               />
               <Text style={tw('font-bold text-xs text-[#B928A0]')}>
                 Dating Quiz
@@ -79,10 +78,7 @@ export const BlindDate = () => {
       </View>
       <View style={tw('absolute w-full top-24')}>
         <View style={tw('flex-col justify-center items-center')}>
-          <Image
-            source={AllImages.Male}
-            style={tw('h-40 w-40 object-cover rounded-full')}
-          />
+          <Image source={AllImages.Male} style={tw('h-40 w-40 object-cover')} />
           <Text
             style={tw('font-normal text-xs text-center px-5 py-3 text-black')}>
             Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,

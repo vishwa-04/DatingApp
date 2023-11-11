@@ -24,7 +24,7 @@ export const ProfileBackground = ({
       <View style={tw('flex-row justify-between items-center w-full p-2 mt-2')}>
         <View style={tw('flex-row justify-between items-center gap-2')}>
           <TouchableOpacity style={tw('')}>
-            <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
+            <Image source={AllImages.LeftArrow} style={tw('w-5 h-5')} />
           </TouchableOpacity>
           <Text style={tw('text-white font-medium text-lg')}>My profile</Text>
         </View>

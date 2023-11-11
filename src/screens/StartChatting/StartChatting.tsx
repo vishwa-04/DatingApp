@@ -16,10 +16,10 @@ export const StartChatting = () => {
       {/* <div className='text-base text-'></div> */}
       <View
         style={tw(
-          'flex-col items-center justify-center h-2/3 w-80 bg-white m-auto rounded-2xl gap-10',
+          'flex-col items-center justify-center h-2/3 w-80 bg-white m-auto rounded-2xl gap-20',
         )}>
         <View style={tw('gap-3')}>
-          <Image source={AllImages.StartChattingUser} style={tw('w-40 h-40')} />
+          <Image source={AllImages.StartChattingUser} style={tw('w-40 h-40 rounded-full')} />
           <View style={tw('flex-row justify-center items-center gap-2')}>
             <View
               style={tw(

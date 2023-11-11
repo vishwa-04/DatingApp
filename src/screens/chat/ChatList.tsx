@@ -46,7 +46,7 @@ const MatchComponent = ({item}: {item: Item}) => (
 export const ChatList = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
-  const tw = useTailwind();z
+  const tw = useTailwind();
   return (
     <View style={tw('flex-1 items-center bg-[#DF8CD1]')}>
       {/* <div className="w-6 h-6 font-normal text-sm text-[595f67] top-" /> */}
@@ -57,7 +57,7 @@ export const ChatList = ({
             'my-auto bg-white w-80 rounded-3xl px-12 font-normal text-sm text-[#595f67]',
           )}
         />
-        <Imagex1
+        <Image
           source={AllImages.Search}
           style={tw('h-6 w-6 absolute top-[65px] left-4')}
         />

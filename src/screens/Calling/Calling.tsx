@@ -7,11 +7,10 @@ export const Calling = () => {
   const tw = useTailwind();
 
   return (
-    <ImageBackground source={AllImages.UserPhoto} style={tw('flex-1')}>
+    <ImageBackground source={AllImages.CallingUserBackground} style={tw('flex-1')}>
       <View style={tw('flex-1 justify-between')}>
-        {/* <div className="font-normal text-sm justify-end left-"  /> */}
         <View style={tw('p-5 flex-row')}>
-          <View style={tw('bg-[#df8cd1] p-3 rounded-xl')}>
+          <View style={tw('bg-[#df8cd1] py-3 px-4 rounded-xl')}>
             <Image source={AllImages.LeftArrow} style={tw('w-3 h-5')} />
           </View>
         </View>

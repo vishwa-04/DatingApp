@@ -15,65 +15,75 @@ export const Settings = () => {
             <View style={tw('flex-row justify-between gap-2')}>
               <Image
                 source={AllImages.Feedback}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                style={tw('h-5 w-5 object-cover')}
               />
-              <Text style={tw('font-medium text-base text-[#161616]')}>Feedback</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>
+                Feedback
+              </Text>
             </View>
             <Image
               source={AllImages.Polygon}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
           </View>
           <View style={tw('flex-row justify-between p-3')}>
             <View style={tw('flex-row justify-between gap-2')}>
               <Image
                 source={AllImages.Help}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                style={tw('h-5 w-5 object-cover')}
               />
-              <Text style={tw('font-medium text-base text-[#161616]')}>Help</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>
+                Help
+              </Text>
             </View>
             <Image
               source={AllImages.Polygon}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
           </View>
           <View style={tw('flex-row justify-between p-3')}>
             <View style={tw('flex-row justify-between gap-2')}>
               <Image
                 source={AllImages.Notification}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                style={tw('h-5 w-5 object-cover')}
               />
-              <Text style={tw('font-medium text-base text-[#161616]')}>Notification</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>
+                Notification
+              </Text>
             </View>
             <Image
               source={AllImages.Polygon}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
           </View>
           <View style={tw('flex-row justify-between p-3')}>
             <View style={tw('flex-row justify-between gap-2')}>
               <Image
                 source={AllImages.PrivacyPolicy}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                style={tw('h-5 w-5 object-cover')}
               />
-              <Text style={tw('font-medium text-base text-[#161616]')}>Privacy Policy</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>
+                Privacy Policy
+              </Text>
             </View>
             <Image
               source={AllImages.Polygon}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
           </View>
           <View style={tw('flex-row justify-between p-3')}>
             <View style={tw('flex-row justify-between gap-2')}>
               <Image
                 source={AllImages.TermsOfService}
-                style={tw('h-5 w-5 object-cover rounded-full')}
+                style={tw('h-5 w-5 object-cover')}
               />
-              <Text style={tw('font-medium text-base text-[#161616]')}>Terms Of Service</Text>
+              <Text style={tw('font-medium text-base text-[#161616]')}>
+                Terms Of Service
+              </Text>
             </View>
             <Image
               source={AllImages.Polygon}
-              style={tw('h-5 w-5 object-cover rounded-full')}
+              style={tw('h-5 w-5 object-cover')}
             />
           </View>
         </View>
