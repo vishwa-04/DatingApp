@@ -3,15 +3,17 @@ import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '../../../assets/images/index';
 import Swiper from 'react-native-deck-swiper';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackCardList } from '../../types/navigation';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackCardList} from '../../types/navigation';
 
 type dataProps = {
   firstname: string;
   image: any;
   id: number;
 };
-export const Swipe = ({navigation}:NativeStackScreenProps<RootStackCardList>) => {
+export const Swipe = ({
+  navigation,
+}: NativeStackScreenProps<RootStackCardList>) => {
   const DUMMY_DATA: dataProps[] = [
     {
       firstname: 'John',
@@ -46,7 +48,7 @@ export const Swipe = ({navigation}:NativeStackScreenProps<RootStackCardList>) =>
   ];
   const tw = useTailwind();
   return (
-    <View style={tw('flex-1 justify-between pb-24 px-2 pt-2 h-full')}>
+    <View style={tw('flex-1 justify-between pb-24 px-2 pt-2 h-full bg-white')}>
       <Image
         source={AllImages.LovelineText}
         style={tw('w-40 h-9 mx-auto object-cover rounded-2xl')}
@@ -79,25 +81,33 @@ export const Swipe = ({navigation}:NativeStackScreenProps<RootStackCardList>) =>
             );
           }}></Swiper>
       </View>
-      <View style={tw('flex-row justify-center items-center gap-5')}>
-        <Image source={AllImages.Close} style={tw('w-8 h-7 object-cover')} />
-        <Image source={AllImages.Heart} style={tw('w-8 h-7 object-cover')} />
-        <Image source={AllImages.Star} style={tw('w-8 h-7 object-cover')} />
-      </View>
-      <Pressable onPress={()=>{navigation.navigate('SwipeUserInfo')}}>
-        <Text style={tw('text-center text-[#4B164C] font-bold text-base')}>
-          Olivia jension
+      <View style={tw('flex-col justify-between gap-y-4 bg-white')}>
+        <View style={tw('flex-row justify-center items-center gap-14')}>
+          <Image source={AllImages.Close} style={tw('w-8 h-7 object-cover')} />
+          <Image source={AllImages.Heart} style={tw('w-8 h-7 object-cover')} />
+          <Image source={AllImages.Star} style={tw('w-8 h-7 object-cover')} />
+        </View>
+        <Pressable
+          onPress={() => {
+            navigation.navigate('SwipeUserInfo');
+          }}>
+          <Text style={tw('text-center text-[#4B164C] font-bold text-base')}>
+            Olivia jension
+          </Text>
+        </Pressable>
+        <View style={tw('flex-row justify-center items-center gap-3')}>
+          <Text style={tw('text-black')}>Art manager</Text>
+          <Image
+            source={AllImages.Location}
+            style={tw('w-5 h-6 object-cover')}
+          />
+          <Text style={tw('text-black')}>10 km</Text>
+        </View>
+        <Text style={tw('text-center font-normal text-sm')}>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s,
         </Text>
-      </Pressable>
-      <View style={tw('flex-row justify-center items-center gap-3')}>
-        <Text style={tw('text-black')}>Art manager</Text>
-        <Image source={AllImages.Location} style={tw('w-5 h-6 object-cover')} />
-        <Text style={tw('text-black')}>10 km</Text>
       </View>
-      <Text style={tw('text-center font-normal text-sm')}>
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s,
-      </Text>
     </View>
   );
 };

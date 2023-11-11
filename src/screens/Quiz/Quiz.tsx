@@ -9,14 +9,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTailwind} from 'tailwind-rn';
+import {RootStackParamList} from '../../types/navigation';
 
-export const Quiz = () => {
+export const Quiz = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   return (
     <ImageBackground source={AllIcons.BubbleBg} style={[tw('flex-1 h-[30%]')]}>
       <View style={tw('gap-5 mx-auto mt-28')}>
-        {/* <div className="font-medium text-base h-" /> */}
         <View
           style={tw(
             'bg-white rounded-xl p-10 flex-col justify-between gap-6 mx-5',
@@ -62,7 +65,10 @@ export const Quiz = () => {
           <TouchableOpacity
             style={tw(
               'py-3 px-24 bg-[#4B164C] rounded-3xl font-semibold text-base',
-            )}>
+            )}
+            onPress={() => {
+              navigation.navigate('StartChatting');
+            }}>
             <Text style={tw('text-white text-center')}>Continue</Text>
           </TouchableOpacity>
         </View>

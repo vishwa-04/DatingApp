@@ -32,7 +32,7 @@ export const ProfileBackground = ({
             onPress={() => {
               navigate.goBack();
             }}>
-            <Image source={AllImages.LeftArrow} style={tw('w-5 h-5')} />
+            <Image source={AllImages.LeftArrow} style={tw('w-2 h-2')} />
           </TouchableOpacity>
           <Text style={tw('text-white font-medium text-lg')}>My profile</Text>
         </View>

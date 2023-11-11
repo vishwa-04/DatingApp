@@ -16,7 +16,6 @@ export type RootStackParamList = {
   Calling: undefined;
   BottomNavBar: undefined;
   CardSwipe:undefined;
-
 };
 
 export type RootBottomTabParamList = {

@@ -8,8 +8,12 @@ import {
 import React from 'react';
 import {AllImages} from '../../../assets/images/index';
 import {useTailwind} from 'tailwind-rn';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../types/navigation';
 
-export const StartChatting = () => {
+export const StartChatting = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   return (
     <ImageBackground source={AllImages.AppBg} style={tw('h-full')}>
@@ -19,13 +23,19 @@ export const StartChatting = () => {
           'flex-col items-center justify-center h-2/3 w-80 bg-white m-auto rounded-2xl gap-20',
         )}>
         <View style={tw('gap-3')}>
-          <Image source={AllImages.StartChattingUser} style={tw('w-40 h-40 rounded-full')} />
+          <Image
+            source={AllImages.StartChattingUser}
+            style={tw('w-40 h-40 rounded-full')}
+          />
           <View style={tw('flex-row justify-center items-center gap-2')}>
             <View
               style={tw(
                 'flex-row justify-center items-center gap-2 p-1 border border-[#D9D9D9] rounded-xl',
               )}>
-              <Image source={AllImages.StartChattingLike} style={tw('w-4 h-4')} />
+              <Image
+                source={AllImages.StartChattingLike}
+                style={tw('w-4 h-4')}
+              />
               <Text style={tw('text-black')}>25</Text>
             </View>
             <View

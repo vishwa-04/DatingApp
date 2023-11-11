@@ -4,6 +4,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  Pressable,
 } from 'react-native';
 import React from 'react';
 import {AllImages} from '../../../assets/images/index';
@@ -42,7 +43,10 @@ export const BlindDate = ({
               <TouchableOpacity
                 style={tw(
                   'p-2 bg-white rounded-3xl font-semibold text-base w-20',
-                )}>
+                )}
+                onPress={() => {
+                  navigation.navigate('Calling');
+                }}>
                 <Text
                   style={tw('text-[#B928A0] text-center font-bold text-xs')}>
                   Start
@@ -75,9 +79,14 @@ export const BlindDate = ({
                 source={AllImages.DatingQuiz}
                 style={tw('h-14 w-16 object-cover')}
               />
-              <Text style={tw('font-bold text-xs text-[#B928A0]')}>
-                Dating Quiz
-              </Text>
+              <Pressable
+                onPress={() => {
+                  navigation.navigate('Quiz');
+                }}>
+                <Text style={tw('font-bold text-xs text-[#B928A0]')}>
+                  Dating Quiz
+                </Text>
+              </Pressable>
             </View>
           </View>
         </View>

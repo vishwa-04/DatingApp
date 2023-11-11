@@ -1,7 +1,13 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {RootStackParamList, RootBottomTabParamList, RootStackHomeList, RootStackCardList,RootStackUserList} from '../types/navigation';
+import {
+  RootStackParamList,
+  RootBottomTabParamList,
+  RootStackHomeList,
+  RootStackCardList,
+  RootStackUserList,
+} from '../types/navigation';
 import {Login} from '../screens/auth/Login/Login';
 import {Register} from '../screens/auth/Register/Register';
 import {Welcome} from '../screens/auth/Welcome/WelcomeScreen';
@@ -25,7 +31,7 @@ import {CustomBottomTabBar} from '../components/common/BottomTab/CustomBottomBar
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ChatList} from '../screens/chat/ChatList';
 import {ChatDetail} from '../screens/chat/ChatDetail';
-import { CardSwipe } from '../screens/cardswipe/CardSwipe';
+import {CardSwipe} from '../screens/cardswipe/CardSwipe';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
 export const Routes = (): React.JSX.Element => {
@@ -50,9 +56,9 @@ export const Routes = (): React.JSX.Element => {
         />
         <NativeStack.Screen name={'Birthday'} component={Birthday} />
         <NativeStack.Screen name={'Home'} component={Home} />
-      
+
         <NativeStack.Screen name={'Like'} component={Like} />
-      
+
         <NativeStack.Screen name={'Notification'} component={Notification} />
         <NativeStack.Screen name={'BlindDate'} component={BlindDate} />
         <NativeStack.Screen name={'Quiz'} component={Quiz} />
@@ -91,46 +97,45 @@ export const BottomTabNavigator = () => {
 const HomeStack = createNativeStackNavigator<RootStackHomeList>();
 export const HomeFeed = (): React.JSX.Element => {
   return (
-      <HomeStack.Navigator
-        initialRouteName="ChatList"
-        screenOptions={{
-          animation: 'none',
-          orientation: 'portrait',
-          headerShown: false,
-        }}>
-        <HomeStack.Screen name={'ChatList'} component={ChatList} />
-        
-      </HomeStack.Navigator>
+    <HomeStack.Navigator
+      initialRouteName="ChatList"
+      screenOptions={{
+        animation: 'none',
+        orientation: 'portrait',
+        headerShown: false,
+      }}>
+      <HomeStack.Screen name={'ChatList'} component={ChatList} />
+    </HomeStack.Navigator>
   );
 };
 const CardStack = createNativeStackNavigator<RootStackCardList>();
 export const CardTab = (): React.JSX.Element => {
   return (
-      <CardStack.Navigator
-        initialRouteName="Swipe"
-        screenOptions={{
-          animation: 'none',
-          orientation: 'portrait',
-          headerShown: false,
-        }}>
-        <CardStack.Screen name={'Swipe'} component={Swipe} />
-        <CardStack.Screen name={'SwipeUserInfo'} component={SwipeUserInfo} />
-      </CardStack.Navigator>
+    <CardStack.Navigator
+      initialRouteName="Swipe"
+      screenOptions={{
+        animation: 'none',
+        orientation: 'portrait',
+        headerShown: false,
+      }}>
+      <CardStack.Screen name={'Swipe'} component={Swipe} />
+      <CardStack.Screen name={'SwipeUserInfo'} component={SwipeUserInfo} />
+    </CardStack.Navigator>
   );
 };
 const UserStack = createNativeStackNavigator<RootStackUserList>();
 export const UserTab = (): React.JSX.Element => {
   return (
-      <UserStack.Navigator
-        initialRouteName="UserProfile"
-        screenOptions={{
-          animation: 'none',
-          orientation: 'portrait',
-          headerShown: false,
-        }}>
-         <UserStack.Screen name={'UserProfile'} component={UserProfile} />
-        <UserStack.Screen name={'EditProfile'} component={EditProfile} />
-        <UserStack.Screen name={'Settings'} component={Settings} />
-      </UserStack.Navigator>
+    <UserStack.Navigator
+      initialRouteName="UserProfile"
+      screenOptions={{
+        animation: 'none',
+        orientation: 'portrait',
+        headerShown: false,
+      }}>
+      <UserStack.Screen name={'UserProfile'} component={UserProfile} />
+      <UserStack.Screen name={'EditProfile'} component={EditProfile} />
+      <UserStack.Screen name={'Settings'} component={Settings} />
+    </UserStack.Navigator>
   );
 };
