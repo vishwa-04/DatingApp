@@ -1,3 +1,4 @@
+import {AllIcons} from '../../../assets/icons/index';
 import {AllImages} from '../../../assets/images/index';
 import React from 'react';
 import {
@@ -13,7 +14,7 @@ import {useTailwind} from 'tailwind-rn';
 export const Quiz = () => {
   const tw = useTailwind();
   return (
-    <ImageBackground source={AllImages.AppBg} style={tw('flex-1')}>
+    <ImageBackground source={AllIcons.BubbleBg} style={[tw('flex-1 h-[30%]')]}>
       <View style={tw('gap-5 mx-auto mt-28')}>
         {/* <div className="font-medium text-base h-" /> */}
         <View

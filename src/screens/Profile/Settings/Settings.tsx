@@ -1,10 +1,12 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Pressable} from 'react-native';
 import React from 'react';
 import {AllImages} from '../../../../assets/images/index';
 import {useTailwind} from 'tailwind-rn';
 import {ProfileBackground} from '../../../components/common/ProfileBackground';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../../types/navigation';
 
-export const Settings = () => {
+export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
   return (
@@ -37,7 +39,7 @@ export const Settings = () => {
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
           </View>
-          <View style={tw('flex-row justify-between p-3')}>
+          <Pressable style={tw('flex-row justify-between p-3')} onPress={()=>navigation.navigate('Notification')}>
             <View style={tw('flex-row justify-between gap-2')}>
               <Image
                 source={AllImages.Notification}
@@ -49,7 +51,7 @@ export const Settings = () => {
               source={AllImages.Polygon}
               style={tw('h-5 w-5 object-cover rounded-full')}
             />
-          </View>
+          </Pressable>
           <View style={tw('flex-row justify-between p-3')}>
             <View style={tw('flex-row justify-between gap-2')}>
               <Image

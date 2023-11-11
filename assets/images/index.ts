@@ -47,4 +47,12 @@ export const AllImages={
     StartChattingUser:require('../images/StartChattingUser.png'),
     StartChattingLike:require('../images/StartChattingLike.png'),
     QuizTrue:require('../images/QuizTrue.png'),
+    Password:require('../images/Password.png'),
+    PasswordEyeShut:require('../images/PasswordEyeShut.png'),
+    Search:require('../images/Search.png'),
+    Calling:require('../images/Calling.png'),
+    MessageIcon:require('../images/MessageIcon.png'),
+    TripleDot:require('../images/TripleDot.png'),
+    CallUserPhoto:require('../images/CallUserPhoto.png'),
+    CallingBottom:require('../images/CallingBottom.png'),
 }

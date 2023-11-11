@@ -2,8 +2,12 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import {useTailwind} from 'tailwind-rn';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../types/navigation';
 
-export const Birthday = () => {
+export const Birthday = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
   const months = [
@@ -49,10 +53,10 @@ export const Birthday = () => {
           onSelect={(selectedItem, index) => {
             console.log(selectedItem, index);
           }}
-          buttonTextAfterSelection={(selectedItem, index) => {
+          buttonTextAfterSelection={selectedItem => {
             return selectedItem;
           }}
-          rowTextForSelection={(item, index) => {
+          rowTextForSelection={item => {
             return item;
           }}
           buttonStyle={tw('w-[100] bg-white border border-gray-600 rounded-md')}
@@ -64,10 +68,10 @@ export const Birthday = () => {
           onSelect={(selectedItem, index) => {
             console.log(selectedItem, index);
           }}
-          buttonTextAfterSelection={(selectedItem, index) => {
+          buttonTextAfterSelection={selectedItem => {
             return selectedItem;
           }}
-          rowTextForSelection={(item, index) => {
+          rowTextForSelection={item => {
             return item;
           }}
           buttonStyle={tw('w-[100] bg-white border border-gray-600 rounded-md')}
@@ -79,10 +83,10 @@ export const Birthday = () => {
           onSelect={(selectedItem, index) => {
             console.log(selectedItem, index);
           }}
-          buttonTextAfterSelection={(selectedItem, index) => {
+          buttonTextAfterSelection={selectedItem => {
             return selectedItem;
           }}
-          rowTextForSelection={(item, index) => {
+          rowTextForSelection={item => {
             return item;
           }}
           buttonStyle={tw('w-[100] bg-white border border-gray-600 rounded-md')}
@@ -93,10 +97,14 @@ export const Birthday = () => {
           Your age information will be updated
         </Text>
         <TouchableOpacity
-          style={tw(
-            'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
-          )}>
-          <Text style={tw('text-white text-center')}>Continue</Text>
+          style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
+          <Text
+            style={tw('text-white text-center')}
+            onPress={() => {
+              navigation.navigate('OtpLoginScreen');
+            }}>
+            Continue
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -2,11 +2,15 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '../../../assets/images/index';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../types/navigation';
 
-export const Home = () => {
+export const Home = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   return (
-    <View style={tw('flex-col justify-between gap-48')}>
+    <View style={tw('flex-1 justify-between gap-44')}>
       <View style={tw('flex-col justify-between gap-3 mt-20')}>
         {/* <div className="font-semibold text- font- leading- text- gap-" /> */}
         <Image
@@ -32,7 +36,7 @@ export const Home = () => {
           style={tw(
             'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
           )}>
-          <Text style={tw('text-white text-center')}>Continue</Text>
+          <Text style={tw('text-white text-center')} onPress={()=>navigation.navigate('Swipe')}>Continue</Text>
         </TouchableOpacity>
       </View>
       <View />

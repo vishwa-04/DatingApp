@@ -15,5 +15,6 @@ export const AllIcons = {
   Avatar2:require('../icons/Avatar2.png'),
   Avatar3:require('../icons/Avatar3.png'),
   Avatar4:require('../icons/Avatar4.png'),
-  Call:require('../icons/Call.png')
+  Call:require('../icons/Call.png'),
+  BubbleBg:require('../icons/bubbleBg.png')
 };

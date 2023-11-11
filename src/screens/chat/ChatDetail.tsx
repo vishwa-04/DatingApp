@@ -1,10 +1,12 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {AllIcons} from '../../../assets/icons';
 import React, {useState, useCallback, useEffect} from 'react';
-import {TextInput, View, Image, Text} from 'react-native';
+import {View, Image, Text, Pressable, SafeAreaView} from 'react-native';
 import {Bubble, GiftedChat, IMessage} from 'react-native-gifted-chat';
 import {useTailwind} from 'tailwind-rn';
+import { RootStackParamList } from '../../types/navigation';
 
-export const ChatDetail = () => {
+export const ChatDetail = ({navigation}:NativeStackScreenProps<RootStackParamList>) => {
   const [messages, setMessages] = useState<IMessage[]>([]);
   const tw = useTailwind();
 
@@ -28,7 +30,7 @@ export const ChatDetail = () => {
       GiftedChat.append(previousMessages, messages),
     );
   }, []);
-  const renderBubble = (props:any) => {
+  const renderBubble = (props: any) => {
     return (
       <Bubble
         {...props}
@@ -54,10 +56,9 @@ export const ChatDetail = () => {
     );
   };
 
-  
-
   return (
     <View style={tw('flex-1 items-center bg-[#DF8CD1]')}>
+      <SafeAreaView>
       <View style={tw(' items-center h-[20%]')} />
 
       <View
@@ -66,12 +67,12 @@ export const ChatDetail = () => {
           {borderTopRightRadius: 40, borderTopLeftRadius: 40},
         ]}>
         <View style={tw('flex-row px-3 mt-4')}>
-          <View style={tw(' items-center w-[10%] mt-auto mb-auto')}>
+          <Pressable style={tw(' items-center w-[10%] mt-auto mb-auto')} onPress={()=>navigation.goBack()}>
             <Image
               source={AllIcons.ArrowSimpleLeft}
               style={{height: 30, width: 30}}
             />
-          </View>
+          </Pressable>
           <View style={tw('flex-row justify-between items-center w-[88%]')}>
             <View style={tw('flex-row')}>
               <Image source={AllIcons.Avatar1} />
@@ -95,6 +96,7 @@ export const ChatDetail = () => {
           }}
         />
       </View>
+      </SafeAreaView>
     </View>
   );
 };

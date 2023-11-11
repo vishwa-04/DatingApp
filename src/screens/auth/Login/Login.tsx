@@ -2,10 +2,13 @@ import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import AuthBackground from '../../../components/common/AuthBackground';
-import {useNavigation} from '@react-navigation/native';
 import {GoogleAuth} from '../../../components/common/GoogleAuth';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../types/navigation';
 
-export const Login = () => {
+export const Login = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   let objScreen = {
     Login: 'login',
     password: 'password',
@@ -13,7 +16,6 @@ export const Login = () => {
   };
   const tw = useTailwind();
   const [screen, setScreen] = useState(objScreen.Login);
-  const navigation = useNavigation();
   return (
     <AuthBackground
       header={
@@ -28,24 +30,26 @@ export const Login = () => {
           : () => setScreen(objScreen.Login)
       }>
       {screen === objScreen.Login ? (
-      <View style={tw('flex justify-between absolute top-52 w-full gap-72')}>
-      <View
-            style={tw(
-              'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
-            )}>
-            <TextInput style={tw('h-10 rounded-3xl border')} />
-            <TouchableOpacity
+        <>
+          <View style={tw('flex justify-between absolute top-52 w-full')}>
+            <View
               style={tw(
-                'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <Text
-                style={tw('text-white text-center')}
-                onPress={() => setScreen(objScreen.password)}>
-                Continue
-              </Text>
-            </TouchableOpacity>
+              <TextInput style={tw('h-10 rounded-3xl border')} />
+              <TouchableOpacity
+                style={tw(
+                  'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                )}>
+                <Text
+                  style={tw('text-white text-center')}
+                  onPress={() => setScreen(objScreen.password)}>
+                  Continue
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={tw('flex-1 justify-between items-center gap-2')}>
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
             <View style={tw('flex-row justify-center gap-1')}>
               <Text style={tw('text-black')}>New user?</Text>
@@ -56,42 +60,41 @@ export const Login = () => {
               </Text>
             </View>
           </View>
-          </View>
+        </>
       ) : (
-        <View style={tw('flex justify-between absolute top-52 w-full gap-72')}>
-        <View
-            style={tw(
-              'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
-            )}>
-            <TextInput style={tw('h-10 rounded-3xl border')} />
-            <Text style={tw('text-[#4B164C] text-center')}>
-              Forgot Password?
-            </Text>
-            <TouchableOpacity
+        <>
+          <View
+            style={tw('flex justify-between absolute top-52 w-full')}>
+            <View
               style={tw(
-                'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <Text
-                style={tw('text-white text-center')}
-                onPress={() => {
-                  navigation.navigate('OtpLoginScreen');
-                }}>
-                Submit
-              </Text>
-            </TouchableOpacity>
+              <TextInput style={tw('h-10 rounded-3xl border')} />
+              <TouchableOpacity
+                style={tw(
+                  'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                )}>
+                <Text
+                  style={tw('text-white text-center')}
+                  onPress={() => {
+                    navigation.navigate('OtpLoginScreen');
+                  }}>
+                  Submit
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={tw('flex-1 justify-between items-center gap-3')}>
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
             <View style={tw('flex-row justify-center gap-1')}>
-              <Text style={tw('text-black')}>New user?</Text>
               <Text
                 style={tw('text-[#4B164C]')}
-                onPress={() => navigation.navigate('Register')}>
-                Register
+                onPress={() => navigation.navigate('ForgotPassword')}>
+                Forgot Password?
               </Text>
             </View>
           </View>
-          </View>
+        </>
       )}
     </AuthBackground>
   );
