@@ -14,7 +14,7 @@ export const SwipeUserInfo = () => {
         style={tw('w-full h-full object-cover')}
       />
       <View
-        style={tw('absolute top-1/3 rounded-t-3xl h-3/4 bg-white w-full p-5')}>
+        style={tw('absolute top-1/3 rounded-t-3xl h-3/4 bg-white w-full p-5 mt-10')}>
         <View style={tw('flex-row justify-between items-center pb-2')}>
           <View style={tw('flex-col justify-center')}>
             <View style={tw('flex-row justify-between gap-5')}>

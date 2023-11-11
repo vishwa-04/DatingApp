@@ -4,17 +4,16 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  Pressable,
 } from 'react-native';
 import React from 'react';
 import {AllImages} from '../../../../assets/images/index';
 import {useTailwind} from 'tailwind-rn';
 import {HorizontalLine} from '../../../components/common/HorizontalLine';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../types/navigation';
+import { RootStackUserList } from '../../../types/navigation';
 
-export const UserProfile = ({
-  navigation,
-}: NativeStackScreenProps<RootStackParamList>) => {
+export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserList>) => {
   const tw = useTailwind();
 
   return (
@@ -30,7 +29,7 @@ export const UserProfile = ({
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-5')}>
         <View style={tw('mt-28')}>
-          <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
+          <Pressable style={tw('flex-row justify-start items-center gap-3 my-2')} onPress={()=>navigation.navigate('EditProfile')}>
             <Image
               source={AllImages.AccountDetail}
               style={tw('w-7 h-7 object-cover')}
@@ -38,9 +37,9 @@ export const UserProfile = ({
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Account Detail
             </Text>
-          </View>
+          </Pressable>
           <HorizontalLine />
-          <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
+          <Pressable style={tw('flex-row justify-start items-center gap-3 my-2')} onPress={()=>navigation.navigate('Settings')}>
             <Image
               source={AllImages.Setting}
               style={tw('w-7 h-7 object-cover')}
@@ -48,7 +47,7 @@ export const UserProfile = ({
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Settings
             </Text>
-          </View>
+          </Pressable>
           <HorizontalLine />
           <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image

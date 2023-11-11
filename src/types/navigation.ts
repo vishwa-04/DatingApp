@@ -7,19 +7,16 @@ export type RootStackParamList = {
   ForgotPassword: undefined;
   Birthday: undefined;
   Home: undefined;
-  Swipe: undefined;
-  SwipeUserInfo: undefined;
+  ChatDetail: undefined;
   Like: undefined;
-  UserProfile: undefined;
-  EditProfile: undefined;
-  Settings: undefined;
   Notification: undefined;
   BlindDate: undefined;
   Quiz: undefined;
   StartChatting: undefined;
   Calling: undefined;
   BottomNavBar: undefined;
-  ChatDetail: undefined;
+  CardSwipe:undefined;
+
 };
 
 export type RootBottomTabParamList = {
@@ -29,3 +26,17 @@ export type RootBottomTabParamList = {
   Message: undefined;
   User: undefined;
 };
+
+export type RootStackHomeList = {
+  ChatList:undefined
+ 
+}
+export type RootStackCardList = {
+  Swipe: undefined;
+  SwipeUserInfo: undefined;
+}
+export type RootStackUserList = {
+  UserProfile: undefined;
+  EditProfile: undefined;
+  Settings: undefined;
+}
