@@ -9,15 +9,21 @@ import React from 'react';
 import {AllImages} from '../../../../assets/images/index';
 import {useTailwind} from 'tailwind-rn';
 import {HorizontalLine} from '../../../components/common/HorizontalLine';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../../types/navigation';
 
-export const UserProfile = () => {
+export const UserProfile = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
   return (
     <ImageBackground
       source={AllImages.AppBg}
       style={tw('h-full w-full relative')}>
-      <TouchableOpacity style={tw('absolute top-5 mx-3')}>
+      <TouchableOpacity
+        style={tw('absolute top-5 mx-3')}
+        onPress={() => navigation.goBack()}>
         <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
       </TouchableOpacity>
       {/* <div className='rounded-full mt- font- text-'></div> */}

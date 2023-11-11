@@ -8,13 +8,17 @@ import {
 import React from 'react';
 import {AllImages} from '../../../assets/images';
 import {useTailwind} from 'tailwind-rn';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../types/navigation';
 
 export const ProfileBackground = ({
   children,
   header,
+  navigate,
 }: {
   children: React.ReactNode;
   header: String;
+  navigate: any;
 }) => {
   const tw = useTailwind();
   return (
@@ -23,7 +27,11 @@ export const ProfileBackground = ({
       style={tw('h-full w-full relative')}>
       <View style={tw('flex-row justify-between items-center w-full p-2 mt-2')}>
         <View style={tw('flex-row justify-between items-center gap-2')}>
-          <TouchableOpacity style={tw('')}>
+          <TouchableOpacity
+            style={tw('')}
+            onPress={() => {
+              navigate.goBack();
+            }}>
             <Image source={AllImages.LeftArrow} style={tw('w-5 h-5')} />
           </TouchableOpacity>
           <Text style={tw('text-white font-medium text-lg')}>My profile</Text>

@@ -3,12 +3,16 @@ import React from 'react';
 import {AllImages} from '../../../../assets/images/index';
 import {useTailwind} from 'tailwind-rn';
 import {ProfileBackground} from '../../../components/common/ProfileBackground';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../types/navigation';
 
-export const Settings = () => {
+export const Settings = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
   return (
-    <ProfileBackground header={'Settings'}>
+    <ProfileBackground header={'Settings'} navigate={navigation}>
       <View style={tw('flex-1 justify-between')}>
         <View>
           <View style={tw('flex-row justify-between p-3')}>
