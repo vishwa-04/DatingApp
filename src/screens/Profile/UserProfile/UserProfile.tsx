@@ -81,7 +81,7 @@ export const UserProfile = () => {
       <View style={tw('absolute w-full top-24')}>
         <View style={tw('flex-col justify-center items-center')}>
           <Image
-            source={AllImages.Male}
+            source={AllImages.UserPhoto}
             style={tw('h-40 w-40 object-cover rounded-full')}
           />
           <Text style={tw('font-medium text-sm')}>Jesica arnold</Text>
