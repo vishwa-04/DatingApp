@@ -113,6 +113,11 @@
   margin-bottom: auto
 }
 
+.-my-2 {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem
+}
+
 .mb-10 {
   margin-bottom: 2.5rem
 }
@@ -670,6 +675,10 @@
 
 .p-6 {
   padding: 1.5rem
+}
+
+.p-\[-20px\] {
+  padding: -20px
 }
 
 .px-12 {

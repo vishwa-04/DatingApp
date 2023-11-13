@@ -40,11 +40,11 @@ export const SwipeLoading = () => {
 
   return (
     <View style={tw('flex-1 justify-center items-center')}>
-      <Animated.View style={[styles.itemTop, {transform}]}>
+      <Animated.View style={[styles.itemTop,{transform}]}>
         <Animated.View style={[styles.topItem]}>
           <Image source={AllImages.Male} style={tw('rounded-full w-10 h-10')} />
         </Animated.View>
-        <Animated.View style={[styles.itemBottom, {transform}]}>
+        <Animated.View style={[styles.itemBottom,{transform}]}>
           <View style={tw('p-16')}></View>
           <Animated.View style={[styles.topItem]}>
             <Image
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    // top: 12,
   },
   text: {
     color: '#fff',

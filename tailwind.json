@@ -144,6 +144,12 @@
 			"marginBottom": "auto"
 		}
 	},
+	"-my-2": {
+		"style": {
+			"marginTop": -8,
+			"marginBottom": -8
+		}
+	},
 	"mb-10": {
 		"style": {
 			"marginBottom": 40
@@ -902,6 +908,14 @@
 			"paddingRight": 24,
 			"paddingBottom": 24,
 			"paddingLeft": 24
+		}
+	},
+	"p-[-20px]": {
+		"style": {
+			"paddingTop": -20,
+			"paddingRight": -20,
+			"paddingBottom": -20,
+			"paddingLeft": -20
 		}
 	},
 	"px-12": {
