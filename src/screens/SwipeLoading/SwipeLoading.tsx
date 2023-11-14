@@ -1,9 +1,11 @@
 import {AllImages} from '@assets';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@types';
 import React, {useEffect, useRef} from 'react';
-import {View, Animated, StyleSheet, Easing, Image} from 'react-native';
+import {View, Animated, StyleSheet, Easing, Image, Pressable} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 
-export const SwipeLoading = () => {
+export const SwipeLoading = ({navigation}:NativeStackScreenProps<RootStackParamList>) => {
   const animated = useRef(new Animated.Value(0)).current;
   const tw = useTailwind();
   const inputRange = [0, 1];
@@ -29,6 +31,7 @@ export const SwipeLoading = () => {
           easing: Easing.linear,
         }),
       ).start();
+      setTimeout(()=>{navigation.navigate('BottomNavBar')},1000)
     };
 
     animate();
@@ -48,6 +51,7 @@ export const SwipeLoading = () => {
           <View style={tw('p-16')}></View>
           <Animated.View style={[styles.topItem]}>
             <Image
+            
               source={AllImages.Female}
               style={tw('rounded-full w-10 h-10')}
             />

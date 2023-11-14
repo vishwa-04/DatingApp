@@ -33,6 +33,7 @@ import {
   Notification,
   Settings,
   UserProfile,
+  SwipeLoading,
 } from '@screens';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
@@ -71,6 +72,7 @@ export const Routes = (): React.JSX.Element => {
           component={BottomTabNavigator}
         />
         <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
+        <NativeStack.Screen name={'SwipeLoading'} component={SwipeLoading} />
       </NativeStack.Navigator>
     </NavigationContainer>
   );
