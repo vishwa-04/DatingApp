@@ -1,10 +1,10 @@
 import {View, Text, Image, Pressable} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
-import {AllImages} from '../../../assets/images/index';
+import {AllImages} from '@assets';
 import Swiper from 'react-native-deck-swiper';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackCardList} from '../../types/navigation';
+import {RootStackCardList} from '@types';
 
 type dataProps = {
   firstname: string;

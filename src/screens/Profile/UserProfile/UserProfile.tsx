@@ -7,11 +7,11 @@ import {
   Pressable,
 } from 'react-native';
 import React from 'react';
-import {AllImages} from '../../../../assets/images/index';
+import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
-import {HorizontalLine} from '../../../components/common/HorizontalLine';
+import {HorizontalLine} from '@components';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackUserList } from '../../../types/navigation';
+import { RootStackUserList } from '@types';
 
 export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserList>) => {
   const tw = useTailwind();

@@ -2,36 +2,38 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
-  RootStackParamList,
   RootBottomTabParamList,
-  RootStackHomeList,
   RootStackCardList,
+  RootStackHomeList,
+  RootStackParamList,
   RootStackUserList,
-} from '../types/navigation';
-import {Login} from '../screens/auth/Login/Login';
-import {Register} from '../screens/auth/Register/Register';
-import {Welcome} from '../screens/auth/Welcome/WelcomeScreen';
-import {OtpScreen} from '../screens/auth/OTP/OtpScreen';
-import {ForgotPassword} from '../screens/auth/ForgotPassword/ForgotPassword';
-import {Gender} from '../screens/gender/Gender';
-import {Birthday} from '../screens/birthday/Birthday';
-import {Home} from '../screens/home/Home';
-import {Swipe} from '../screens/swipe/swipe';
-import {SwipeUserInfo} from '../screens/swipeUserInfo/SwipeUserInfo';
-import {Like} from '../screens/Like/Like';
-import {UserProfile} from '../screens/Profile/UserProfile/UserProfile';
-import {EditProfile} from '../screens/Profile/EditProfile/EditProfile';
-import {Settings} from '../screens/Profile/Settings/Settings';
-import {Notification} from '../screens/Profile/Notification/Notification';
-import {BlindDate} from '../screens/BlindDate/BlindDate';
-import {Quiz} from '../screens/Quiz/Quiz';
-import {StartChatting} from '../screens/StartChatting/StartChatting';
-import {Calling} from '../screens/Calling/Calling';
-import {CustomBottomTabBar} from '../components/common/BottomTab/CustomBottomBar';
+} from '@types';
+import {CustomBottomTabBar} from '@components';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ChatList} from '../screens/chat/ChatList';
-import {ChatDetail} from '../screens/chat/ChatDetail';
-import {CardSwipe} from '../screens/cardswipe/CardSwipe';
+import {
+  CardSwipe,
+  Welcome,
+  Login,
+  OtpScreen,
+  Register,
+  Gender,
+  ForgotPassword,
+  Birthday,
+  Home,
+  Like,
+  BlindDate,
+  Quiz,
+  StartChatting,
+  Calling,
+  ChatDetail,
+  ChatList,
+  Swipe,
+  SwipeUserInfo,
+  EditProfile,
+  Notification,
+  Settings,
+  UserProfile,
+} from '@screens';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
 export const Routes = (): React.JSX.Element => {
@@ -68,7 +70,7 @@ export const Routes = (): React.JSX.Element => {
           name={'BottomNavBar'}
           component={BottomTabNavigator}
         />
-        <HomeStack.Screen name={'ChatDetail'} component={ChatDetail} />
+        <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
       </NativeStack.Navigator>
     </NavigationContainer>
   );

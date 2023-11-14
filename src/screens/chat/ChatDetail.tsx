@@ -1,10 +1,10 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import {AllIcons} from '../../../assets/icons';
+import {AllIcons} from '@assets';
 import React, {useState, useCallback, useEffect} from 'react';
 import {View, Image, Text, Pressable, SafeAreaView} from 'react-native';
 import {Bubble, GiftedChat, IMessage} from 'react-native-gifted-chat';
 import {useTailwind} from 'tailwind-rn';
-import { RootStackParamList } from '../../types/navigation';
+import { RootStackParamList } from '@types';
 
 export const ChatDetail = ({navigation}:NativeStackScreenProps<RootStackParamList>) => {
   const [messages, setMessages] = useState<IMessage[]>([]);

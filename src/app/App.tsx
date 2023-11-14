@@ -6,11 +6,11 @@ import {
   ScrollView,
   View,
 } from 'react-native';
-import {AllImages} from '../../assets/images';
-import {Routes} from '../routes/Router';
+import {AllImages} from '@assets';
+import {Routes} from '@routes';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from '../../tailwind.json';
-import {Splash} from '../screens/splash/Splash';
+import {Splash} from '@screens';
 
 function App(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(true);

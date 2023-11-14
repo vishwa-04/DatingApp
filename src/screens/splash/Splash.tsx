@@ -1,6 +1,6 @@
 import {View, Image, Animated} from 'react-native';
 import React, {useEffect, useRef} from 'react';
-import {AllImages} from '../../../assets/images/index';
+import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 import {ScrollView} from 'react-native';
 

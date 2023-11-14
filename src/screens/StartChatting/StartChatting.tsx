@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {AllImages} from '../../../assets/images/index';
+import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../types/navigation';
+import {RootStackParamList} from '@types';
 
 export const StartChatting = ({
   navigation,

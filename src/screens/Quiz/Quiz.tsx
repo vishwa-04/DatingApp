@@ -1,5 +1,5 @@
-import {AllIcons} from '../../../assets/icons/index';
-import {AllImages} from '../../../assets/images/index';
+import {AllIcons} from '@assets';
+import {AllImages} from '@assets';
 import React from 'react';
 import {
   Image,
@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTailwind} from 'tailwind-rn';
-import {RootStackParamList} from '../../types/navigation';
+import {RootStackParamList} from '@types';
 
 export const Quiz = ({
   navigation,

@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity, Image,ScrollView} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
-import {AllImages} from '../../../assets/images/index';
+import {AllImages} from '@assets';
 
 export const Like = () => {
   const tw = useTailwind();

@@ -1,4 +1,4 @@
-import {AllImages} from '../../../assets/images';
+import {AllImages} from '@assets';
 import React, {useEffect, useRef} from 'react';
 import {View, Animated, StyleSheet, Easing, Image} from 'react-native';
 import {useTailwind} from 'tailwind-rn';

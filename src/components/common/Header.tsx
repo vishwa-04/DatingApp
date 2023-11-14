@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {AllIcons} from '../../../assets/icons/index';
+import {AllIcons} from '@assets';
 import {
   Dimensions,
   Image,

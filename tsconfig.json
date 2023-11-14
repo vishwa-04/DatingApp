@@ -14,7 +14,7 @@
       "@services": ["src/services/index"],
       "@storage": ["src/storage/index"],
       "@types": ["src/types/index"],
-      "@utils": ["src/utils/index"],
+      "@constants": ["src/constants/index"],
       "@validations": ["src/validations/index"]
     }
   }

@@ -1,9 +1,9 @@
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
-import {AllImages} from '../../../../assets/images/index';
+import {AllImages} from '@assets';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../types/navigation';
+import {RootStackParamList} from '@types';
 
 export const ForgotPassword = ({
   navigation,

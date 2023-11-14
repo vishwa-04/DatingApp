@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import {AllImages} from '../../../assets/images/index';
+import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 
 type ScreenWrapperProps = {
@@ -10,7 +10,7 @@ type ScreenWrapperProps = {
   onbackFunc: () => void;
 };
 
-const AuthBackground = ({
+export const AuthBackground = ({
   header,
   para,
   children,

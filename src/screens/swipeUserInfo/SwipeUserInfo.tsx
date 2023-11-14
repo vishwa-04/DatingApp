@@ -1,8 +1,8 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {AllImages} from '../../../assets/images/index';
+import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
-import {HorizontalLine} from '../../components/common/HorizontalLine';
+import {HorizontalLine} from '@components';
 
 export const SwipeUserInfo = () => {
   const tw = useTailwind();

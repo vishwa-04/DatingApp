@@ -1,4 +1,4 @@
-import { AllIcons } from "../../assets/icons";
+import { AllIcons } from "@assets";
 import { ImageSourcePropType } from "react-native";
 
 // Define a type for the object

@@ -1,10 +1,10 @@
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
-import AuthBackground from '../../../components/common/AuthBackground';
-import {GoogleAuth} from '../../../components/common/GoogleAuth';
+import {AuthBackground} from '@components';
+import {GoogleAuth} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../types/navigation';
+import {RootStackParamList} from '@types';
 
 export const Register = ({
   navigation,

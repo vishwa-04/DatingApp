@@ -1,9 +1,9 @@
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import React from 'react';
-import AuthBackground from '../../../components/common/AuthBackground';
+import {AuthBackground} from '@components';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../types/navigation';
+import {RootStackParamList} from '@types';
 
 export const OtpScreen = ({
   navigation,

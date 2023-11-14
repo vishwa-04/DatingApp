@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {AllIcons} from '../../../../assets/icons/index';
+import {AllIcons} from '@assets';
 import {
   BottomTabDescriptorMap,
   BottomTabNavigationEventMap,
@@ -114,6 +114,7 @@ const NavigationIcon = React.memo(
       <>
         {isFocused && <View />}
         <Image
+        resizeMode='contain'
           source={isFocused ? icon[0] : icon[1]}
           style={{
             // tintColor: isFocused

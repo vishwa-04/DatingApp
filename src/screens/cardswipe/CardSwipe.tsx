@@ -1,7 +1,7 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
 import Swiper from 'react-native-deck-swiper';
-import { AllImages } from '../../../assets/images';
+import { AllImages } from '@assets';
 import FastImage from 'react-native-fast-image';
 
 type dataProps = {

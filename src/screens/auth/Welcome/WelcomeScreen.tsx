@@ -1,11 +1,11 @@
 import {View, Text, ImageBackground, Image} from 'react-native';
 import React from 'react';
-import {AllImages} from '../../../../assets/images';
 
 import {useTailwind} from 'tailwind-rn';
 import { TouchableOpacity} from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../types/navigation';
+import {RootStackParamList} from '@types';
+import { AllImages } from '@assets';
 
 export const Welcome = ({
   navigation,

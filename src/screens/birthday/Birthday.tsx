@@ -3,7 +3,7 @@ import React from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../types/navigation';
+import {RootStackParamList} from '@types';
 
 export const Birthday = ({
   navigation,

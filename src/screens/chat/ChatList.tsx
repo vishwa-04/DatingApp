@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
-import {Item, items} from '../../constants/utils';
+import {Item, items} from '@constants';
 import {styles} from './styles';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../types/navigation';
-import {AllImages} from '../../../assets/images/index';
+import {RootStackParamList} from '@types';
+import {AllImages} from '@assets';
 
 const ItemComponent = ({
   item,
