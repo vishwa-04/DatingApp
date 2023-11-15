@@ -3,18 +3,20 @@ import React from 'react';
 import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 import {ProfileBackground} from '@components';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@types';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '@types';
 
-export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>) => {
+export const Settings = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
   return (
     <ProfileBackground header={'Settings'} navigate={navigation}>
       <View style={tw('flex-1 justify-between')}>
         <View>
-          <View style={tw('flex-row justify-between p-3')}>
-            <View style={tw('flex-row justify-between gap-2')}>
+          <View style={tw('flex-row justify-between p-3 items-center')}>
+            <View style={tw('flex-row justify-between gap-2 items-center')}>
               <Image
                 source={AllImages.Feedback}
                 style={tw('h-5 w-5 object-cover')}
@@ -28,8 +30,8 @@ export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>
               style={tw('h-5 w-5 object-cover')}
             />
           </View>
-          <View style={tw('flex-row justify-between p-3')}>
-            <View style={tw('flex-row justify-between gap-2')}>
+          <View style={tw('flex-row justify-between p-3 items-center')}>
+            <View style={tw('flex-row justify-between gap-2 items-center')}>
               <Image
                 source={AllImages.Help}
                 style={tw('h-5 w-5 object-cover')}
@@ -43,8 +45,10 @@ export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>
               style={tw('h-5 w-5 object-cover')}
             />
           </View>
-          <Pressable style={tw('flex-row justify-between p-3')} onPress={()=>navigation.navigate('Notification')}>
-            <View style={tw('flex-row justify-between gap-2')}>
+          <Pressable
+            style={tw('flex-row justify-between p-3 items-center')}
+            onPress={() => navigation.navigate('Notification')}>
+            <View style={tw('flex-row justify-between gap-2 items-center')}>
               <Image
                 source={AllImages.Notification}
                 style={tw('h-5 w-5 object-cover')}
@@ -58,8 +62,8 @@ export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>
               style={tw('h-5 w-5 object-cover')}
             />
           </Pressable>
-          <View style={tw('flex-row justify-between p-3')}>
-            <View style={tw('flex-row justify-between gap-2')}>
+          <View style={tw('flex-row justify-between p-3 items-center')}>
+            <View style={tw('flex-row justify-between gap-2 items-center')}>
               <Image
                 source={AllImages.PrivacyPolicy}
                 style={tw('h-5 w-5 object-cover')}
@@ -73,8 +77,8 @@ export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>
               style={tw('h-5 w-5 object-cover')}
             />
           </View>
-          <View style={tw('flex-row justify-between p-3')}>
-            <View style={tw('flex-row justify-between gap-2')}>
+          <View style={tw('flex-row justify-between p-3 items-center')}>
+            <View style={tw('flex-row justify-between gap-2 items-center')}>
               <Image
                 source={AllImages.TermsOfService}
                 style={tw('h-5 w-5 object-cover')}
@@ -92,7 +96,7 @@ export const Settings = ({navigation}:NativeStackScreenProps<RootStackParamList>
         <View style={tw('px-3')}>
           <TouchableOpacity
             style={tw(
-              'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
+              'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
             )}>
             <Text style={tw('text-white text-center')}>Logout</Text>
           </TouchableOpacity>

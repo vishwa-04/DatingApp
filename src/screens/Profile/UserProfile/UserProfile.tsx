@@ -25,14 +25,14 @@ export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserLis
         onPress={() => navigation.goBack()}>
         <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
       </TouchableOpacity>
-      {/* <div className='rounded-full mt- font- text-'></div> */}
+      {/* <div className='rounded-full mt- font- text- h-'></div> */}
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-5')}>
         <View style={tw('mt-28')}>
           <Pressable style={tw('flex-row justify-start items-center gap-3 my-2')} onPress={()=>navigation.navigate('EditProfile')}>
             <Image
               source={AllImages.AccountDetail}
-              style={tw('w-7 h-7 object-cover')}
+              style={tw('w-5 h-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Account Detail
@@ -42,7 +42,7 @@ export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserLis
           <Pressable style={tw('flex-row justify-start items-center gap-3 my-2')} onPress={()=>navigation.navigate('Settings')}>
             <Image
               source={AllImages.Setting}
-              style={tw('w-7 h-7 object-cover')}
+              style={tw('w-5 h-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Settings
@@ -52,7 +52,7 @@ export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserLis
           <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image
               source={AllImages.ConatctUs}
-              style={tw('w-7 h-7 object-cover')}
+              style={tw('w-5 h-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               ConatctUs
@@ -62,7 +62,7 @@ export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserLis
           <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
             <Image
               source={AllImages.BlockedUsers}
-              style={tw('w-7 h-7 object-cover')}
+              style={tw('w-5 h-5 object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Blocked Users

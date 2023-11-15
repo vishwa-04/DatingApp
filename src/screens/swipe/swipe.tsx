@@ -53,7 +53,7 @@ export const Swipe = ({
         source={AllImages.LovelineText}
         style={tw('w-40 h-9 mx-auto object-cover rounded-2xl')}
       />
-      <View style={tw('flex-1 h-[20%]')}>
+      <View style={tw('flex-1 h-[20%] z-50')}>
         <Swiper
           stackSize={5}
           cardIndex={0}
@@ -81,7 +81,7 @@ export const Swipe = ({
             );
           }}></Swiper>
       </View>
-      <View style={tw('flex-col justify-between gap-y-4 bg-white')}>
+      <View style={tw('flex-col justify-between gap-y-4 bg-white z-40')}>
         <View style={tw('flex-row justify-center items-center gap-14')}>
           <Image source={AllImages.Close} style={tw('w-8 h-7 object-cover')} />
           <Image source={AllImages.Heart} style={tw('w-8 h-7 object-cover')} />
@@ -97,11 +97,13 @@ export const Swipe = ({
         </Pressable>
         <View style={tw('flex-row justify-center items-center gap-3')}>
           <Text style={tw('text-black')}>Art manager</Text>
-          <Image
-            source={AllImages.Location}
-            style={tw('w-5 h-6 object-cover')}
-          />
-          <Text style={tw('text-black')}>10 km</Text>
+          <View style={tw('flex-row justify-start gap-1 items-center')}>
+            <Image
+              source={AllImages.Location}
+              style={tw('w-4 h-4 object-cover')}
+            />
+            <Text style={tw('text-black')}>10 km</Text>
+          </View>
         </View>
         <Text style={tw('text-center font-normal text-sm')}>
           Lorem Ipsum has been the industry's standard dummy text ever since the

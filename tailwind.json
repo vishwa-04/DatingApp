@@ -89,6 +89,11 @@
 			"top": 70
 		}
 	},
+	"z-40": {
+		"style": {
+			"zIndex": 40
+		}
+	},
 	"z-50": {
 		"style": {
 			"zIndex": 50
@@ -142,12 +147,6 @@
 		"style": {
 			"marginTop": "auto",
 			"marginBottom": "auto"
-		}
-	},
-	"-my-2": {
-		"style": {
-			"marginTop": -8,
-			"marginBottom": -8
 		}
 	},
 	"mb-10": {
@@ -615,6 +614,11 @@
 			"gap": 256
 		}
 	},
+	"gap-10": {
+		"style": {
+			"gap": 40
+		}
+	},
 	"gap-y-3": {
 		"style": {
 			"rowGap": 12
@@ -908,14 +912,6 @@
 			"paddingRight": 24,
 			"paddingBottom": 24,
 			"paddingLeft": 24
-		}
-	},
-	"p-[-20px]": {
-		"style": {
-			"paddingTop": -20,
-			"paddingRight": -20,
-			"paddingBottom": -20,
-			"paddingLeft": -20
 		}
 	},
 	"px-12": {

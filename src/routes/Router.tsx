@@ -59,9 +59,7 @@ export const Routes = (): React.JSX.Element => {
         />
         <NativeStack.Screen name={'Birthday'} component={Birthday} />
         <NativeStack.Screen name={'Home'} component={Home} />
-
         <NativeStack.Screen name={'Like'} component={Like} />
-
         <NativeStack.Screen name={'Notification'} component={Notification} />
         <NativeStack.Screen name={'BlindDate'} component={BlindDate} />
         <NativeStack.Screen name={'Quiz'} component={Quiz} />

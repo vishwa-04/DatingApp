@@ -25,14 +25,15 @@ export const ProfileBackground = ({
     <ImageBackground
       source={AllImages.AppBg}
       style={tw('h-full w-full relative')}>
-      <View style={tw('flex-row justify-between items-center w-full p-2 mt-2')}>
-        <View style={tw('flex-row justify-between items-center gap-2')}>
+      <View style={tw('flex-row justify-between items-center w-full p-2 mt-2 px-3')}>
+        <View style={tw('flex-row justify-between items-center gap-3')}>
           <TouchableOpacity
             style={tw('')}
             onPress={() => {
               navigate.goBack();
             }}>
-            <Image source={AllImages.LeftArrow} style={tw('w-2 h-2')} />
+            <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
+            {/* <div className = 'h-'></div> */}
           </TouchableOpacity>
           <Text style={tw('text-white font-medium text-lg')}>My profile</Text>
         </View>

@@ -28,7 +28,7 @@ export const OtpScreen = ({
             </View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('SwipeLoading');
+                navigation.navigate('Home');
               }}
               style={tw(
                 'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',

@@ -1,19 +1,23 @@
-import {View, ImageBackground, Image, Text} from 'react-native';
+import {View, ImageBackground, Image, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '@assets';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@types';
 
-export const Calling = () => {
+export const Calling = ({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
 
   return (
     <ImageBackground source={AllImages.CallingUserBackground} style={tw('flex-1')}>
       <View style={tw('flex-1 justify-between')}>
-        <View style={tw('p-5 flex-row')}>
+        <TouchableOpacity style={tw('p-5 flex-row')} onPress={()=>{navigation.goBack()}}>
           <View style={tw('bg-[#df8cd1] py-3 px-4 rounded-xl')}>
             <Image source={AllImages.LeftArrow} style={tw('w-3 h-5')} />
           </View>
-        </View>
+        </TouchableOpacity>
         <View>
           <View style={tw('flex-row justify-between items-center p-5')}>
             <View style={tw('gap-3')}>

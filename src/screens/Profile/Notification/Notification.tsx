@@ -2,8 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
-import {ProfileBackground} from '@components';
-import {ToggleButton} from '@components';
+import {ProfileBackground, ToggleButton} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
 export const Notification = ({

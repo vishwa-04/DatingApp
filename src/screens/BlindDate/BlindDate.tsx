@@ -28,8 +28,8 @@ export const BlindDate = ({
       </TouchableOpacity>
       {/* <div className='rounded-full mt- font-normal w-18 text- w-'></div> */}
       <View
-        style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-3')}>
-        <View style={tw('mt-60 gap-5')}>
+        style={tw('absolute top-1/4 h-3/4 bg-white w-full p-3')}>
+        <View style={tw('mt-60 gap-5 rounded-2xl')}>
           <ImageBackground
             source={AllImages.BlindDateBackground}
             style={tw('flex-row justify-between items-center p-3')}>

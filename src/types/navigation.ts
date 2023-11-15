@@ -34,6 +34,7 @@ export type RootStackHomeList = {
 export type RootStackCardList = {
   Swipe: undefined;
   SwipeUserInfo: undefined;
+  SwipeLoading:undefined
 }
 export type RootStackUserList = {
   UserProfile: undefined;
