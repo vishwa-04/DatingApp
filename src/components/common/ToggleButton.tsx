@@ -1,4 +1,4 @@
-import {Switch} from 'react-native';
+import {Switch} from 'react-native-switch';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 
@@ -12,11 +12,19 @@ export const ToggleButton = () => {
 
   return (
     <Switch
-      thumbColor={isEnabled ? '#34C759' : '#f4f3f4'}
-      ios_backgroundColor="#3e3e3e"
+    activeText=''
+    inActiveText=''
+    backgroundActive='#32D74B'
+    backgroundInactive='#78788029'
+    circleBorderActiveColor='white'
+    circleBorderInactiveColor='white'
+    switchLeftPx={4}
+    barHeight={32}
+    switchRightPx={4}
+    circleSize={28}
+    switchWidthMultiplier={1.8}
       onValueChange={toggleSwitch}
       value={isEnabled}
-      style={tw('')}
     />
   );
 };

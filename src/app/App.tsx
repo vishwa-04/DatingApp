@@ -1,16 +1,11 @@
-import React, {useState} from 'react';
+import { Routes } from '@routes';
+import { Splash } from '@screens';
+import React, { useState } from 'react';
 import {
-  Image,
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-  View,
+  SafeAreaView
 } from 'react-native';
-import {AllImages} from '@assets';
-import {Routes} from '@routes';
-import {TailwindProvider} from 'tailwind-rn';
+import { TailwindProvider } from 'tailwind-rn';
 import utilities from '../../tailwind.json';
-import {Splash} from '@screens';
 
 function App(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(true);
