@@ -30,7 +30,7 @@ export const Welcome = ({
             style={tw(
               'py-3 px-32 text-[#4B164C] bg-white rounded-3xl font-semibold text-base',
             )}>
-            <Text>I'm new here</Text>
+            <Text style={tw('text-black')}>I'm new here</Text>
           </TouchableOpacity>
           <TouchableOpacity
             disabled={false}

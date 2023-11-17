@@ -15,6 +15,8 @@ export * from './home'
 export * from './splash'
 export * from './swipe'
 export * from './swipeUserInfo'
+export * from './loveclic'
+
 
 
 

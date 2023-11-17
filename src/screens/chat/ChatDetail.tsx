@@ -93,21 +93,20 @@ export const ChatDetail = ({
           </View>
           <GiftedChat
             alwaysShowSend
-            renderSend={() => (
-              <View
-                style={{
-                  height: 50,
-                  width: 50,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Image
-                  source={AllIcons.SendMessage}
-                  style={{justifyContent: 'center'}}
-                />
-              </View>
-            )}
-            renderComposer={()=><View><Text>Hi</Text></View>}
+            // renderSend={() => (
+            //   <View
+            //     style={{
+            //       height: 50,
+            //       width: 50,
+            //       justifyContent: 'center',
+            //       alignItems: 'center',
+            //     }}>
+            //     <Image
+            //       source={AllIcons.SendMessage}
+            //       style={{justifyContent: 'center'}}
+            //     />
+            //   </View>
+            // )}
             renderBubble={renderBubble}
             messages={messages}
             onSend={messages => onSend(messages)}

@@ -31,8 +31,8 @@ export const SwipeLoading = ({navigation}:NativeStackScreenProps<RootStackParamL
           easing: Easing.linear,
         }),
       ).start();
-      setTimeout(()=>{navigation.navigate('BottomNavBar')},1000)
     };
+    setTimeout(()=>{navigation.navigate('BottomNavBar')},1000)
 
     animate();
   }, [animated]); // The empty array ensures this effect only runs once, similar to componentDidMount

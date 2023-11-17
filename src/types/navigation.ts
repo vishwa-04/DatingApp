@@ -17,6 +17,7 @@ export type RootStackParamList = {
   BottomNavBar: undefined;
   CardSwipe:undefined;
   SwipeLoading:undefined;
+  LoveClic:undefined;
 };
 
 export type RootBottomTabParamList = {

@@ -26,12 +26,12 @@ export const BlindDate = ({
         onPress={() => navigation.goBack()}>
         <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
       </TouchableOpacity>
-      {/* <div className='rounded-full mt- font-normal w-18 text- w-'></div> */}
+    
       <View
         style={tw(
           'absolute top-1/4 h-3/4 bg-white w-full p-3 flex-col justify-end pb-16',
         )}>
-        <View style={tw('gap-5 rounded-2xl')}>
+        <View style={[tw('gap-5 rounded-2xl'),{bottom:15}]}>
           <ImageBackground
             source={AllImages.BlindDateBackground}
             style={tw('flex-row justify-between items-center p-3')}>
@@ -61,35 +61,34 @@ export const BlindDate = ({
             />
           </ImageBackground>
           <View style={tw('flex-row justify-between gap-2')}>
-            <View
+            <Pressable
+            onPress={()=>{navigation.navigate('LoveClic')}}
               style={tw(
                 'flex-row justify-start items-center gap-2 h-20 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
               )}>
               <Image
                 source={AllImages.Alarm}
-                style={tw('h-14 w-12 object-cover')}
+                style={tw('h-8 w-8 object-cover')}
               />
               <Text style={tw('font-bold text-xs text-[#B928A0]')}>
                 Love line Clic
               </Text>
-            </View>
-            <View
+            </Pressable>
+            <Pressable
+            onPress={() => {
+              navigation.navigate('Quiz')}}
               style={tw(
                 'flex-row justify-start items-center gap-2 h-20 rounded-2xl bg-[#ffb3f2] w-1/2 px-3',
               )}>
               <Image
                 source={AllImages.DatingQuiz}
-                style={tw('h-14 w-16 object-cover')}
+                style={tw('h-8 w-8 object-cover')}
               />
-              <Pressable
-                onPress={() => {
-                  navigation.navigate('Quiz');
-                }}>
+             
                 <Text style={tw('font-bold text-xs text-[#B928A0]')}>
                   Dating Quiz
                 </Text>
-              </Pressable>
-            </View>
+            </Pressable>
           </View>
         </View>
       </View>
