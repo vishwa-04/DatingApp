@@ -205,10 +205,6 @@
   height: 4rem
 }
 
-.h-2 {
-  height: 0.5rem
-}
-
 .h-2\/3 {
   height: 66.666667%
 }
@@ -311,10 +307,6 @@
 
 .w-16 {
   width: 4rem
-}
-
-.w-2 {
-  width: 0.5rem
 }
 
 .w-20 {
@@ -473,10 +465,6 @@
   gap: 1rem
 }
 
-.gap-44 {
-  gap: 11rem
-}
-
 .gap-5 {
   gap: 1.25rem
 }
@@ -489,10 +477,6 @@
   gap: 16rem
 }
 
-.gap-10 {
-  gap: 2.5rem
-}
-
 .gap-y-3 {
   row-gap: 0.75rem
 }
@@ -503,6 +487,10 @@
 
 .gap-y-6 {
   row-gap: 1.5rem
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem
 }
 
 .rounded-2xl {
@@ -787,6 +775,10 @@
 
 .pt-\[30\%\] {
   padding-top: 30%
+}
+
+.pb-16 {
+  padding-bottom: 4rem
 }
 
 .text-center {

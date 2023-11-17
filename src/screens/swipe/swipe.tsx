@@ -79,13 +79,14 @@ export const Swipe = ({
                 )}
               </>
             );
-          }}></Swiper>
+          }}
+        />
       </View>
-      <View style={tw('flex-col justify-between gap-y-4 bg-white z-40')}>
+      <View style={tw('flex-col justify-between gap-y-2 bg-white z-40')}>
         <View style={tw('flex-row justify-center items-center gap-14')}>
-          <Image source={AllImages.Close} style={tw('w-8 h-7 object-cover')} />
+          <Image source={AllImages.Close} style={tw('w-8 h- object-cover')} />
           <Image source={AllImages.Heart} style={tw('w-8 h-7 object-cover')} />
-          <Image source={AllImages.Star} style={tw('w-8 h-7 object-cover')} />
+          <Image source={AllImages.Star} style={tw('w-8 h-8 object-cover')} />
         </View>
         <Pressable
           onPress={() => {
