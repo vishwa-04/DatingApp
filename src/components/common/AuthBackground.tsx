@@ -30,9 +30,9 @@ export const AuthBackground = ({
           }}>
           <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
         </TouchableOpacity>
-        <View style={tw('flex justify-center gap-5')}>
-          <Text style={tw('font-medium text-3xl text-white')}>{header}</Text>
-          <Text style={tw('font-normal text-sm text-white')}>{para}</Text>
+        <View style={tw('justify-center gap-5 flex')}>
+          <Text style={tw('font-medium text-3xl text-white ml-2 font-semibold')}>{header}</Text>
+          <Text style={tw('font-normal text-sm text-white ml-2')}>{para}</Text>
         </View>
       </View>
       {children}

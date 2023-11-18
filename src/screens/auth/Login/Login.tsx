@@ -20,7 +20,7 @@ export const Login = ({
     <AuthBackground
       header={
         screen === objScreen.Login
-          ? "What's your phone number"
+          ? "What's your phone number?"
           : 'Enter Your Password'
       }
       para="What's your phone number"
@@ -36,7 +36,7 @@ export const Login = ({
               style={tw(
                 'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <TextInput style={tw('h-10 rounded-3xl border text-black')} />
+              <TextInput style={tw('h-10 rounded-3xl px-4 border text-black')} />
               <TouchableOpacity
                 style={tw(
                   'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
@@ -51,10 +51,10 @@ export const Login = ({
           </View>
           <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
-            <View style={tw('flex-row justify-center gap-1')}>
-              <Text style={tw('text-black')}>New user?</Text>
+            <View style={tw('flex-row justify-center gap-1 mt-2 ')}>
+              <Text style={tw('text-black font-semibold')}>New user?</Text>
               <Text
-                style={tw('text-[#4B164C]')}
+                style={tw('text-[#4B164C] font-bold')}
                 onPress={() => navigation.navigate('Register')}>
                 Register
               </Text>
@@ -68,7 +68,7 @@ export const Login = ({
               style={tw(
                 'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <TextInput style={tw('h-10 rounded-3xl border text-black')} />
+              <TextInput style={tw('h-10 rounded-3xl border text-black px-4')} />
               <TouchableOpacity
                 style={tw(
                   'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
@@ -85,9 +85,9 @@ export const Login = ({
           </View>
           <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
-            <View style={tw('flex-row justify-center gap-1')}>
+            <View style={tw('flex-row justify-center gap-1 mt-2')}>
               <Text
-                style={tw('text-[#4B164C]')}
+                style={tw('text-[#4B164C] font-semibold')}
                 onPress={() => navigation.navigate('ForgotPassword')}>
                 Forgot Password?
               </Text>

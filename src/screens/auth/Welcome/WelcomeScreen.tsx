@@ -14,7 +14,7 @@ export const Welcome = ({
   return (
     <ImageBackground source={AllImages.AppBg} style={tw('h-full')}>
       {/* <div className='gap-'></div>/ */}
-      <View style={tw('flex-1 justify-between items-center')}>
+      <View style={[tw('flex-1 justify-between items-center'),{marginTop:"25%"}]}>
         <View>
           <Image
             source={AllImages.Logo}
@@ -27,19 +27,19 @@ export const Welcome = ({
               navigation.navigate('Register');
             }}
             style={tw(
-              'py-3 px-32  bg-white rounded-3xl font-semibold text-base',
+              'py-2  bg-white  rounded-3xl border-4  border-white ',
             )}>
-            <Text style={tw('text-[#4B164C]')}>I'm new here</Text>
+            <Text style={[tw('text-[#4B164C] font-bold text-lg'),{paddingHorizontal:"27.5%"}]}>I'm new here</Text>
           </TouchableOpacity>
           <TouchableOpacity
             disabled={false}
             onPress={() => {
               navigation.navigate('Login');
             }}
-            style={tw(
-              'py-3 px-24 bg-transparent text-white rounded-3xl font-semibold text-base border border-white cursor-pointer',
-            )}>
-            <Text style={tw('text-white')}>I've Been here before</Text>
+            style={[tw(
+              'py-2  bg-transparent  rounded-3xl  border-4 border-white cursor-pointer',
+            )]}>
+            <Text style={[tw('text-white font-bold text-lg'),{paddingHorizontal:"18.5%"}]}>I've Been here before</Text>
           </TouchableOpacity>
         </View>
       </View>
