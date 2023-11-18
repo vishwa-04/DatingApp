@@ -66,6 +66,10 @@
   top: 70px
 }
 
+.top-\[40\%\] {
+  top: 40%
+}
+
 .left-5 {
   left: 1.25rem
 }
@@ -381,12 +385,28 @@
   width: 100%
 }
 
-.w-24 {
-  width: 6rem
+.w-\[66\%\] {
+  width: 66%
 }
 
-.w-32 {
-  width: 8rem
+.w-\[60\%\] {
+  width: 60%
+}
+
+.w-\[58\%\] {
+  width: 58%
+}
+
+.w-\[55\%\] {
+  width: 55%
+}
+
+.w-\[65\%\] {
+  width: 65%
+}
+
+.w-\[63\%\] {
+  width: 63%
 }
 
 .flex-1 {
@@ -666,6 +686,10 @@
   background-color: rgb(107 33 168 / var(--tw-bg-opacity))
 }
 
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5)
+}
+
 .object-cover {
   object-fit: cover
 }
@@ -791,6 +815,10 @@
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem
+}
+
+.pb-16 {
+  padding-bottom: 4rem
 }
 
 .pb-16 {
@@ -966,4 +994,12 @@
 .placeholder-gray-500::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(107 114 128 / var(--tw-placeholder-opacity))
+}
+
+.opacity-100 {
+  opacity: 1
+}
+
+.opacity-50 {
+  opacity: 0.5
 }

@@ -58,14 +58,17 @@ export const LoveClic = ({
       source={AllImages.AppBg}
       style={tw('h-full w-full relative')}>
       <TouchableOpacity
-        style={tw('absolute top-5 mx-3')}
+        style={tw('flex flex-row justify-between items-center p-5 opacity-50')}
         onPress={() => navigation.goBack()}>
         <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
+        <Text style={tw('font-bold text-xl text-white w-[63%]')}>
+          Blind Date
+        </Text>
       </TouchableOpacity>
-      {/* <div className='rounded-full mt- font-normal w-18 text- w-'></div> */}
+      {/* <div className='rounded-full mt- font-normal w-18 text- w- text- fotn'></div> */}
       <View
         style={[
-          tw('absolute top-1/4 h-3/4 bg-white w-full flex-col justify-end'),
+          tw('absolute top-1/4 h-3/4 bg-white/50 w-full flex-col justify-end'),
           {borderTopRightRadius: 40, borderTopLeftRadius: 40},
         ]}>
         <View style={[tw('bg-[#4B164C]'), {height: '75%'}]}>
@@ -115,7 +118,7 @@ export const LoveClic = ({
           </View>
         </View>
       </View>
-      <View style={tw('absolute w-full top-24')}>
+      <View style={tw('absolute w-full top-24 opacity-50')}>
         <View style={tw('flex-col justify-center items-center')}>
           <Image source={AllImages.Male} style={tw('h-40 w-40 object-cover')} />
           <Text
