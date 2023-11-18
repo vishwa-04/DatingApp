@@ -70,6 +70,10 @@
   top: 70px
 }
 
+.top-\[40\%\] {
+  top: 40%
+}
+
 .z-40 {
   z-index: 40
 }
@@ -171,10 +175,6 @@
 
 .mt-4 {
   margin-top: 1rem
-}
-
-.mt-60 {
-  margin-top: 15rem
 }
 
 .mt-8 {
@@ -385,6 +385,30 @@
   width: 100%
 }
 
+.w-\[66\%\] {
+  width: 66%
+}
+
+.w-\[60\%\] {
+  width: 60%
+}
+
+.w-\[58\%\] {
+  width: 58%
+}
+
+.w-\[55\%\] {
+  width: 55%
+}
+
+.w-\[65\%\] {
+  width: 65%
+}
+
+.w-\[63\%\] {
+  width: 63%
+}
+
 .flex-1 {
   flex: 1 1 0%
 }
@@ -477,20 +501,16 @@
   gap: 16rem
 }
 
+.gap-y-2 {
+  row-gap: 0.5rem
+}
+
 .gap-y-3 {
   row-gap: 0.75rem
 }
 
-.gap-y-4 {
-  row-gap: 1rem
-}
-
 .gap-y-6 {
   row-gap: 1.5rem
-}
-
-.gap-y-2 {
-  row-gap: 0.5rem
 }
 
 .rounded-2xl {
@@ -636,6 +656,10 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5)
+}
+
 .object-cover {
   object-fit: cover
 }
@@ -753,6 +777,10 @@
   padding-bottom: 2.25rem
 }
 
+.pb-16 {
+  padding-bottom: 4rem
+}
+
 .pb-2 {
   padding-bottom: 0.5rem
 }
@@ -775,10 +803,6 @@
 
 .pt-\[30\%\] {
   padding-top: 30%
-}
-
-.pb-16 {
-  padding-bottom: 4rem
 }
 
 .text-center {
@@ -813,6 +837,11 @@
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem
 }
 
 .font-bold {
@@ -916,4 +945,17 @@
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.placeholder-gray-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-placeholder-opacity))
+}
+
+.opacity-100 {
+  opacity: 1
+}
+
+.opacity-50 {
+  opacity: 0.5
 }
