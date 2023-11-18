@@ -72,10 +72,7 @@ export const ChatDetail = ({
             <Pressable
               style={tw(' items-center w-[10%] mt-auto mb-auto')}
               onPress={() => navigation.goBack()}>
-              <Image
-                source={AllIcons.ArrowSimpleLeft}
-                style={{height: 30, width: 30}}
-              />
+              <Image source={AllIcons.ArrowSimpleLeft} />
             </Pressable>
             <View style={tw('flex-row justify-between items-center w-[88%]')}>
               <View style={tw('flex-row')}>

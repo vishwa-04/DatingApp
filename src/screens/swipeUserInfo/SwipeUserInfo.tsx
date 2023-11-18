@@ -14,33 +14,28 @@ export const SwipeUserInfo = () => {
         style={tw('w-full h-full object-cover')}
       />
       <View
-        style={tw('absolute top-1/3 rounded-t-3xl h-3/4 bg-white w-full p-5 mt-10')}>
+        style={tw(
+          'absolute top-1/3 rounded-t-3xl h-3/4 bg-white w-full p-5 mt-10',
+        )}>
         <View style={tw('flex-row justify-between items-center pb-2')}>
           <View style={tw('flex-col justify-center')}>
             <View style={tw('flex-row justify-between gap-5')}>
               <Text
-                style={tw('text-center text-[#4B164C] font-bold text-base')}>
+                style={tw(
+                  'text-center text-black text-[#4B164C] font-bold text-base',
+                )}>
                 Olivia jension
               </Text>
-              <Image
-                source={AllImages.Verified}
-                style={tw('w-7 h-7 object-cover')}
-              />
+              <Image source={AllImages.Verified} style={tw('object-cover')} />
             </View>
-            <View style={tw('flex-row justify-start gap-2')}>
-              <Image
-                source={AllImages.Location}
-                style={tw('w-5 h-6 object-cover')}
-              />
+            <View style={tw('flex-row justify-start items-center gap-2')}>
+              <Image source={AllImages.Location} style={tw('object-cover')} />
               <Text>Dubai</Text>
             </View>
           </View>
           <View style={tw('flex-row justify-center items-center gap-2')}>
-            <Image source={AllImages.Flag} style={tw('w-5 h-5 object-cover')} />
-            <Image
-              source={AllImages.UserIcon}
-              style={tw('w-5 h-5 object-cover')}
-            />
+            <Image source={AllImages.Flag} style={tw('object-cover')} />
+            <Image source={AllImages.UserIcon} style={tw('object-cover')} />
             <Text style={tw('font-medium text-base')}>28</Text>
           </View>
         </View>
@@ -50,7 +45,7 @@ export const SwipeUserInfo = () => {
             Occupation
           </Text>
           <View style={tw('flex-row justify-end items-center gap-2')}>
-            <Image source={AllImages.Plus} style={tw('w-7 h-7 object-cover')} />
+            <Image source={AllImages.Plus} style={tw('object-cover')} />
             <Text style={tw('font-medium text-sm')}>Art Manager</Text>
           </View>
         </View>
@@ -72,61 +67,43 @@ export const SwipeUserInfo = () => {
               style={tw(
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
-              <Image
-                source={AllImages.Flag}
-                style={tw('w-5 h-5 object-cover')}
-              />
-              <Text style={tw('text-center')}>Beaches</Text>
+              <Image source={AllImages.Flag} style={tw('object-cover')} />
+              <Text style={tw('text-center text-black')}>Beaches</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={tw(
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
-              <Image
-                source={AllImages.Flag}
-                style={tw('w-5 h-5 object-cover')}
-              />
-              <Text style={tw('text-center')}>Beaches</Text>
+              <Image source={AllImages.Flag} style={tw('object-cover')} />
+              <Text style={tw('text-center text-black')}>Beaches</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={tw(
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
-              <Image
-                source={AllImages.Flag}
-                style={tw('w-5 h-5 object-cover')}
-              />
-              <Text style={tw('text-center')}>Beaches</Text>
+              <Image source={AllImages.Flag} style={tw('object-cover')} />
+              <Text style={tw('text-center text-black')}>Beaches</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={tw(
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
-              <Image
-                source={AllImages.Flag}
-                style={tw('w-5 h-5 object-cover')}
-              />
-              <Text style={tw('text-center')}>Beaches</Text>
+              <Image source={AllImages.Flag} style={tw('object-cover')} />
+              <Text style={tw('text-center text-black')}>Beaches</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={tw(
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
-              <Image
-                source={AllImages.Flag}
-                style={tw('w-5 h-5 object-cover')}
-              />
-              <Text style={tw('text-center')}>Beaches</Text>
+              <Image source={AllImages.Flag} style={tw('object-cover')} />
+              <Text style={tw('text-center text-black')}>Beaches</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={tw(
                 'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
               )}>
-              <Image
-                source={AllImages.Flag}
-                style={tw('w-5 h-5 object-cover')}
-              />
-              <Text style={tw('text-center')}>Beaches</Text>
+              <Image source={AllImages.Flag} style={tw('object-cover')} />
+              <Text style={tw('text-center text-black')}>Beaches</Text>
             </TouchableOpacity>
           </View>
         </View>

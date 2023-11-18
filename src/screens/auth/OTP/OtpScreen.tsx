@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {AuthBackground} from '@components';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -10,17 +10,15 @@ export const OtpScreen = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
-  const [checkOtp,setCheckOtp] = useState('')
-    const handleCheck = () => {
-      if (checkOtp === '000000') {
-        navigation.navigate('Home')
-      }
-      else{
-        console.log("Wrong otp")
-      }
-
+  const [checkOtp, setCheckOtp] = useState('');
+  const handleCheck = () => {
+    if (checkOtp === '000000') {
+      navigation.navigate('Home');
+    } else {
+      console.log('Wrong otp');
     }
-  
+  };
+
   return (
     <AuthBackground
       header="Enter Your OTP"
@@ -46,7 +44,8 @@ export const OtpScreen = ({
                 width: 40,
                 borderRadius: 10,
                 fontSize: 15,
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                color: 'black',
               }}
               textAlign="center"
               textAlignVertical="center"
@@ -57,7 +56,7 @@ export const OtpScreen = ({
             </View>
             <TouchableOpacity
               onPress={() => {
-                handleCheck()
+                handleCheck();
               }}
               style={tw(
                 'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',

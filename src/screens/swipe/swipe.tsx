@@ -84,9 +84,9 @@ export const Swipe = ({
       </View>
       <View style={tw('flex-col justify-between gap-y-2 bg-white z-40')}>
         <View style={tw('flex-row justify-center items-center gap-14')}>
-          <Image source={AllImages.Close} style={tw('w-8 h- object-cover')} />
-          <Image source={AllImages.Heart} style={tw('w-8 h-7 object-cover')} />
-          <Image source={AllImages.Star} style={tw('w-8 h-8 object-cover')} />
+          <Image source={AllImages.Close} style={tw('object-cover')} />
+          <Image source={AllImages.Heart} style={tw('object-cover')} />
+          <Image source={AllImages.Star} style={tw('object-cover')} />
         </View>
         <Pressable
           onPress={() => {
@@ -96,17 +96,14 @@ export const Swipe = ({
             Olivia jension
           </Text>
         </Pressable>
-        <View style={tw('flex-row justify-center items-center gap-3')}>
+        <View style={tw('flex-row justify-center items-center gap-2')}>
           <Text style={tw('text-black')}>Art manager</Text>
           <View style={tw('flex-row justify-start gap-1 items-center')}>
-            <Image
-              source={AllImages.Location}
-              style={tw('w-4 h-4 object-cover')}
-            />
+            <Image source={AllImages.Location} style={tw('object-cover')} />
             <Text style={tw('text-black')}>10 km</Text>
           </View>
         </View>
-        <Text style={tw('text-center font-normal text-sm')}>
+        <Text style={tw('text-center font-normal text-sm text-black')}>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s,
         </Text>

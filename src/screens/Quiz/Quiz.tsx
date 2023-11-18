@@ -34,31 +34,35 @@ export const Quiz = ({
         <View style={tw('mx-auto gap-y-3')}>
           <TextInput
             style={tw(
-              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] relative',
+              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] relative placeholder-gray-500 text-black',
             )}
             placeholder="Option 1"
+            placeholderTextColor="#2b262d"
           />
           <Image
             source={AllImages.QuizTrue}
-            style={tw('h-5 w-5 absolute top-4 right-3')}
+            style={tw(' absolute top-4 right-3')}
           />
           <TextInput
             style={tw(
-              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1]',
+              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] text-black',
             )}
             placeholder="Option 2"
+            placeholderTextColor="#2b262d"
           />
           <TextInput
             style={tw(
-              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1]',
+              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] text-black',
             )}
             placeholder="Option 3"
+            placeholderTextColor="#2b262d"
           />
           <TextInput
             style={tw(
-              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1]',
+              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] text-black',
             )}
             placeholder="Option 4"
+            placeholderTextColor="#2b262d"
           />
         </View>
         <View style={tw('flex-row justify-center items-center mt-8')}>

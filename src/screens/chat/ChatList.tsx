@@ -53,13 +53,14 @@ export const ChatList = ({
       <View style={tw('items-end h-[20%] relative')}>
         <TextInput
           placeholder="Search"
+          placeholderTextColor="#2b262d"
           style={tw(
-            'my-auto bg-white w-80 rounded-3xl px-12 font-normal text-sm text-[#595f67]',
+            'my-auto bg-white w-80 rounded-3xl px-12 font-normal text-sm text-[#595f67] text-black',
           )}
         />
         <Image
           source={AllImages.Search}
-          style={tw('h-6 w-6 absolute top-[65px] left-4')}
+          style={tw('absolute top-[40%] left-4')}
         />
       </View>
       <View

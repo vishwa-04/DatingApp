@@ -10,10 +10,12 @@ import React from 'react';
 import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 import {HorizontalLine} from '@components';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackUserList } from '@types';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackUserList} from '@types';
 
-export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserList>) => {
+export const UserProfile = ({
+  navigation,
+}: NativeStackScreenProps<RootStackUserList>) => {
   const tw = useTailwind();
 
   return (
@@ -23,47 +25,41 @@ export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserLis
       <TouchableOpacity
         style={tw('absolute top-5 mx-3')}
         onPress={() => navigation.goBack()}>
-        <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
+        <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
       </TouchableOpacity>
-      {/* <div className='rounded-full mt- font- text- h-'></div> */}
       <View
         style={tw('absolute top-1/4 rounded-t-3xl h-3/4 bg-white w-full p-5')}>
         <View style={tw('mt-28')}>
-          <Pressable style={tw('flex-row justify-start items-center gap-3 my-2')} onPress={()=>navigation.navigate('EditProfile')}>
+          <Pressable
+            style={tw('flex-row justify-start items-center gap-3 my-2')}
+            onPress={() => navigation.navigate('EditProfile')}>
             <Image
               source={AllImages.AccountDetail}
-              style={tw('w-5 h-5 object-cover')}
+              style={tw('object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Account Detail
             </Text>
           </Pressable>
           <HorizontalLine />
-          <Pressable style={tw('flex-row justify-start items-center gap-3 my-2')} onPress={()=>navigation.navigate('Settings')}>
-            <Image
-              source={AllImages.Setting}
-              style={tw('w-5 h-5 object-cover')}
-            />
+          <Pressable
+            style={tw('flex-row justify-start items-center gap-3 my-2')}
+            onPress={() => navigation.navigate('Settings')}>
+            <Image source={AllImages.Setting} style={tw('object-cover')} />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Settings
             </Text>
           </Pressable>
           <HorizontalLine />
           <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
-            <Image
-              source={AllImages.ConatctUs}
-              style={tw('w-5 h-5 object-cover')}
-            />
+            <Image source={AllImages.ConatctUs} style={tw('object-cover')} />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               ConatctUs
             </Text>
           </View>
           <HorizontalLine />
           <View style={tw('flex-row justify-start items-center gap-3 my-2')}>
-            <Image
-              source={AllImages.BlockedUsers}
-              style={tw('w-5 h-5 object-cover')}
-            />
+            <Image source={AllImages.BlockedUsers} style={tw('object-cover')} />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Blocked Users
             </Text>
@@ -89,7 +85,9 @@ export const UserProfile = ({navigation}:NativeStackScreenProps<RootStackUserLis
             source={AllImages.UserPhoto}
             style={tw('h-40 w-40 object-cover rounded-full')}
           />
-          <Text style={tw('font-medium text-sm')}>Jesica arnold</Text>
+          <Text style={tw('font-medium text-sm text-black')}>
+            Jesica arnold
+          </Text>
         </View>
       </View>
     </ImageBackground>

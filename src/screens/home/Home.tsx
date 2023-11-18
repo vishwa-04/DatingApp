@@ -31,9 +31,7 @@ export const Home = ({
           Lorem Ipsum has been the industry's
         </Text>
         <TouchableOpacity
-          style={tw(
-            'py-3 px-32 bg-[#4B164C] rounded-3xl font-semibold text-base',
-          )}>
+          style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
           <Text
             style={tw('text-white text-center')}
             onPress={() => navigation.navigate('SwipeLoading')}>

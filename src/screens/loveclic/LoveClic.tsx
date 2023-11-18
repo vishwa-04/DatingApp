@@ -14,7 +14,7 @@ import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
-import { HorizontalLine, ToggleButton } from '@components';
+import {HorizontalLine, ToggleButton} from '@components';
 
 export const LoveClic = ({
   navigation,
@@ -60,7 +60,7 @@ export const LoveClic = ({
       <TouchableOpacity
         style={tw('absolute top-5 mx-3')}
         onPress={() => navigation.goBack()}>
-        <Image source={AllImages.LeftArrow} style={tw('w-3 h-3')} />
+        <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
       </TouchableOpacity>
       {/* <div className='rounded-full mt- font-normal w-18 text- w-'></div> */}
       <View
@@ -68,50 +68,58 @@ export const LoveClic = ({
           tw('absolute top-1/4 h-3/4 bg-white w-full flex-col justify-end'),
           {borderTopRightRadius: 40, borderTopLeftRadius: 40},
         ]}>
-        <View style={[tw(' bg-[#4B164C]'), {height: '75%'}]}>
-        <View style={tw('flex-1 justify-center items-center')}>
-          <Animated.View style={[styles.itemTop, {transform}]}>
-            <Animated.View style={[styles.topItem]}>
-              <Image
-                source={AllImages.Male}
-                style={tw('rounded-full w-10 h-10')}
-              />
-            </Animated.View>
-            <Animated.View style={[styles.itemBottom, {transform}]}>
-              <View style={tw('p-16')}></View>
+        <View style={[tw('bg-[#4B164C]'), {height: '75%'}]}>
+          <View style={tw('flex-1 justify-center items-center')}>
+            <Animated.View style={[styles.itemTop, {transform}]}>
               <Animated.View style={[styles.topItem]}>
                 <Image
-                  source={AllImages.Female}
-                  style={tw('rounded-full w-10 h-10')}
+                  source={AllImages.Male}
+                  style={tw('rounded-full w-7 h-7')}
                 />
               </Animated.View>
-            </Animated.View>
-            <Animated.View style={[{transform: transformSecond}]}>
-              <Animated.View style={[styles.secondItem]}>
-                <Image
-                  source={AllImages.Female}
-                  style={tw('rounded-full w-10 h-10')}
-                />
+              <Animated.View style={[styles.itemBottom, {transform}]}>
+                <View style={tw('p-16')} />
+                <Animated.View style={[styles.topItem]}>
+                  <Image
+                    source={AllImages.Female}
+                    style={tw('rounded-full w-7 h-7')}
+                  />
+                </Animated.View>
+              </Animated.View>
+              <Animated.View style={[{transform: transformSecond}]}>
+                <Animated.View style={[styles.secondItem]}>
+                  <Image
+                    source={AllImages.Female}
+                    style={tw('rounded-full w-7 h-7')}
+                  />
+                </Animated.View>
               </Animated.View>
             </Animated.View>
-          </Animated.View>
-          <Image
-            source={AllImages.UserPhoto}
-            style={tw('rounded-full w-28 h-28 absolute')}
-          />
-        </View>
-        <HorizontalLine/>
-        <View style={tw('flex flex-row')}>
-        <Text style={tw('text-white')}>LoremLoremLoremLoremLoremLoremLoremLorem</Text>
-<ToggleButton/>
-        </View>
+            <Image
+              source={AllImages.UserPhoto}
+              style={tw('rounded-full w-20 h-20 absolute')}
+            />
+          </View>
+          <Text style={tw('font-normal text-xs text-white text-center px-3')}>
+            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
+          </Text>
+          <HorizontalLine />
+          <View style={tw('flex flex-row justify-between items-center p-3')}>
+            <Text style={tw('text-white font-normal text-xs')}>
+              Love line click switch
+            </Text>
+            <ToggleButton
+              circleBorderInactiveColor={'#000000'}
+              backgroundActive="#d38cdf"
+            />
+          </View>
         </View>
       </View>
       <View style={tw('absolute w-full top-24')}>
         <View style={tw('flex-col justify-center items-center')}>
           <Image source={AllImages.Male} style={tw('h-40 w-40 object-cover')} />
           <Text
-            style={tw('font-normal text-xs text-center px-5 py-3 text-black')}>
+            style={tw('font-normal text-xs text-center px-5 py-2 text-black')}>
             Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
             consectetur
           </Text>
@@ -126,22 +134,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  centerPhoto: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    position: 'absolute',
-  },
   itemTop: {
-    padding: 36,
+    padding: 25,
     borderWidth: 2,
     borderColor: 'rgba(223, 140, 209, 0.3)',
     borderRadius: 9999,
     position: 'relative',
   },
   itemBottom: {
-    padding: 36,
-    borderWidth: 50,
+    padding: 5,
+    borderWidth: 20,
     borderColor: 'rgba(223, 140, 209, 0.3)',
     borderRadius: 9999,
     position: 'relative',

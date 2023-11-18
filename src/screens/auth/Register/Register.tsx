@@ -36,13 +36,12 @@ export const Register = ({
       }>
       {screen === objScreen.Register ? (
         <>
-          <View
-            style={tw('flex-1 justify-between absolute top-52 w-full')}>
+          <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
             <View
               style={tw(
                 'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <TextInput style={tw('h-10 rounded-3xl border')} />
+              <TextInput style={tw('h-10 rounded-3xl border text-black')} />
               <TouchableOpacity
                 style={tw(
                   'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
@@ -71,28 +70,27 @@ export const Register = ({
         </>
       ) : screen === objScreen.Password ? (
         <>
-        <View
-          style={tw('flex-1 justify-between absolute top-52 w-full')}>
-          <View
-            style={tw(
-              'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
-            )}>
-            <TextInput style={tw('h-10 rounded-3xl border')} />
-            <TouchableOpacity
+          <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
+            <View
               style={tw(
-                'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <Text
-                style={tw('text-white text-center')}
-                onPress={() => {
-                  setScreen(objScreen.Name);
-                }}>
-                Submit
-              </Text>
-            </TouchableOpacity>
+              <TextInput style={tw('h-10 rounded-3xl border text-black')} />
+              <TouchableOpacity
+                style={tw(
+                  'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                )}>
+                <Text
+                  style={tw('text-white text-center')}
+                  onPress={() => {
+                    setScreen(objScreen.Name);
+                  }}>
+                  Submit
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-        <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
             <GoogleAuth />
             <View style={tw('flex-row justify-center gap-1')}>
               <Text style={tw('text-black')}>Already sign in?</Text>
@@ -110,7 +108,7 @@ export const Register = ({
             style={tw(
               'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
             )}>
-            <TextInput style={tw('h-10 rounded-3xl border')} />
+            <TextInput style={tw('h-10 rounded-3xl border text-black')} />
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Gender');

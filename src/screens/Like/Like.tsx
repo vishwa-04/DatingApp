@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, Image,ScrollView} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '@assets';
@@ -27,33 +27,33 @@ export const Like = () => {
           />
         </TouchableOpacity>
       </View>
-      <Text style={tw('text-center p-2')}>
+      <Text style={tw('text-center p-2 text-black')}>
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s,
       </Text>
       <ScrollView>
-      <View style={tw('flex-row flex-wrap justify-between p-6 gap-y-6')}>
-        <Image
-          source={AllImages.UserPhoto}
-          style={tw('w-36 h-60 object-cover rounded-2xl')}
-        />
-        <Image
-          source={AllImages.UserPhoto}
-          style={tw('w-36 h-60 object-cover rounded-2xl')}
-        />
-        <Image
-          source={AllImages.UserPhoto}
-          style={tw('w-36 h-60 object-cover rounded-2xl')}
-        />
-        <Image
-          source={AllImages.UserPhoto}
-          style={tw('w-36 h-60 object-cover rounded-2xl')}
-        />
-        <Image
-          source={AllImages.UserPhoto}
-          style={tw('w-36 h-60 object-cover rounded-2xl')}
-        />
-      </View>
+        <View style={tw('flex-row flex-wrap justify-between p-6 gap-y-6')}>
+          <Image
+            source={AllImages.UserPhoto}
+            style={tw('w-36 h-60 object-cover rounded-2xl')}
+          />
+          <Image
+            source={AllImages.UserPhoto}
+            style={tw('w-36 h-60 object-cover rounded-2xl')}
+          />
+          <Image
+            source={AllImages.UserPhoto}
+            style={tw('w-36 h-60 object-cover rounded-2xl')}
+          />
+          <Image
+            source={AllImages.UserPhoto}
+            style={tw('w-36 h-60 object-cover rounded-2xl')}
+          />
+          <Image
+            source={AllImages.UserPhoto}
+            style={tw('w-36 h-60 object-cover rounded-2xl')}
+          />
+        </View>
       </ScrollView>
     </View>
   );

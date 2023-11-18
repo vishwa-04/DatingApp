@@ -2,15 +2,14 @@ import {View, Text, ImageBackground, Image} from 'react-native';
 import React from 'react';
 
 import {useTailwind} from 'tailwind-rn';
-import { TouchableOpacity} from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import {TouchableOpacity} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
-import { AllImages } from '@assets';
+import {AllImages} from '@assets';
 
 export const Welcome = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
-
   const tw = useTailwind();
   return (
     <ImageBackground source={AllImages.AppBg} style={tw('h-full')}>
@@ -28,9 +27,9 @@ export const Welcome = ({
               navigation.navigate('Register');
             }}
             style={tw(
-              'py-3 px-32 text-[#4B164C] bg-white rounded-3xl font-semibold text-base',
+              'py-3 px-32  bg-white rounded-3xl font-semibold text-base',
             )}>
-            <Text style={tw('text-black')}>I'm new here</Text>
+            <Text style={tw('text-[#4B164C]')}>I'm new here</Text>
           </TouchableOpacity>
           <TouchableOpacity
             disabled={false}

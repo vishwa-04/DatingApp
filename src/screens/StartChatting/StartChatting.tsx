@@ -25,7 +25,7 @@ export const StartChatting = ({
         <View style={tw('gap-3')}>
           <Image
             source={AllImages.StartChattingUser}
-            style={tw('w-40 h-40 rounded-full')}
+            style={tw('object-cover')}
           />
           <View style={tw('flex-row justify-center items-center gap-2')}>
             <View
@@ -34,7 +34,7 @@ export const StartChatting = ({
               )}>
               <Image
                 source={AllImages.StartChattingLike}
-                style={tw('w-4 h-4')}
+                style={tw('object-cover')}
               />
               <Text style={tw('text-black')}>25</Text>
             </View>
@@ -42,7 +42,7 @@ export const StartChatting = ({
               style={tw(
                 'flex-row justify-center items-center gap-2 p-1 border border-[#D9D9D9] rounded-xl',
               )}>
-              <Image source={AllImages.UserIcon} style={tw('w-4 h-4')} />
+              <Image source={AllImages.UserIcon} style={tw('object-cover')} />
               <Text style={tw('text-black')}>Jension</Text>
             </View>
           </View>

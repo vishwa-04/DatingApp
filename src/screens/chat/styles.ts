@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
   },
   name: {
     flexGrow: 1,
+    color: 'black',
   },
   viewButton: {
     borderBlockColor: '#cbd5e0',

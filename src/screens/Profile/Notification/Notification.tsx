@@ -17,7 +17,7 @@ export const Notification = ({
           <View style={tw('flex-row justify-between gap-2 items-center')}>
             <Image
               source={AllImages.AllowPushNotification}
-              style={tw('h-8 w-8 object-cover')}
+              style={tw('object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Allow Push Notifications
@@ -29,7 +29,7 @@ export const Notification = ({
           <View style={tw('flex-row justify-between gap-2 items-center')}>
             <Image
               source={AllImages.MessageNotification}
-              style={tw('h-8 w-8 object-cover')}
+              style={tw('object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Message Notifications
@@ -41,7 +41,7 @@ export const Notification = ({
           <View style={tw('flex-row justify-between gap-2 items-center')}>
             <Image
               source={AllImages.FriendRequestNotification}
-              style={tw('h-8 w-8 object-cover')}
+              style={tw('object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Friend Request Notification
@@ -53,7 +53,7 @@ export const Notification = ({
           <View style={tw('flex-row justify-between gap-2 items-center')}>
             <Image
               source={AllImages.LocationSecond}
-              style={tw('h-8 w-8 object-cover')}
+              style={tw('object-cover')}
             />
             <Text style={tw('font-medium text-base text-[#161616]')}>
               Location

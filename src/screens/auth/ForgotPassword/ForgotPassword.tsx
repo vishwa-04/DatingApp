@@ -1,4 +1,11 @@
-import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '@assets';
@@ -14,14 +21,12 @@ export const ForgotPassword = ({
       {/* <div className='z-'> </div> */}
       <View
         style={tw(
-          'h-16 bg-[#DF8CD1] flex flex-row justify-center items-center px-3 relative',
+          'bg-[#DF8CD1] flex flex-row justify-between items-center p-3 relative',
         )}>
-        <Text
-          style={tw('absolute left-5 z-50')}
-          onPress={() => navigation.navigate('Login')}>
-          <Image source={AllImages.LeftArrow} style={tw('w-3 h-5')} />
-        </Text>
-        <Text style={tw('font-medium text-sm text-white')}>
+        <Pressable onPress={() => navigation.navigate('Login')}>
+          <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
+        </Pressable>
+        <Text style={tw('font-medium text-sm text-white w-[66%]')}>
           Change Password
         </Text>
       </View>
@@ -36,11 +41,11 @@ export const ForgotPassword = ({
           </View>
           <View style={tw('gap-5 relative')}>
             <TextInput
-              style={tw('h-10 w-72 border rounded-xl')}
+              style={tw('h-10 w-72 border rounded-xl text-black')}
               placeholder="New Password"
             />
             <TextInput
-              style={tw('h-10 w-72 border rounded-xl')}
+              style={tw('h-10 w-72 border rounded-xl text-black')}
               placeholder="Confirm Password"
             />
             <Image

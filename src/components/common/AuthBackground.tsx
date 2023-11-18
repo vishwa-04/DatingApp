@@ -28,7 +28,7 @@ export const AuthBackground = ({
           onPress={() => {
             onbackFunc();
           }}>
-          <Image source={AllImages.LeftArrow} style={tw('w-3 h-5')} />
+          <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
         </TouchableOpacity>
         <View style={tw('flex justify-center gap-5')}>
           <Text style={tw('font-medium text-3xl text-white')}>{header}</Text>
