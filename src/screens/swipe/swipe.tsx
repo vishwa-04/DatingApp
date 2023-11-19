@@ -88,7 +88,7 @@ export const Swipe = ({
         <View style={tw('flex-row justify-center items-center gap-14')}>
           <Image source={AllImages.Close} style={tw('object-cover')} />
           <Image source={AllImages.Heart} style={tw('object-cover')} />
-          <Image source={AllImages.Star} style={tw('object-cover')} />
+          <Image source={AllImages.Info} style={tw('object-cover')} />
         </View>
         <Pressable
           onPress={() => {
