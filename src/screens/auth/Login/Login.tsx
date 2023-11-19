@@ -1,4 +1,4 @@
-import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AuthBackground} from '@components';
@@ -17,6 +17,12 @@ export const Login = ({
   const tw = useTailwind();
   const [screen, setScreen] = useState(objScreen.Login);
   return (
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={{flex:1}}
+    keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+  >
+    <ScrollView contentContainerStyle={tw('flex-grow')} keyboardShouldPersistTaps="never">
     <AuthBackground
       header={
         screen === objScreen.Login
@@ -96,5 +102,7 @@ export const Login = ({
         </>
       )}
     </AuthBackground>
+    </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
