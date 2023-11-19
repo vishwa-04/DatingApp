@@ -1,10 +1,21 @@
-import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  ActivityIndicator,
+} from 'react-native';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
-import {AuthBackground} from '@components';
+import {AuthBackground, TextInputCommon, ButtonLoader} from '@components';
 import {GoogleAuth} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
+import {useForm} from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup';
+import {IRegister} from '@validations';
+import {RegisterApi} from '@services';
+import Toast from 'react-native-simple-toast';
 
 export const Register = ({
   navigation,
@@ -15,8 +26,41 @@ export const Register = ({
     Name: 'name',
   };
   const tw = useTailwind();
+  const {
+    control,
+    handleSubmit,
+    formState: {errors},
+  } = useForm({
+    resolver: yupResolver(IRegister),
+  });
   const [screen, setScreen] = useState(objScreen.Register);
-
+  const [loader, setLoader] = useState(false);
+  const onSubmit = async (data: any) => {
+    try {
+      setLoader(true);
+      await RegisterApi(data.phoneNumber);
+      // Toast.showWithGravityAndOffset(
+      //   'This is a long toast at the top.',
+      //   Toast.LONG,
+      //   Toast.TOP,
+      //   0, // X Offset
+      //   30, // Y Offset - Adjust this value as needed
+      // );
+      navigation.navigate('OtpLoginScreen');
+    } catch (error: any) {
+      Toast.showWithGravityAndOffset(
+        error?.message,
+        Toast.LONG,
+        Toast.TOP,
+        0, // X Offset
+        30, // Y Offset - Adjust this value as needed
+      );
+      console.log(error);
+    } finally {
+      setLoader(false);
+    }
+    // Handle form submission
+  };
   return (
     <AuthBackground
       header={
@@ -41,18 +85,27 @@ export const Register = ({
               style={tw(
                 'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
               )}>
-              <TextInput style={tw('h-10 rounded-3xl border text-black')} />
+              <TextInputCommon
+                style={'h-10 rounded-3xl border text-black'}
+                control={control}
+                error={errors?.phoneNumber}
+              />
               <TouchableOpacity
                 style={tw(
-                  'py-3 bg-[#4B164C] rounded-3xl font-semibold text-base',
-                )}>
-                <Text
-                  style={tw('text-white text-center')}
-                  onPress={() => {
-                    setScreen(objScreen.Password);
-                  }}>
-                  Continue
-                </Text>
+                  `py-3 bg-[#4B164C] rounded-3xl ${loader ? 'opacity-70' : ''}`,
+                )}
+                onPress={handleSubmit(onSubmit)}
+                disabled={loader}>
+                {loader ? (
+                  <ButtonLoader />
+                ) : (
+                  <Text
+                    style={tw(
+                      'text-white text-center font-semibold text-base',
+                    )}>
+                    Continue
+                  </Text>
+                )}
               </TouchableOpacity>
             </View>
           </View>
@@ -83,9 +136,9 @@ export const Register = ({
                 <Text
                   style={tw('text-white text-center')}
                   onPress={() => {
-                    setScreen(objScreen.Name);
+                    setScreen(objScreen.Password);
                   }}>
-                  Submit
+                  Continue
                 </Text>
               </TouchableOpacity>
             </View>

@@ -337,8 +337,8 @@
   width: 100
 }
 
-.w-\[45\%\] {
-  width: 45%
+.w-\[47\%\] {
+  width: 47%
 }
 
 .w-\[63\%\] {
@@ -355,26 +355,6 @@
 
 .w-full {
   width: 100%
-}
-
-.w-\[50\%\] {
-  width: 50%
-}
-
-.w-\[46\%\] {
-  width: 46%
-}
-
-.w-\[48\%\] {
-  width: 48%
-}
-
-.w-\[65\%\] {
-  width: 65%
-}
-
-.w-\[47\%\] {
-  width: 47%
 }
 
 .flex-1 {
@@ -481,10 +461,6 @@
   row-gap: 1.5rem
 }
 
-.gap-y-5 {
-  row-gap: 1.25rem
-}
-
 .rounded-2xl {
   border-radius: 1rem
 }
@@ -503,10 +479,6 @@
 
 .rounded-xl {
   border-radius: 0.75rem
-}
-
-.rounded-lg {
-  border-radius: 0.5rem
 }
 
 .rounded-t-3xl {
@@ -757,11 +729,6 @@
   padding-bottom: 2.25rem
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem
-}
-
 .pb-16 {
   padding-bottom: 4rem
 }
@@ -932,6 +899,15 @@
   color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity))
+}
+
 .opacity-50 {
   opacity: 0.5
+}
+
+.opacity-70 {
+  opacity: 0.7
 }
