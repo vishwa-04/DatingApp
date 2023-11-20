@@ -3,7 +3,6 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  ActivityIndicator,
 } from 'react-native';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
@@ -16,6 +15,7 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {IRegister} from '@validations';
 import {RegisterApi} from '@services';
 import Toast from 'react-native-simple-toast';
+import {apiResponse} from '@constants';
 
 export const Register = ({
   navigation,
@@ -38,16 +38,17 @@ export const Register = ({
   const onSubmit = async (data: any) => {
     try {
       setLoader(true);
-      const response = await RegisterApi(data.phoneNumber);
-      console.log(response)
-
-      // Toast.showWithGravityAndOffset(
-      //   'This is a long toast at the top.',
-      //   Toast.LONG,
-      //   Toast.TOP,
-      //   0, // X Offset
-      //   30, // Y Offset - Adjust this value as needed
-      // );
+      const response: any = await RegisterApi(data.phoneNumber);
+      if (response?.data?.status === apiResponse.fail) {
+        Toast.showWithGravityAndOffset(
+          response?.data?.message || '',
+          Toast.LONG,
+          Toast.TOP,
+          0, // X Offset
+          30, // Y Offset - Adjust this value as needed
+        );
+        return;
+      }
       navigation.navigate('OtpLoginScreen');
     } catch (error: any) {
       Toast.showWithGravityAndOffset(
@@ -61,19 +62,21 @@ export const Register = ({
     } finally {
       setLoader(false);
     }
-    // Handle form submission
   };
   return (
     <AuthBackground
-      header={screen === objScreen.Register
-        ? "What's your phone number"
-        : screen === objScreen.Password
+      header={
+        screen === objScreen.Register
+          ? "What's your phone number"
+          : screen === objScreen.Password
           ? 'Enter Your Password'
-          : 'Your Name is...'}
+          : 'Your Name is...'
+      }
       para="What's your phone number"
-      onbackFunc={screen === objScreen.Register
-        ? () => navigation.navigate('Welcome')
-        : screen === objScreen.Password
+      onbackFunc={
+        screen === objScreen.Register
+          ? () => navigation.navigate('Welcome')
+          : screen === objScreen.Password
           ? () => setScreen(objScreen.Register)
           : () => setScreen(objScreen.Password)} >
       {screen === objScreen.Register ? (
