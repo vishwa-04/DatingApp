@@ -37,6 +37,7 @@ import {
   LoveClic,
   Password,
   Name,
+  SwipeLoadingSecond,
 } from '@screens';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
@@ -44,7 +45,7 @@ export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="Welcome"
+        initialRouteName="SwipeLoading"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',
@@ -76,7 +77,7 @@ export const Routes = (): React.JSX.Element => {
           component={BottomTabNavigator}
         />
         <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
-        <NativeStack.Screen name={'SwipeLoading'} component={SwipeLoading} />
+        <NativeStack.Screen name={'SwipeLoading'} component={SwipeLoadingSecond} />
         <NativeStack.Screen name={'LoveClic'} component={LoveClic} />
       </NativeStack.Navigator>
     </NavigationContainer>
