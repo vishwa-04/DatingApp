@@ -2,6 +2,8 @@ export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   Welcome: undefined;
+  Password:undefined;
+  Name:undefined;
   OtpLoginScreen: undefined;
   Gender: undefined;
   ForgotPassword: undefined;

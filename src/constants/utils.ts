@@ -25,3 +25,8 @@ export type Item = {
   
   // Example usage
   console.log(items);
+
+
+  export const apiResponse = {
+    fail:'fail'
+  }

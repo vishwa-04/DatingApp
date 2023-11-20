@@ -101,7 +101,7 @@ export const Birthday = ({
           <Text
             style={tw('text-white text-center')}
             onPress={() => {
-              navigation.navigate('OtpLoginScreen');
+              navigation.navigate('Home');
             }}>
             Continue
           </Text>
