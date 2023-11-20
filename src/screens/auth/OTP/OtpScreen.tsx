@@ -17,39 +17,13 @@ export const OtpScreen = ({
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   const [checkOtp, setCheckOtp] = useState('');
-  const {
-    control,
-    handleSubmit,
-    formState: {errors},
-  } = useForm({
-    resolver: yupResolver(IOTP),
-  });
-  const [loader, setLoader] = useState(false);
-  const onSubmit = async (data: any) => {
-    try {
-      setLoader(true);
-      const response = await OtpVerify(data.otp);
-      console.log(response?.data);
-      navigation.navigate('OtpLoginScreen');
-    } catch (error: any) {
-      Toast.showWithGravityAndOffset(
-        error?.message,
-        Toast.LONG,
-        Toast.TOP,
-        0, // X Offset
-        30, // Y Offset - Adjust this value as needed
-      );
-      console.log(error);
-    } finally {
-      setLoader(false);
-    }
-    // Handle form submission
-  };
-  const handleCheck = () => {
-    if (checkOtp === '000000') {
+  const handleCheck = async () => {
+    const res = await OtpVerify(checkOtp);
+    if (res?.data?.data?.status === 'success') {
       navigation.navigate('Home');
     } else {
-      console.log('Wrong otp');
+      Toast.show('Invalid OTP', 5);
+      setCheckOtp('');
     }
   };
 
@@ -57,8 +31,7 @@ export const OtpScreen = ({
     <AuthBackground
       header="Enter Your OTP"
       para="What's your phone number"
-      onbackFunc={() => navigation.goBack()}
-      children={undefined}>
+      onbackFunc={() => navigation.goBack()}>
       <>
         <View style={tw('flex justify-between absolute top-52 w-full gap-64')}>
           <View
@@ -66,47 +39,43 @@ export const OtpScreen = ({
               'flex justify-between h-48 bg-white rounded-2xl gap-4 px-3 py-9 mx-4',
             )}>
             {/* <TextInput style={tw('h-10 rounded-3xl border')} /> */}
-            <Controller
-              control={control}
-              name="otp"
-              render={({field: {onChange, onBlur, value}}) => (
-                <OtpInputs
-                  onBlur={onBlur}
-                  onChangeText={onChange}
-                  value={value}
-                  numberOfInputs={6}
-                  handleChange={code => setCheckOtp(code)}
-                  autofillFromClipboard={false}
-                  inputStyles={{
-                    flexDirection: 'row',
-                    borderWidth: 1,
-                    borderColor: '#4B164C',
-                    height: 40,
-                    width: 40,
-                    borderRadius: 10,
-                    fontSize: 15,
-                    fontWeight: 'bold',
-                    color: 'black',
-                  }}
-                  textAlign="center"
-                  textAlignVertical="center"
-                />
-              )}
+
+            <OtpInputs
+              numberOfInputs={4}
+              handleChange={code => {
+                setCheckOtp(code); // This will update the local state
+              }}
+              autofillFromClipboard={false}
+              inputStyles={{
+                flexDirection: 'row',
+                borderWidth: 1,
+                borderColor: '#4B164C',
+                height: 40,
+                width: 40,
+                borderRadius: 10,
+                fontSize: 15,
+                fontWeight: 'bold',
+                color: 'black',
+              }}
+              textAlign="center"
+              textAlignVertical="center"
             />
-           
 
             <View style={tw('flex-row justify-center gap-1')}>
               <Text style={tw('text-black')}>Didn’t receive OTP?</Text>
               <Text style={tw('text-[#4B164C]')}>Resend</Text>
             </View>
             <TouchableOpacity
-            disabled={checkOtp.length===4}
+              disabled={checkOtp.length !== 4}
               onPress={() => {
                 handleCheck();
               }}
-              style={tw(
-                'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
-              )}>
+              style={[
+                tw(
+                  'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                ),
+                {opacity: checkOtp.length < 4 ? 0.5 : 1},
+              ]}>
               <Text style={tw('text-white text-center')}>
                 Verify & Continue
               </Text>

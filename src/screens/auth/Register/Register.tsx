@@ -75,7 +75,7 @@ export const Register = ({
         ? () => navigation.navigate('Welcome')
         : screen === objScreen.Password
           ? () => setScreen(objScreen.Register)
-          : () => setScreen(objScreen.Password)} children={undefined}>
+          : () => setScreen(objScreen.Password)} >
       {screen === objScreen.Register ? (
         <>
           <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
