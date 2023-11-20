@@ -38,7 +38,9 @@ export const Register = ({
   const onSubmit = async (data: any) => {
     try {
       setLoader(true);
-      await RegisterApi(data.phoneNumber);
+      const response = await RegisterApi(data.phoneNumber);
+      console.log(response)
+
       // Toast.showWithGravityAndOffset(
       //   'This is a long toast at the top.',
       //   Toast.LONG,
@@ -63,21 +65,17 @@ export const Register = ({
   };
   return (
     <AuthBackground
-      header={
-        screen === objScreen.Register
-          ? "What's your phone number"
-          : screen === objScreen.Password
+      header={screen === objScreen.Register
+        ? "What's your phone number"
+        : screen === objScreen.Password
           ? 'Enter Your Password'
-          : 'Your Name is...'
-      }
+          : 'Your Name is...'}
       para="What's your phone number"
-      onbackFunc={
-        screen === objScreen.Register
-          ? () => navigation.navigate('Welcome')
-          : screen === objScreen.Password
+      onbackFunc={screen === objScreen.Register
+        ? () => navigation.navigate('Welcome')
+        : screen === objScreen.Password
           ? () => setScreen(objScreen.Register)
-          : () => setScreen(objScreen.Password)
-      }>
+          : () => setScreen(objScreen.Password)} children={undefined}>
       {screen === objScreen.Register ? (
         <>
           <View style={tw('flex-1 justify-between absolute top-52 w-full')}>

@@ -1,5 +1,5 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
-import {BASE_URL, REGISTER_ENDPOINT} from '@env';
+import {BASE_URL, OTP_ENDPOINT, REGISTER_ENDPOINT} from '@env';
 import {getBearerToken} from '@services';
 type ApiResponse<T> = {
   resType: 'SUCCESS' | 'ERROR';
@@ -70,6 +70,15 @@ export const RegisterApi = async (phoneNumber: string) => {
     REGISTER_ENDPOINT,
     'post',
     {contact_no: phoneNumber},
+    {},
+    false,
+  );
+};
+export const OtpVerify = async (otp: string) => {
+  return await apiRequest(
+    OTP_ENDPOINT,
+    'post',
+    {otp: otp},
     {},
     false,
   );
