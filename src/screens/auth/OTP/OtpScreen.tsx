@@ -14,6 +14,7 @@ export const OtpScreen = ({
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   const [checkOtp, setCheckOtp] = useState('');
+<<<<<<< HEAD
   const [loader, setLoader] = useState(false);
   const handleCheck = async () => {
     try {
@@ -42,6 +43,18 @@ export const OtpScreen = ({
       setLoader(false);
     }
   };
+=======
+  const handleCheck = async () => {
+    const res = await OtpVerify(checkOtp);
+    if (res?.data?.data?.status === 'success') {
+      navigation.navigate('Home');
+    } else {
+      Toast.show('Invalid OTP', 5);
+      setCheckOtp('');
+    }
+  };
+
+>>>>>>> 74dda5ad682775a49d419a1afd84519585a510b4
   return (
     <AuthBackground
       header="Enter Your OTP"
@@ -87,6 +100,7 @@ export const OtpScreen = ({
               }}
               style={[
                 tw(
+<<<<<<< HEAD
                   `py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base ${
                     checkOtp.length !== 4 ? 'opacity-50' : ''
                   }`,
@@ -100,6 +114,15 @@ export const OtpScreen = ({
                   Verify & Continue
                 </Text>
               )}
+=======
+                  'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
+                ),
+                {opacity: checkOtp.length < 4 ? 0.5 : 1},
+              ]}>
+              <Text style={tw('text-white text-center')}>
+                Verify & Continue
+              </Text>
+>>>>>>> 74dda5ad682775a49d419a1afd84519585a510b4
             </TouchableOpacity>
           </View>
         </View>
