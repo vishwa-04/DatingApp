@@ -45,7 +45,7 @@ export const Routes = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <NativeStack.Navigator
-        initialRouteName="SwipeLoading"
+        initialRouteName="Welcome"
         screenOptions={{
           animation: 'none',
           orientation: 'portrait',
@@ -77,7 +77,10 @@ export const Routes = (): React.JSX.Element => {
           component={BottomTabNavigator}
         />
         <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
-        <NativeStack.Screen name={'SwipeLoading'} component={SwipeLoadingSecond} />
+        <NativeStack.Screen
+          name={'SwipeLoading'}
+          component={SwipeLoadingSecond}
+        />
         <NativeStack.Screen name={'LoveClic'} component={LoveClic} />
       </NativeStack.Navigator>
     </NavigationContainer>

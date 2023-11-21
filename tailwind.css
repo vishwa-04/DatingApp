@@ -58,6 +58,10 @@
   top: 13rem
 }
 
+.top-\[10px\] {
+  top: 10px
+}
+
 .top-\[40\%\] {
   top: 40%
 }
@@ -68,6 +72,10 @@
 
 .z-40 {
   z-index: 40
+}
+
+.z-50 {
+  z-index: 50
 }
 
 .m-auto {
@@ -894,14 +902,14 @@
   color: rgb(0 0 0 / var(--tw-text-opacity))
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity))
-}
-
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .opacity-50 {
