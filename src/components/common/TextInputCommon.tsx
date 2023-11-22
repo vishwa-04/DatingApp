@@ -11,6 +11,8 @@ export const TextInputCommon = ({
   viewClass = '',
   phoneField = false,
   keyboardType = 'default',
+  name,
+  secureTextEntry = false,
 }: {
   style?: string;
   error?: FieldError | undefined;
@@ -19,13 +21,15 @@ export const TextInputCommon = ({
   viewClass?: string;
   phoneField?: boolean;
   keyboardType?: KeyboardTypeOptions | undefined;
+  name: string;
+  secureTextEntry?: boolean;
 }) => {
   const tw = useTailwind();
   return (
     <Fragment>
       <Controller
         control={control}
-        name="phoneNumber"
+        name={name}
         render={({field: {onChange, onBlur, value}}) => (
           <View style={tw(viewClass)}>
             <TextInput
@@ -35,6 +39,7 @@ export const TextInputCommon = ({
               value={value}
               style={tw(style)}
               keyboardType={keyboardType}
+              secureTextEntry={secureTextEntry}
             />
             {phoneField && (
               <View
@@ -52,5 +57,3 @@ export const TextInputCommon = ({
     </Fragment>
   );
 };
-
-export default TextInput;

@@ -12,31 +12,34 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {IRegister} from '@validations';
-import {RegisterApi} from '@services';
+import {IPasswordLogin} from '@validations';
 import Toast from 'react-native-simple-toast';
 import {apiResponse, asyncStorageConst} from '@constants';
+import {LoginApi} from '@services';
 
-export const Register = ({
+export const LoginPassword = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
-  const {
-    control,
-    handleSubmit,
-    formState: {errors},
-  } = useForm({
-    resolver: yupResolver(IRegister),
-  });
   const [loader, setLoader] = useState(false);
+  const {
+    control: passwordControl,
+    handleSubmit: handlePasswordSubmit,
+    formState: formStatePassword,
+  } = useForm({
+    resolver: yupResolver(IPasswordLogin),
+  });
   const onSubmit = async (data: any) => {
     try {
       setLoader(true);
-      await AsyncStorage.setItem(
-        asyncStorageConst.RegisterPhone,
-        `+91${data.phoneNumber}`,
+      const contact_no = await AsyncStorage.getItem(
+        asyncStorageConst.LoginPhone,
       );
-      const response: any = await RegisterApi(data.phoneNumber);
+      const response: any = await LoginApi({
+        contact_no: `+91${contact_no}`,
+        password: data.password,
+        device_token: 'qwertyuiop',
+      });
       if (response?.data?.status === apiResponse.fail) {
         Toast.showWithGravityAndOffset(
           response?.data?.message || '',
@@ -47,7 +50,7 @@ export const Register = ({
         );
         return;
       }
-      navigation.navigate('OtpLoginScreen');
+      navigation.navigate('Home');
     } catch (error: any) {
       Toast.showWithGravityAndOffset(
         error?.message,
@@ -56,42 +59,44 @@ export const Register = ({
         0, // X Offset
         30, // Y Offset - Adjust this value as needed
       );
+      console.log(error);
     } finally {
       setLoader(false);
     }
   };
   return (
     <AuthBackground
-      header="What's your phone number"
+      header="Enter Your Password"
       para="What's your phone number"
-      onbackFunc={() => navigation.navigate('Welcome')}>
+      onbackFunc={() => navigation.navigate('Login')}>
       <>
-        <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
+        <View style={tw('flex justify-between absolute top-52 w-full')}>
           <View
             style={tw(
               'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
             )}>
             <TextInputCommon
-              style={'h-10 rounded-3xl border text-black px-16'}
-              control={control}
-              error={errors?.phoneNumber}
-              phoneField={true}
+              style={'h-10 rounded-3xl border text-black px-4'}
+              control={passwordControl}
+              error={formStatePassword.errors?.password}
               viewClass={'relative'}
-              keyboardType={'number-pad'}
-              name="phoneNumber"
+              name="password"
+              secureTextEntry={true}
             />
             <TouchableOpacity
               style={tw(
-                `py-3 bg-[#4B164C] rounded-3xl ${loader ? 'opacity-70' : ''}`,
+                `py-3 bg-[#4B164C] rounded-3xl font-semibold text-base ${
+                  loader ? 'opacity-70' : ''
+                }`,
               )}
-              onPress={handleSubmit(onSubmit)}
+              onPress={handlePasswordSubmit(onSubmit)}
               disabled={loader}>
               {loader ? (
                 <ButtonLoader />
               ) : (
                 <Text
                   style={tw('text-white text-center font-semibold text-base')}>
-                  Continue
+                  Submit
                 </Text>
               )}
             </TouchableOpacity>
@@ -99,12 +104,11 @@ export const Register = ({
         </View>
         <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
           <GoogleAuth />
-          <View style={tw('flex-row justify-center gap-1')}>
-            <Text style={tw('text-black')}>Already sign in?</Text>
+          <View style={tw('flex-row justify-center gap-1 mt-2')}>
             <Text
-              style={tw('text-[#4B164C]')}
-              onPress={() => navigation.navigate('Login')}>
-              Login
+              style={tw('text-[#4B164C] font-semibold')}
+              onPress={() => navigation.navigate('ForgotPassword')}>
+              Forgot Password?
             </Text>
           </View>
         </View>

@@ -1,43 +1,33 @@
-import {
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  ActivityIndicator,
-} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AuthBackground, TextInputCommon, ButtonLoader} from '@components';
-import {GoogleAuth} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {IRegister} from '@validations';
-import {RegisterApi} from '@services';
+import {IName} from '@validations';
 import Toast from 'react-native-simple-toast';
-import {apiResponse} from '@constants';
+import {asyncStorageConst} from '@constants';
 
 export const Name = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
-  let objScreen = {
-    Register: 'register',
-    Password: 'password',
-    Name: 'name',
-  };
   const tw = useTailwind();
   const {
     control,
     handleSubmit,
     formState: {errors},
   } = useForm({
-    resolver: yupResolver(IRegister),
+    resolver: yupResolver(IName),
   });
   const [loader, setLoader] = useState(false);
   const onSubmit = async (data: any) => {
     try {
       setLoader(true);
+      await AsyncStorage.setItem(asyncStorageConst.RegisterUserName, data.name);
+      navigation.navigate('Gender');
     } catch (error: any) {
       Toast.showWithGravityAndOffset(
         error?.message,
@@ -61,13 +51,29 @@ export const Name = ({
           style={tw(
             'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
           )}>
-          <TextInput style={tw('h-10 rounded-3xl border text-black')} />
+          <TextInputCommon
+            style={'h-10 rounded-3xl border text-black'}
+            control={control}
+            error={errors?.name}
+            viewClass={'relative'}
+            name="name"
+          />
           <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Gender');
-            }}
-            style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
-            <Text style={tw('text-white text-center')}>Continue</Text>
+            style={tw(
+              `py-3 bg-[#4B164C] rounded-3xl font-semibold text-base ${
+                loader ? 'opacity-70' : ''
+              }`,
+            )}
+            onPress={handleSubmit(onSubmit)}
+            disabled={loader}>
+            {loader ? (
+              <ButtonLoader />
+            ) : (
+              <Text
+                style={tw('text-white text-center font-semibold text-base')}>
+                Continue
+              </Text>
+            )}
           </TouchableOpacity>
         </View>
       </View>
