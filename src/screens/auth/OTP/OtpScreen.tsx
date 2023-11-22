@@ -56,6 +56,7 @@ export const OtpScreen = ({
             {/* <TextInput style={tw('h-10 rounded-3xl border')} /> */}
 
             <OtpInputs
+            
               numberOfInputs={4}
               handleChange={code => {
                 setCheckOtp(code); // This will update the local state
