@@ -37,7 +37,7 @@ import {
   LoveClic,
   Password,
   Name,
-  SwipeLoadingSecond,
+  LoginPassword,
 } from '@screens';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
@@ -57,6 +57,8 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'OtpLoginScreen'} component={OtpScreen} />
         <NativeStack.Screen name={'Register'} component={Register} />
         <NativeStack.Screen name={'Password'} component={Password} />
+        <NativeStack.Screen name={'LoginPassword'} component={LoginPassword} />
+
         <NativeStack.Screen name={'Name'} component={Name} />
 
         <NativeStack.Screen name={'Gender'} component={Gender} />
@@ -77,10 +79,7 @@ export const Routes = (): React.JSX.Element => {
           component={BottomTabNavigator}
         />
         <NativeStack.Screen name={'ChatDetail'} component={ChatDetail} />
-        <NativeStack.Screen
-          name={'SwipeLoading'}
-          component={SwipeLoadingSecond}
-        />
+        <NativeStack.Screen name={'SwipeLoading'} component={SwipeLoading} />
         <NativeStack.Screen name={'LoveClic'} component={LoveClic} />
       </NativeStack.Navigator>
     </NavigationContainer>

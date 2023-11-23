@@ -1,5 +1,11 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
-import {BASE_URL, OTP_ENDPOINT, REGISTER_ENDPOINT} from '@env';
+import {
+  BASE_URL,
+  LOGIN_ENDPOINT,
+  OTP_ENDPOINT,
+  REGISTER_ENDPOINT,
+  REGISTER_FINAL_ENDPOINT,
+} from '@env';
 import {getBearerToken} from '@services';
 type ApiResponse<T> = {
   resType: 'SUCCESS' | 'ERROR';
@@ -75,13 +81,15 @@ export const RegisterApi = async (phoneNumber: string) => {
   );
 };
 export const OtpVerify = async (otp: string) => {
-  return await apiRequest(
-    OTP_ENDPOINT,
-    'post',
-    {otp: otp},
-    {},
-    false,
-  );
+  return await apiRequest(OTP_ENDPOINT, 'post', {otp: otp}, {}, false);
+};
+
+export const RegisterFinalApi = async (data: any) => {
+  return await apiRequest(REGISTER_FINAL_ENDPOINT, 'post', data, {}, false);
+};
+
+export const LoginApi = async (data: any) => {
+  return await apiRequest(LOGIN_ENDPOINT, 'post', data, {}, false);
 };
 
 // Exporting the API functions
