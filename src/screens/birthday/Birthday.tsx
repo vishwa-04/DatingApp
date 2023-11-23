@@ -20,28 +20,29 @@ export const Birthday = ({
     month: null,
     year: null,
   });
+  const [datesDropdown, setDatesDropDown] = useState<string[]>([]);
   const [dirty, setDirty] = useState<boolean>(false);
   const calender = useMemo(() => dates(), []);
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   function dates() {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    const days = Array.from({length: 31}, (_, i) => (i + 1).toString());
-    const years = Array.from({length: 2020 - 1930 + 1}, (_, i) =>
+    const currentYear = new Date().getFullYear();
+    const years = Array.from({length: currentYear - 1930 + 1}, (_, i) =>
       (1930 + i).toString(),
     );
-    return {months, days, years};
+    return {years};
   }
   const onSubmit = async () => {
     try {
@@ -58,7 +59,9 @@ export const Birthday = ({
       const gender = await AsyncStorage.getItem(
         asyncStorageConst.RegisterGender,
       );
-      const dob = `${birthDate.date}/${birthDate.month}/${birthDate.year}`;
+      const dob = `${birthDate.date}/${
+        months.indexOf(birthDate.month ? birthDate.month : 'January') + 1
+      }/${birthDate.year}`;
       const response: any = await RegisterFinalApi({
         contact_no,
         username,
@@ -92,6 +95,18 @@ export const Birthday = ({
       setLoader(false);
     }
   };
+
+  const setDateDopDownData = (month: string, year: number) => {
+    try {
+      const monthNumber = months.indexOf(month) + 1;
+      const daysInMonth = new Date(year, monthNumber, 0).getDate();
+      setDatesDropDown(
+        Array.from({length: daysInMonth}, (_, i) => (i + 1).toString()),
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={tw('flex-1 justify-center items-center')}>
       <View style={tw('items-center px-3')}>
@@ -111,10 +126,37 @@ export const Birthday = ({
       </View>
       <View style={tw('flex-row justify-around w-full')}>
         <SelectDropdown
-          defaultButtonText="MM"
-          data={calender.months}
+          dropdownIconPosition="left"
+          defaultButtonText="YYYY"
+          data={calender.years}
           onSelect={(selectedItem, index) => {
             console.log(selectedItem, index);
+            if (birthDate.month) {
+              setDateDopDownData(birthDate.month, selectedItem);
+            }
+            setBirthDate(birthDate => {
+              return {
+                ...birthDate,
+                year: selectedItem,
+              };
+            });
+          }}
+          buttonTextAfterSelection={selectedItem => {
+            return selectedItem;
+          }}
+          rowTextForSelection={item => {
+            return item;
+          }}
+          buttonStyle={tw('w-[100] bg-white border border-gray-600 rounded-md')}
+        />
+        <SelectDropdown
+          defaultButtonText="MM"
+          data={months}
+          onSelect={(selectedItem, index) => {
+            console.log(selectedItem, index);
+            if (birthDate.year) {
+              setDateDopDownData(selectedItem, birthDate.year);
+            }
             setBirthDate(birthDate => {
               return {
                 ...birthDate,
@@ -132,35 +174,17 @@ export const Birthday = ({
           // Add more styles if needed
         />
         <SelectDropdown
+          disabled={Boolean(
+            birthDate.month === null || birthDate.year === null,
+          )}
           defaultButtonText="DD"
-          data={calender.days}
+          data={datesDropdown}
           onSelect={(selectedItem, index) => {
             console.log(selectedItem, index);
             setBirthDate(birthDate => {
               return {
                 ...birthDate,
                 date: selectedItem,
-              };
-            });
-          }}
-          buttonTextAfterSelection={selectedItem => {
-            return selectedItem;
-          }}
-          rowTextForSelection={item => {
-            return item;
-          }}
-          buttonStyle={tw('w-[100] bg-white border border-gray-600 rounded-md')}
-        />
-        <SelectDropdown
-          dropdownIconPosition="left"
-          defaultButtonText="YYYY"
-          data={calender.years}
-          onSelect={(selectedItem, index) => {
-            console.log(selectedItem, index);
-            setBirthDate(birthDate => {
-              return {
-                ...birthDate,
-                year: selectedItem,
               };
             });
           }}

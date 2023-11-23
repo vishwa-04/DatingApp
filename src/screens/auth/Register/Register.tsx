@@ -99,10 +99,10 @@ export const Register = ({
         </View>
         <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
           <GoogleAuth />
-          <View style={tw('flex-row justify-center gap-1')}>
-            <Text style={tw('text-black')}>Already sign in?</Text>
+          <View style={tw('flex-row justify-center gap-1 mt-2')}>
+            <Text style={tw('text-black font-semibold')}>Already sign in?</Text>
             <Text
-              style={tw('text-[#4B164C]')}
+              style={tw('text-[#4B164C] font-semibold')}
               onPress={() => navigation.navigate('Login')}>
               Login
             </Text>

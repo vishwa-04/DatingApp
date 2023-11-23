@@ -53,67 +53,67 @@ export const Login = ({
     }
   };
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}>
-      <ScrollView
-        contentContainerStyle={tw('flex-grow')}
-        keyboardShouldPersistTaps="never">
-        <AuthBackground
-          header="What's your phone number?"
-          para="What's your phone number"
-          onbackFunc={() => navigation.navigate('Welcome')}>
-          <>
-            <View style={tw('flex justify-between absolute top-52 w-full')}>
-              <View
+    // <KeyboardAvoidingView
+    //   behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    //   style={{flex: 1}}
+    //   keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}>
+    <ScrollView
+      contentContainerStyle={tw('flex-grow')}
+      keyboardShouldPersistTaps="never">
+      <AuthBackground
+        header="What's your phone number?"
+        para="What's your phone number"
+        onbackFunc={() => navigation.navigate('Welcome')}>
+        <>
+          <View style={tw('flex justify-between absolute top-52 w-full')}>
+            <View
+              style={tw(
+                'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
+              )}>
+              <TextInputCommon
+                style={'h-10 rounded-3xl border text-black px-16'}
+                control={control}
+                error={errors?.contact_no}
+                phoneField={true}
+                viewClass={'relative'}
+                keyboardType={'number-pad'}
+                name="contact_no"
+              />
+              <TouchableOpacity
                 style={tw(
-                  'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
-                )}>
-                <TextInputCommon
-                  style={'h-10 rounded-3xl border text-black px-16'}
-                  control={control}
-                  error={errors?.contact_no}
-                  phoneField={true}
-                  viewClass={'relative'}
-                  keyboardType={'number-pad'}
-                  name="contact_no"
-                />
-                <TouchableOpacity
-                  style={tw(
-                    `py-3 bg-[#4B164C] rounded-3xl font-semibold text-base ${
-                      loader ? 'opacity-70' : ''
-                    }`,
-                  )}
-                  onPress={handleSubmit(onSubmit)}
-                  disabled={loader}>
-                  {loader ? (
-                    <ButtonLoader />
-                  ) : (
-                    <Text
-                      style={tw(
-                        'text-white text-center font-semibold text-base',
-                      )}>
-                      Continue
-                    </Text>
-                  )}
-                </TouchableOpacity>
-              </View>
+                  `py-3 bg-[#4B164C] rounded-3xl font-semibold text-base ${
+                    loader ? 'opacity-70' : ''
+                  }`,
+                )}
+                onPress={handleSubmit(onSubmit)}
+                disabled={loader}>
+                {loader ? (
+                  <ButtonLoader />
+                ) : (
+                  <Text
+                    style={tw(
+                      'text-white text-center font-semibold text-base',
+                    )}>
+                    Continue
+                  </Text>
+                )}
+              </TouchableOpacity>
             </View>
-            <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
-              <GoogleAuth />
-              <View style={tw('flex-row justify-center gap-1 mt-2 ')}>
-                <Text style={tw('text-black font-semibold')}>New user?</Text>
-                <Text
-                  style={tw('text-[#4B164C] font-bold')}
-                  onPress={() => navigation.navigate('Register')}>
-                  Register
-                </Text>
-              </View>
+          </View>
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
+            <GoogleAuth />
+            <View style={tw('flex-row justify-center gap-1 mt-2 ')}>
+              <Text style={tw('text-black font-semibold')}>New user?</Text>
+              <Text
+                style={tw('text-[#4B164C] font-bold')}
+                onPress={() => navigation.navigate('Register')}>
+                Register
+              </Text>
             </View>
-          </>
-        </AuthBackground>
-      </ScrollView>
-    </KeyboardAvoidingView>
+          </View>
+        </>
+      </AuthBackground>
+    </ScrollView>
+    // </KeyboardAvoidingView>
   );
 };

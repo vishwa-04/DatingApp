@@ -21,15 +21,15 @@ export const Welcome = ({
             style={tw('h-80 w-52 mx-auto my-auto object-cover')}
           />
         </View>
-        <View style={tw('flex justify-center items-center gap-3 py-5')}>
+        <View style={tw('flex justify-center items-center gap-3 p-5 w-full')}>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Register');
             }}
             style={tw(
-              'py-2  bg-white  rounded-3xl border-4  border-white ',
+              'py-2 bg-white rounded-3xl border-4 border-white w-full',
             )}>
-            <Text style={[tw('text-[#4B164C] font-bold text-lg'),{paddingHorizontal:"27.5%"}]}>I'm new here</Text>
+            <Text style={[tw('text-center text-[#4B164C] font-bold text-lg w-full')]}>I'm new here</Text>
           </TouchableOpacity>
           <TouchableOpacity
             disabled={false}
@@ -37,9 +37,9 @@ export const Welcome = ({
               navigation.navigate('Login');
             }}
             style={[tw(
-              'py-2  bg-transparent  rounded-3xl  border-4 border-white cursor-pointer',
+              'py-2 bg-transparent  rounded-3xl  border-4 border-white cursor-pointer w-full',
             )]}>
-            <Text style={[tw('text-white font-bold text-lg'),{paddingHorizontal:"18.5%"}]}>I've Been here before</Text>
+            <Text style={[tw('text-center text-white font-bold text-lg w-full')]}>I've Been here before</Text>
           </TouchableOpacity>
         </View>
       </View>
