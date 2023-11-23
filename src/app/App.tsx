@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from '../../tailwind.json';
+import { NativeBaseProvider } from 'native-base';
 
 function App(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(true);
