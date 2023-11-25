@@ -35,9 +35,6 @@ import {
   UserProfile,
   SwipeLoading,
   LoveClic,
-  Password,
-  Name,
-  LoginPassword,
 } from '@screens';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
@@ -56,11 +53,6 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'Login'} component={Login} />
         <NativeStack.Screen name={'OtpLoginScreen'} component={OtpScreen} />
         <NativeStack.Screen name={'Register'} component={Register} />
-        <NativeStack.Screen name={'Password'} component={Password} />
-        <NativeStack.Screen name={'LoginPassword'} component={LoginPassword} />
-
-        <NativeStack.Screen name={'Name'} component={Name} />
-
         <NativeStack.Screen name={'Gender'} component={Gender} />
         <NativeStack.Screen
           name={'ForgotPassword'}
