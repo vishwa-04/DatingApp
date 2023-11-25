@@ -58,4 +58,6 @@ export const AllImages={
     BlindDateBackground:require('../images/BlindDateBackground.png'),
     CallingUserBackground:require('../images/CallingUserBackground.png'),
     Info:require('../images/Info.png'),
+    CloseEye:require('../images/CloseEye.png'),
+    OpenEye:require('../images/OpenEye.png')
 }

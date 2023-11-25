@@ -25,6 +25,8 @@ export const SwipeLoadingSecond = ({
         ]),
       ).start();
     };
+    setTimeout(()=>{navigation.navigate('BottomNavBar')},3000)
+
     animationFunc();
   }, [animatedValue]);
   return (

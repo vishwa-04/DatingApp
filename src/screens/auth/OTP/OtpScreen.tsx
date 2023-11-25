@@ -25,16 +25,19 @@ export const OtpScreen = ({
       para="What's your phone number"
       onbackFunc={() => navigation.goBack()}>
       <>
-        <View style={tw('flex justify-between absolute top-52 w-full gap-64')}>
+        <View style={tw('flex absolute top-52 w-full gap-4')}>
           <View
             style={tw(
-              'flex justify-between h-48 bg-white rounded-2xl gap-4 px-3 py-9 mx-4',
+              'h-48 bg-white rounded-2xl gap-4 px-3 py-9 mx-4',
             )}>
             {/* <TextInput style={tw('h-10 rounded-3xl border')} /> */}
 
             <OtpInputs
-              numberOfInputs={6}
-              handleChange={code => setCheckOtp(code)}
+              style={{flexDirection:'row',justifyContent:'center'}}
+              numberOfInputs={4}
+              handleChange={code => {
+                setCheckOtp(code); // This will update the local state
+              }}
               autofillFromClipboard={false}
               inputStyles={{
                 flexDirection: 'row',
@@ -46,6 +49,7 @@ export const OtpScreen = ({
                 fontSize: 15,
                 fontWeight: 'bold',
                 color: 'black',
+                marginHorizontal:10
               }}
               textAlign="center"
               textAlignVertical="center"
