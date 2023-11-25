@@ -7,8 +7,7 @@ type ScreenWrapperProps = {
   children: React.ReactNode;
   header: string;
   para: string;
-  onbackFunc?: () => void;
-  leftArrow?: boolean;
+  onbackFunc: () => void;
 };
 
 export const AuthBackground = ({
@@ -16,7 +15,6 @@ export const AuthBackground = ({
   para,
   children,
   onbackFunc,
-  leftArrow = true,
 }: ScreenWrapperProps) => {
   const tw = useTailwind();
   return (
@@ -25,21 +23,16 @@ export const AuthBackground = ({
         style={tw(
           'flex justify-center bg-[#DF8CD1] h-64 rounded-br-3xl rounded-bl-3xl px-2 text-white gap-5',
         )}>
-        {leftArrow && onbackFunc && (
-          <TouchableOpacity
-            style={tw('absolute top-5 mx-3')}
-            onPress={() => {
-              onbackFunc();
-            }}>
-            <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
-          </TouchableOpacity>
-        )}
-        <View style={tw('justify-center gap-5 flex')}>
-          <Text
-            style={tw('font-medium text-3xl text-white ml-2 font-semibold')}>
-            {header}
-          </Text>
-          <Text style={tw('font-normal text-sm text-white ml-2')}>{para}</Text>
+        <TouchableOpacity
+          style={tw('absolute top-5 mx-3')}
+          onPress={() => {
+            onbackFunc();
+          }}>
+          <Image source={AllImages.LeftArrow} style={tw('object-cover')} />
+        </TouchableOpacity>
+        <View style={tw('flex justify-center gap-5')}>
+          <Text style={tw('font-medium text-3xl text-white')}>{header}</Text>
+          <Text style={tw('font-normal text-sm text-white')}>{para}</Text>
         </View>
       </View>
       {children}

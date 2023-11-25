@@ -1,40 +1,10 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  FlatList,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '@assets';
 
-const ItemComponent = ({item}: {item: any}) => {
-  const tw = useTailwind();
-
-  return (
-    <View style={tw('flex flex-row justify-between items-center px-5 py-3')}>
-      <Image style={tw('object-cover w-[47%] rounded-xl')} source={item.img1}></Image>
-      <Image style={tw('object-cover w-[47%] rounded-xl')} source={item.img1}></Image>
-    </View>
-  );
-};
-
 export const Like = () => {
   const tw = useTailwind();
-  const items = [
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-    {img1: AllImages.UserPhoto, img2: AllImages.UserPhoto},
-  ];
   return (
     <View>
       {/* <div className='w-'></div> */}
@@ -61,13 +31,7 @@ export const Like = () => {
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s,
       </Text>
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        data={items}
-        renderItem={({item}) => <ItemComponent item={item} />}
-        keyExtractor={(item, index) => `list-item-${index}`}
-      />
-      {/* <ScrollView>
+      <ScrollView>
         <View style={tw('flex-row flex-wrap justify-between p-6 gap-y-6')}>
           <Image
             source={AllImages.UserPhoto}
@@ -90,7 +54,7 @@ export const Like = () => {
             style={tw('w-36 h-60 object-cover rounded-2xl')}
           />
         </View>
-      </ScrollView> */}
+      </ScrollView>
     </View>
   );
 };

@@ -1,47 +1,24 @@
-import {View, Text, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
-import {AuthBackground, ButtonLoader} from '@components';
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {AuthBackground} from '@components';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
 import OtpInputs from 'react-native-otp-inputs';
-import Toast from 'react-native-simple-toast';
-import {OtpVerify} from '@services';
-import {apiResponse} from '@constants';
 
 export const OtpScreen = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   const [checkOtp, setCheckOtp] = useState('');
-  const [loader, setLoader] = useState(false);
-  const handleCheck = async () => {
-    try {
-      setLoader(true);
-      const response: any = await OtpVerify(checkOtp);
-      if (response?.data?.status === apiResponse.fail) {
-        Toast.showWithGravityAndOffset(
-          response?.data?.message || '',
-          Toast.LONG,
-          Toast.TOP,
-          0, // X Offset
-          30, // Y Offset - Adjust this value as needed
-        );
-        return;
-      }
-      navigation.navigate('Password');
-    } catch (error: any) {
-      Toast.showWithGravityAndOffset(
-        error?.message,
-        Toast.LONG,
-        Toast.TOP,
-        0, // X Offset
-        30, // Y Offset - Adjust this value as needed
-      );
-    } finally {
-      setLoader(false);
+  const handleCheck = () => {
+    if (checkOtp === '000000') {
+      navigation.navigate('Home');
+    } else {
+      console.log('Wrong otp');
     }
   };
+
   return (
     <AuthBackground
       header="Enter Your OTP"
@@ -56,7 +33,6 @@ export const OtpScreen = ({
             {/* <TextInput style={tw('h-10 rounded-3xl border')} /> */}
 
             <OtpInputs
-
               style={{flexDirection:'row',justifyContent:'center'}}
               numberOfInputs={4}
               handleChange={code => {
@@ -78,31 +54,20 @@ export const OtpScreen = ({
               textAlign="center"
               textAlignVertical="center"
             />
-
             <View style={tw('flex-row justify-center gap-1')}>
-              <Text style={tw('text-black')}>Didn't receive OTP?</Text>
+              <Text style={tw('text-black')}>Didn’t receive OTP?</Text>
               <Text style={tw('text-[#4B164C]')}>Resend</Text>
             </View>
             <TouchableOpacity
-              disabled={checkOtp.length !== 4}
               onPress={() => {
                 handleCheck();
               }}
-              style={[
-                tw(
-                  `py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base ${
-                    checkOtp.length !== 4 ? 'opacity-50' : ''
-                  }`,
-                ),
-                // {opacity: checkOtp.length < 4 ? 0.5 : 1},
-              ]}>
-              {loader ? (
-                <ButtonLoader />
-              ) : (
-                <Text style={tw('text-white text-center')}>
-                  Verify & Continue
-                </Text>
-              )}
+              style={tw(
+                'py-3 px-16 bg-[#4B164C] rounded-3xl font-semibold text-base',
+              )}>
+              <Text style={tw('text-white text-center')}>
+                Verify & Continue
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

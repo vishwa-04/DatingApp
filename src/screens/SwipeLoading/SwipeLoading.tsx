@@ -26,7 +26,7 @@ export const SwipeLoading = ({navigation}:NativeStackScreenProps<RootStackParamL
       Animated.loop(
         Animated.timing(animated, {
           toValue: 1,
-          duration: 6000,
+          duration: 4000,
           useNativeDriver: true,
           easing: Easing.linear,
         }),

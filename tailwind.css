@@ -78,10 +78,6 @@
   z-index: 50
 }
 
-.m-2 {
-  margin: 0.5rem
-}
-
 .m-auto {
   margin: auto
 }
@@ -491,6 +487,10 @@
 
 .rounded-xl {
   border-radius: 0.75rem
+}
+
+.rounded {
+  border-radius: 0.25rem
 }
 
 .rounded-t-3xl {
@@ -916,9 +916,9 @@
   color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
-.placeholder-yellow-200::placeholder {
+.placeholder-gray-500::placeholder {
   --tw-placeholder-opacity: 1;
-  color: rgb(254 240 138 / var(--tw-placeholder-opacity))
+  color: rgb(107 114 128 / var(--tw-placeholder-opacity))
 }
 
 .opacity-50 {
@@ -927,9 +927,4 @@
 
 .opacity-70 {
   opacity: 0.7
-}
-
-.placeholder\:text-black::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity))
 }
