@@ -46,10 +46,10 @@ export const Name = ({
       header="Your Name is..."
       para="What's your phone number"
       onbackFunc={() => navigation.navigate('Password')}>
-      <View style={tw('flex justify-between absolute top-52 w-full')}>
+      <View style={tw('flex justify-between absolute top-44 w-full')}>
         <View
           style={tw(
-            'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
+            'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
           )}>
           <TextInputCommon
             style={'h-10 rounded-3xl border text-black'}

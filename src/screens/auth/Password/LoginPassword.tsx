@@ -16,12 +16,16 @@ import {IPasswordLogin} from '@validations';
 import Toast from 'react-native-simple-toast';
 import {apiResponse, asyncStorageConst} from '@constants';
 import {LoginApi} from '@services';
+import {useHideGooglAuth} from '../../../hooks';
 
 export const LoginPassword = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
   const [loader, setLoader] = useState(false);
+  3;
+  const isKeyboardVisible = useHideGooglAuth();
+
   const {
     control: passwordControl,
     handleSubmit: handlePasswordSubmit,
@@ -52,6 +56,7 @@ export const LoginPassword = ({
       }
       navigation.navigate('Home');
     } catch (error: any) {
+      console.log(error, 'error');
       Toast.showWithGravityAndOffset(
         error?.message,
         Toast.LONG,
@@ -59,7 +64,6 @@ export const LoginPassword = ({
         0, // X Offset
         30, // Y Offset - Adjust this value as needed
       );
-      console.log(error);
     } finally {
       setLoader(false);
     }
@@ -70,10 +74,10 @@ export const LoginPassword = ({
       para="What's your phone number"
       onbackFunc={() => navigation.navigate('Login')}>
       <>
-        <View style={tw('flex justify-between absolute top-52 w-full')}>
+        <View style={tw('flex justify-between absolute top-44 w-full')}>
           <View
             style={tw(
-              'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
+              'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
             )}>
             <TextInputCommon
               style={'h-10 rounded-3xl border text-black px-4'}
@@ -102,16 +106,18 @@ export const LoginPassword = ({
             </TouchableOpacity>
           </View>
         </View>
-        <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
-          <GoogleAuth />
-          <View style={tw('flex-row justify-center gap-1 mt-2')}>
-            <Text
-              style={tw('text-[#4B164C] font-semibold')}
-              onPress={() => navigation.navigate('ForgotPassword')}>
-              Forgot Password?
-            </Text>
+        {!isKeyboardVisible && (
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
+            <GoogleAuth />
+            <View style={tw('flex-row justify-center gap-1 mt-2')}>
+              <Text
+                style={tw('text-[#4B164C] font-semibold')}
+                onPress={() => navigation.navigate('ForgotPassword')}>
+                Forgot Password?
+              </Text>
+            </View>
           </View>
-        </View>
+        )}
       </>
     </AuthBackground>
   );

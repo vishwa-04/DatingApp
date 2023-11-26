@@ -53,10 +53,12 @@ export const Swipe = ({
         source={AllImages.LovelineText}
         style={tw('w-40 h-9 mx-auto object-cover rounded-2xl')}
       />
-      <View style={tw('flex-1 h-[20%] z-50')}>
+      <View style={tw('flex-1 h-[20%]')}>
         <Swiper
           stackSize={5}
           cardIndex={0}
+          horizontalSwipe={true}
+          verticalSwipe={false}
           animateCardOpacity
           containerStyle={{
             background: 'transparent',
@@ -86,7 +88,7 @@ export const Swipe = ({
         <View style={tw('flex-row justify-center items-center gap-14')}>
           <Image source={AllImages.Close} style={tw('object-cover')} />
           <Image source={AllImages.Heart} style={tw('object-cover')} />
-          <Image source={AllImages.Star} style={tw('object-cover')} />
+          <Image source={AllImages.Info} style={tw('object-cover')} />
         </View>
         <Pressable
           onPress={() => {

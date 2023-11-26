@@ -34,7 +34,7 @@ export const Quiz = ({
         <View style={tw('mx-auto gap-y-3')}>
           <TextInput
             style={tw(
-              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] relative placeholder-gray-500 text-black',
+              'h-14 w-72 border rounded-xl bg-white border-2 border-[#ff2fc1] relative text-black',
             )}
             placeholder="Option 1"
             placeholderTextColor="#2b262d"
