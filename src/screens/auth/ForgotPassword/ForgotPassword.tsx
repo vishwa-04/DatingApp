@@ -58,6 +58,7 @@ export const ForgotPassword = ({
         0, // X Offset
         30, // Y Offset - Adjust this value as needed
       );
+      console.log(response)
       navigation.navigate('Login');
     } catch (error: any) {
       Toast.showWithGravityAndOffset(
