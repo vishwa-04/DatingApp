@@ -62,7 +62,7 @@ const apiRequest = async <T>(
         ? {params: requestData}
         : {data: requestData}),
     };
-
+    console.log(config, 'config');
     const response = await axiosInstance(config);
     return handleApiResponse<T>(response);
   } catch (error: any) {
@@ -95,12 +95,17 @@ export const LoginApi = async (data: any) => {
 };
 
 export const ForgotPasswordPhoneApi = async (data: any) => {
-  console.log(data,'data')
   return await apiRequest(FORGOT_PASSWORD_ENDPOINT, 'post', data, {}, false);
 };
 
 export const ForgotPasswordChangeApi = async (data: any) => {
-  return await apiRequest(FORGOT_PASSWORD_CHANGE_ENDPOINT, 'post', data, {}, false);
+  return await apiRequest(
+    FORGOT_PASSWORD_CHANGE_ENDPOINT,
+    'post',
+    data,
+    {},
+    false,
+  );
 };
 
 // Exporting the API functions

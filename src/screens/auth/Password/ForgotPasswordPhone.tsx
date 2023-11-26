@@ -32,9 +32,9 @@ export const ForgotPasswordPhone = ({
         asyncStorageConst.ForgotPasswordPhone,
         `+91${data.phoneNumber}`,
       );
-      const response: any = await ForgotPasswordPhoneApi(
-        `+91${data.phoneNumber}`,
-      );
+      const response: any = await ForgotPasswordPhoneApi({
+        contact_no: `+91${data.phoneNumber}`,
+      });
       if (response?.data?.status === apiResponse.fail) {
         Toast.showWithGravityAndOffset(
           response?.data?.message || '',
@@ -45,11 +45,12 @@ export const ForgotPasswordPhone = ({
         );
         return;
       }
-      // await AsyncStorage.setItem(
-      //   asyncStorageConst.ForgotPasswordOTP,
-      //   `+91${data.phoneNumber}`,
-      // );
-      // navigation.navigate('OtpLoginScreen');
+      await AsyncStorage.setItem(
+        asyncStorageConst.ForgotPasswordOTP,
+        `${response.data.data}`,
+      );
+      console.log(response)
+      navigation.navigate('OtpPasswordScreen');
     } catch (error: any) {
       console.log(error, 'error');
       Toast.showWithGravityAndOffset(

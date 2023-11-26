@@ -3,11 +3,12 @@ import React, {useState} from 'react';
 import {AuthBackground, ButtonLoader} from '@components';
 import {useTailwind} from 'tailwind-rn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {RootStackParamList} from '@types';
 import OtpInputs from 'react-native-otp-inputs';
 import Toast from 'react-native-simple-toast';
 import {OtpVerify} from '@services';
-import {apiResponse} from '@constants';
+import {apiResponse, asyncStorageConst} from '@constants';
 
 export const OtpPasswordScreen = ({
   navigation,
@@ -18,18 +19,20 @@ export const OtpPasswordScreen = ({
   const handleCheck = async () => {
     try {
       setLoader(true);
-      const response: any = await OtpVerify(checkOtp);
-      if (response?.data?.status === apiResponse.fail) {
+      const otp = await AsyncStorage.getItem(
+        asyncStorageConst.ForgotPasswordOTP,
+      );
+      if (otp !== checkOtp) {
         Toast.showWithGravityAndOffset(
-          response?.data?.message || '',
+          'Wrong Otp !',
           Toast.LONG,
           Toast.TOP,
           0, // X Offset
           30, // Y Offset - Adjust this value as needed
         );
-        return;
+        return
       }
-      navigation.navigate('Password');
+      navigation.navigate('ForgotPassword');
     } catch (error: any) {
       Toast.showWithGravityAndOffset(
         error?.message,

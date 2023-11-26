@@ -44,6 +44,7 @@ export const LoginPassword = ({
         password: data.password,
         device_token: 'qwertyuiop',
       });
+      console.log(response,'response')
       if (response?.data?.status === apiResponse.fail) {
         Toast.showWithGravityAndOffset(
           response?.data?.message || '',
