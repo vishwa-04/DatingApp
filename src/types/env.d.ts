@@ -6,5 +6,5 @@ declare module '@env' {
   export const LOGIN_ENDPOINT: string;
   export const FORGOT_PASSWORD_ENDPOINT: string;
   export const FORGOT_PASSWORD_CHANGE_ENDPOINT: string;
-
+  export const SWIPE_FIND_NEAR_USER: string;
 }

@@ -44,7 +44,7 @@ export const LoginPassword = ({
         password: data.password,
         device_token: 'qwertyuiop',
       });
-      console.log(response,'response')
+      // console.log(response.data.data,'response')
       if (response?.data?.status === apiResponse.fail) {
         Toast.showWithGravityAndOffset(
           response?.data?.message || '',
@@ -55,6 +55,10 @@ export const LoginPassword = ({
         );
         return;
       }
+      await AsyncStorage.setItem(
+        asyncStorageConst.loggedInUserData,
+        JSON.stringify(response.data.data),
+      );
       navigation.navigate('Home');
     } catch (error: any) {
       console.log(error, 'error');

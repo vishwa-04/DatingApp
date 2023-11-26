@@ -17,7 +17,6 @@ import {ButtonLoader} from '@components';
 export const ForgotPassword = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
-  const [show, setShow] = React.useState(false);
   const [loader, setLoader] = React.useState(false);
   const [passShow, setPassShow] = React.useState(false);
   const [conPassShow, setConPassShow] = React.useState(false);

@@ -1,11 +1,18 @@
 import {AllImages} from '@assets';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@types';
+// import {NativeStackScreenProps} from '@react-navigation/native-stack';
+// import {RootStackParamList} from '@types';
 import React, {useEffect, useRef} from 'react';
-import {View, Animated, StyleSheet, Easing, Image, Pressable} from 'react-native';
+import {
+  View,
+  Animated,
+  StyleSheet,
+  Easing,
+  Image,
+  Pressable,
+} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 
-export const SwipeLoading = ({navigation}:NativeStackScreenProps<RootStackParamList>) => {
+export const SwipeLoading = () => {
   const animated = useRef(new Animated.Value(0)).current;
   const tw = useTailwind();
   const inputRange = [0, 1];
@@ -32,7 +39,9 @@ export const SwipeLoading = ({navigation}:NativeStackScreenProps<RootStackParamL
         }),
       ).start();
     };
-    setTimeout(()=>{navigation.navigate('BottomNavBar')},1000)
+    // setTimeout(() => {
+    //   navigation.navigate('BottomNavBar');
+    // }, 1000);
 
     animate();
   }, [animated]); // The empty array ensures this effect only runs once, similar to componentDidMount
@@ -43,15 +52,14 @@ export const SwipeLoading = ({navigation}:NativeStackScreenProps<RootStackParamL
 
   return (
     <View style={tw('flex-1 justify-center items-center')}>
-      <Animated.View style={[styles.itemTop,{transform}]}>
+      <Animated.View style={[styles.itemTop, {transform}]}>
         <Animated.View style={[styles.topItem]}>
           <Image source={AllImages.Male} style={tw('rounded-full w-10 h-10')} />
         </Animated.View>
-        <Animated.View style={[styles.itemBottom,{transform}]}>
+        <Animated.View style={[styles.itemBottom, {transform}]}>
           <View style={tw('p-16')}></View>
           <Animated.View style={[styles.topItem]}>
             <Image
-            
               source={AllImages.Female}
               style={tw('rounded-full w-10 h-10')}
             />

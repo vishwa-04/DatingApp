@@ -34,7 +34,7 @@ export const Home = ({
           style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
           <Text
             style={tw('text-white text-center')}
-            onPress={() => navigation.navigate('SwipeLoading')}>
+            onPress={() => navigation.navigate('BottomNavBar')}>
             Continue
           </Text>
         </TouchableOpacity>

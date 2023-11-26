@@ -7,6 +7,7 @@ import {
   OTP_ENDPOINT,
   REGISTER_ENDPOINT,
   REGISTER_FINAL_ENDPOINT,
+  SWIPE_FIND_NEAR_USER,
 } from '@env';
 import {getBearerToken} from '@services';
 type ApiResponse<T> = {
@@ -50,13 +51,13 @@ const apiRequest = async <T>(
 ): Promise<ApiResponse<T>> => {
   try {
     const bearerToken = requireBearerToken ? await getBearerToken() : '';
-
+    console.log(requireBearerToken, bearerToken, 'bearerToken');
     const config: AxiosRequestConfig = {
       method,
       url: endpoint,
       headers: {
         ...headers,
-        ...(bearerToken ? {Authorization: `Bearer ${bearerToken}`} : {}),
+        ...(bearerToken ? {token: bearerToken} : {}),
       },
       ...(method === 'get' || method === 'delete'
         ? {params: requestData}
@@ -106,6 +107,10 @@ export const ForgotPasswordChangeApi = async (data: any) => {
     {},
     false,
   );
+};
+
+export const findNearestUsers = async () => {
+  return await apiRequest(SWIPE_FIND_NEAR_USER, 'post', {}, {}, true);
 };
 
 // Exporting the API functions
