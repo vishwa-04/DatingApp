@@ -15,11 +15,13 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {IPassword} from '@validations';
 import Toast from 'react-native-simple-toast';
 import {asyncStorageConst} from '@constants';
+import {useHideGooglAuth} from '../../../hooks';
 
 export const Password = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
+  const isKeyboardVisible = useHideGooglAuth();
   const {
     control,
     handleSubmit,
@@ -55,10 +57,10 @@ export const Password = ({
       para="What's your phone number"
       leftArrow={false}>
       <>
-        <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
+        <View style={tw('flex-1 justify-between absolute top-44 w-full')}>
           <View
             style={tw(
-              'flex justify-between h-44 bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
+              'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
             )}>
             <TextInputCommon
               style={'h-10 rounded-3xl border text-black'}
@@ -87,17 +89,19 @@ export const Password = ({
             </TouchableOpacity>
           </View>
         </View>
-        <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
-          <GoogleAuth />
-          <View style={tw('flex-row justify-center gap-1')}>
-            <Text style={tw('text-black')}>Already sign in?</Text>
-            <Text
-              style={tw('text-[#4B164C]')}
-              onPress={() => navigation.navigate('Login')}>
-              Login
-            </Text>
+        {!isKeyboardVisible && (
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
+            <GoogleAuth />
+            <View style={tw('flex-row justify-center gap-1')}>
+              <Text style={tw('text-black')}>Already sign in?</Text>
+              <Text
+                style={tw('text-[#4B164C]')}
+                onPress={() => navigation.navigate('Login')}>
+                Login
+              </Text>
+            </View>
           </View>
-        </View>
+        )}
       </>
     </AuthBackground>
   );
