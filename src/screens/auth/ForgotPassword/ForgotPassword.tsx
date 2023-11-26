@@ -29,7 +29,6 @@ export const ForgotPassword = ({
   } = useForm({
     resolver: yupResolver(forgotPassword),
   });
-  const handleClick = () => setShow(!show);
   const tw = useTailwind();
   const onSubmit = async (data: any) => {
     try {
