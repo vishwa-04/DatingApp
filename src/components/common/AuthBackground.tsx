@@ -23,7 +23,7 @@ export const AuthBackground = ({
     <View style={tw('flex-1 relative')}>
       <View
         style={tw(
-          'flex justify-center bg-[#DF8CD1] h-64 rounded-br-3xl rounded-bl-3xl px-2 text-white gap-5',
+          'flex justify-center bg-[#DF8CD1] h-[40%] rounded-br-3xl rounded-bl-3xl px-2 text-white gap-5',
         )}>
         {leftArrow && onbackFunc && (
           <TouchableOpacity

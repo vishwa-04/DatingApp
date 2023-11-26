@@ -7,11 +7,12 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@types';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {IName} from '@validations';
+import {IRegister} from '@validations';
+import {ForgotPasswordPhoneApi, RegisterApi} from '@services';
 import Toast from 'react-native-simple-toast';
-import {asyncStorageConst} from '@constants';
+import {apiResponse, asyncStorageConst} from '@constants';
 
-export const Name = ({
+export const ForgotPasswordPhone = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();
@@ -20,15 +21,37 @@ export const Name = ({
     handleSubmit,
     formState: {errors},
   } = useForm({
-    resolver: yupResolver(IName),
+    resolver: yupResolver(IRegister),
   });
   const [loader, setLoader] = useState(false);
   const onSubmit = async (data: any) => {
     try {
       setLoader(true);
-      await AsyncStorage.setItem(asyncStorageConst.RegisterUserName, data.name);
-      navigation.navigate('Gender');
+      console.log(data.phoneNumber);
+      await AsyncStorage.setItem(
+        asyncStorageConst.ForgotPasswordPhone,
+        `+91${data.phoneNumber}`,
+      );
+      const response: any = await ForgotPasswordPhoneApi(
+        `+91${data.phoneNumber}`,
+      );
+      if (response?.data?.status === apiResponse.fail) {
+        Toast.showWithGravityAndOffset(
+          response?.data?.message || '',
+          Toast.LONG,
+          Toast.TOP,
+          0, // X Offset
+          30, // Y Offset - Adjust this value as needed
+        );
+        return;
+      }
+      // await AsyncStorage.setItem(
+      //   asyncStorageConst.ForgotPasswordOTP,
+      //   `+91${data.phoneNumber}`,
+      // );
+      // navigation.navigate('OtpLoginScreen');
     } catch (error: any) {
+      console.log(error, 'error');
       Toast.showWithGravityAndOffset(
         error?.message,
         Toast.LONG,
@@ -36,33 +59,32 @@ export const Name = ({
         0, // X Offset
         30, // Y Offset - Adjust this value as needed
       );
-      console.log(error);
     } finally {
       setLoader(false);
     }
   };
   return (
     <AuthBackground
-      header="Your Name is..."
+      header="What's your phone number"
       para="What's your phone number"
-      onbackFunc={() => navigation.navigate('Password')}>
-      <View style={tw('flex justify-between absolute top-52 w-full')}>
+      onbackFunc={() => navigation.navigate('Welcome')}>
+      <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
         <View
           style={tw(
             'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
           )}>
           <TextInputCommon
-            style={'h-10 rounded-3xl border text-black'}
+            style={'h-10 rounded-3xl border text-black px-16'}
             control={control}
-            error={errors?.name}
+            error={errors?.phoneNumber}
+            phoneField={true}
             viewClass={'relative'}
-            name="name"
+            keyboardType={'number-pad'}
+            name="phoneNumber"
           />
           <TouchableOpacity
             style={tw(
-              `py-3 bg-[#4B164C] rounded-3xl font-semibold text-base ${
-                loader ? 'opacity-70' : ''
-              }`,
+              `py-3 bg-[#4B164C] rounded-3xl ${loader ? 'opacity-70' : ''}`,
             )}
             onPress={handleSubmit(onSubmit)}
             disabled={loader}>

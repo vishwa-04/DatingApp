@@ -38,6 +38,8 @@ import {
   Password,
   Name,
   LoginPassword,
+  OtpPasswordScreen,
+  ForgotPasswordPhone,
 } from '@screens';
 
 const NativeStack = createNativeStackNavigator<RootStackParamList>();
@@ -58,9 +60,15 @@ export const Routes = (): React.JSX.Element => {
         <NativeStack.Screen name={'Register'} component={Register} />
         <NativeStack.Screen name={'Password'} component={Password} />
         <NativeStack.Screen name={'LoginPassword'} component={LoginPassword} />
-
+        <NativeStack.Screen
+          name={'ForgotPasswordPhone'}
+          component={ForgotPasswordPhone}
+        />
+        <NativeStack.Screen
+          name={'OtpPasswordScreen'}
+          component={OtpPasswordScreen}
+        />
         <NativeStack.Screen name={'Name'} component={Name} />
-
         <NativeStack.Screen name={'Gender'} component={Gender} />
         <NativeStack.Screen
           name={'ForgotPassword'}

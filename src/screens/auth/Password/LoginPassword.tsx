@@ -74,7 +74,7 @@ export const LoginPassword = ({
       para="What's your phone number"
       onbackFunc={() => navigation.navigate('Login')}>
       <>
-        <View style={tw('flex justify-between absolute top-44 w-full')}>
+        <View style={tw('flex justify-between absolute top-52 w-full')}>
           <View
             style={tw(
               'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
@@ -112,7 +112,7 @@ export const LoginPassword = ({
             <View style={tw('flex-row justify-center gap-1 mt-2')}>
               <Text
                 style={tw('text-[#4B164C] font-semibold')}
-                onPress={() => navigation.navigate('ForgotPassword')}>
+                onPress={() => navigation.navigate('ForgotPasswordPhone')}>
                 Forgot Password?
               </Text>
             </View>

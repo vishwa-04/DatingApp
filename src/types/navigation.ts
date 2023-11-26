@@ -21,6 +21,8 @@ export type RootStackParamList = {
   SwipeLoading: undefined;
   LoveClic: undefined;
   LoginPassword: undefined;
+  ForgotPasswordPhone: undefined;
+  OtpPasswordScreen: undefined;
 };
 
 export type RootBottomTabParamList = {
