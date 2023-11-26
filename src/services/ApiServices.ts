@@ -8,6 +8,7 @@ import {
   REGISTER_ENDPOINT,
   REGISTER_FINAL_ENDPOINT,
   SWIPE_FIND_NEAR_USER,
+  UPDATE_USER_LOCATION,
 } from '@env';
 import {getBearerToken} from '@services';
 type ApiResponse<T> = {
@@ -111,6 +112,10 @@ export const ForgotPasswordChangeApi = async (data: any) => {
 
 export const findNearestUsers = async () => {
   return await apiRequest(SWIPE_FIND_NEAR_USER, 'post', {}, {}, true);
+};
+
+export const updateUserLocation = async (data: any) => {
+  return await apiRequest(UPDATE_USER_LOCATION, 'post', data, {}, true);
 };
 
 // Exporting the API functions

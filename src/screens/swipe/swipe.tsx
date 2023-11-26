@@ -8,6 +8,8 @@ import {RootStackCardList} from '@types';
 import {findNearestUsers} from '@services';
 import {SwipeLoading} from '../SwipeLoading';
 import {SwipeUserInfo} from '../swipeUserInfo';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {asyncStorageConst} from '@constants';
 
 type dataProps = {
   firstname: string;
@@ -21,16 +23,60 @@ export const Swipe = ({
   const [loader, setLoader] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isUserInfoScreen, setIsUserInfoScreen] = useState(false);
+  const [latlogData, setLatLogData] = useState<any>(null);
+
   useEffect(() => {
-    findNearestUsers()
-      .then((data: any) => {
-        setUserInfo(data?.data?.data || []);
-      })
-      .catch(e => console.log(e))
-      .finally(() => {
-        setLoader(false);
-      });
+    // findNearestUsers()
+    //   .then((data: any) => {
+    //     setUserInfo(data?.data?.data || []);
+    //   })
+    //   .catch(e => console.log(e))
+    //   .finally(() => {
+    //     setLoader(false);
+    //   });
+    findUserData();
   }, []);
+
+  const findUserData = async () => {
+    try {
+      const data: any = await findNearestUsers();
+      setUserInfo(data?.data?.data || []);
+      const latLong: any = await AsyncStorage.getItem(
+        asyncStorageConst.latLogUser,
+      );
+      setLatLogData(JSON.parse(latLong));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoader(false);
+    }
+  };
+
+  const getDistance = () => {
+    const lat1 = latlogData.lat;
+    const lon1 = latlogData.lon;
+    const lat2 = userInfo[currentIndex].lat;
+    const lon2 =  userInfo[currentIndex].lon;
+    console.log(lat1,lon1,lat2,lon2,'sdnkjknkjnkn')
+    function toRad(x: number) {
+      return (x * Math.PI) / 180;
+    }
+
+    var R = 6371; // Radius of the Earth in km
+    var dLat = toRad(lat2 - lat1);
+    var dLon = toRad(lon2 - lon1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    return `${parseInt(d)} km`;
+  };
+
+  console.log(latlogData);
 
   // const DUMMY_DATA: dataProps[] = [
   //   {
@@ -137,13 +183,16 @@ export const Swipe = ({
                 </Pressable>
                 <View style={tw('flex-row justify-center items-center gap-2')}>
                   <Text style={tw('text-black')}>Art manager</Text>
-                  <View style={tw('flex-row justify-start gap-1 items-center')}>
-                    <Image
-                      source={AllImages.Location}
-                      style={tw('object-cover')}
-                    />
-                    <Text style={tw('text-black')}>10 km</Text>
-                  </View>
+                  {latlogData && (
+                    <View
+                      style={tw('flex-row justify-start gap-1 items-center')}>
+                      <Image
+                        source={AllImages.Location}
+                        style={tw('object-cover')}
+                      />
+                      <Text style={tw('text-black')}>{getDistance()}</Text>
+                    </View>
+                  )}
                 </View>
                 <Text style={tw('text-center font-normal text-sm text-black')}>
                   Lorem Ipsum has been the industry's standard dummy text ever
