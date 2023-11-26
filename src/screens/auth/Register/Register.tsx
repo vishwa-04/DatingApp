@@ -68,7 +68,7 @@ export const Register = ({
       para="What's your phone number"
       onbackFunc={() => navigation.navigate('Welcome')}>
       <>
-        <View style={tw('flex-1 justify-between absolute top-44 w-full')}>
+        <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
           <View
             style={tw(
               'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',

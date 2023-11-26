@@ -9,7 +9,7 @@ import Toast from 'react-native-simple-toast';
 import {OtpVerify} from '@services';
 import {apiResponse} from '@constants';
 
-export const OtpScreen = ({
+export const OtpPasswordScreen = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
   const tw = useTailwind();

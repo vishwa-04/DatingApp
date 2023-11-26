@@ -1,6 +1,8 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
 import {
   BASE_URL,
+  FORGOT_PASSWORD_CHANGE_ENDPOINT,
+  FORGOT_PASSWORD_ENDPOINT,
   LOGIN_ENDPOINT,
   OTP_ENDPOINT,
   REGISTER_ENDPOINT,
@@ -90,6 +92,15 @@ export const RegisterFinalApi = async (data: any) => {
 
 export const LoginApi = async (data: any) => {
   return await apiRequest(LOGIN_ENDPOINT, 'post', data, {}, false);
+};
+
+export const ForgotPasswordPhoneApi = async (data: any) => {
+  console.log(data,'data')
+  return await apiRequest(FORGOT_PASSWORD_ENDPOINT, 'post', data, {}, false);
+};
+
+export const ForgotPasswordChangeApi = async (data: any) => {
+  return await apiRequest(FORGOT_PASSWORD_CHANGE_ENDPOINT, 'post', data, {}, false);
 };
 
 // Exporting the API functions

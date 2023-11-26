@@ -37,6 +37,8 @@ export const asyncStorageConst = {
   RegisterPassword: 'RegisterPassword',
   RegisterBirthday: 'RegisterBirthday',
   LoginPhone: 'LoginPhone',
+  ForgotPasswordPhone: 'ForgotPasswordPhone',
+  ForgotPasswordOTP: 'ForgotPasswordOTP',
 };
 
 export const genderConst = {
