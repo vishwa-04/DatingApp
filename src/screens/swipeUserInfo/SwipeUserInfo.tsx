@@ -4,9 +4,8 @@ import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
 import {HorizontalLine} from '@components';
 
-export const SwipeUserInfo = () => {
+export const SwipeUserInfo = ({data}: {data: any}) => {
   const tw = useTailwind();
-
   return (
     <View style={tw('relative')}>
       <Image
@@ -24,7 +23,7 @@ export const SwipeUserInfo = () => {
                 style={tw(
                   'text-center text-black text-[#4B164C] font-bold text-base',
                 )}>
-                Olivia jension
+                {data.username}
               </Text>
               <Image source={AllImages.Verified} style={tw('object-cover')} />
             </View>
@@ -63,48 +62,15 @@ export const SwipeUserInfo = () => {
             My Interests
           </Text>
           <View style={tw('flex-row flex-wrap items-center gap-2')}>
-            <TouchableOpacity
-              style={tw(
-                'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
-              )}>
-              <Image source={AllImages.Flag} style={tw('object-cover')} />
-              <Text style={tw('text-center text-black')}>Beaches</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={tw(
-                'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
-              )}>
-              <Image source={AllImages.Flag} style={tw('object-cover')} />
-              <Text style={tw('text-center text-black')}>Beaches</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={tw(
-                'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
-              )}>
-              <Image source={AllImages.Flag} style={tw('object-cover')} />
-              <Text style={tw('text-center text-black')}>Beaches</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={tw(
-                'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
-              )}>
-              <Image source={AllImages.Flag} style={tw('object-cover')} />
-              <Text style={tw('text-center text-black')}>Beaches</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={tw(
-                'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
-              )}>
-              <Image source={AllImages.Flag} style={tw('object-cover')} />
-              <Text style={tw('text-center text-black')}>Beaches</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={tw(
-                'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
-              )}>
-              <Image source={AllImages.Flag} style={tw('object-cover')} />
-              <Text style={tw('text-center text-black')}>Beaches</Text>
-            </TouchableOpacity>
+            {data.myInterest.map((interest: string) => (
+              <TouchableOpacity
+                style={tw(
+                  'flex-row justify-between px-2 py-1 items-center gap-2 rounded-3xl bg-[#EDF2F7]',
+                )}>
+                <Image source={AllImages.Flag} style={tw('object-cover')} />
+                <Text style={tw('text-center text-black')}>{interest}</Text>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
       </View>

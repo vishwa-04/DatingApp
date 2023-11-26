@@ -7,6 +7,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackCardList} from '@types';
 import {findNearestUsers} from '@services';
 import {SwipeLoading} from '../SwipeLoading';
+import {SwipeUserInfo} from '../swipeUserInfo';
 
 type dataProps = {
   firstname: string;
@@ -19,7 +20,7 @@ export const Swipe = ({
   const [userInfo, setUserInfo] = useState<Array<any>>([]);
   const [loader, setLoader] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [isUserInfoScreen, setIsUserInfoScreen] = useState(false);
   useEffect(() => {
     findNearestUsers()
       .then((data: any) => {
@@ -64,83 +65,94 @@ export const Swipe = ({
   //   },
   // ];
   const tw = useTailwind();
-  // console.log(userInfo);
   return (
     <>
       {loader ? (
         <SwipeLoading />
       ) : (
-        <View
-          style={tw('flex-1 justify-between pb-24 px-2 pt-2 h-full bg-white')}>
-          <Image
-            source={AllImages.LovelineText}
-            style={tw('w-40 h-9 mx-auto object-cover rounded-2xl')}
-          />
-          <View style={tw('flex-1 h-[20%]')}>
-            <Swiper
-              stackSize={userInfo.length}
-              cardIndex={currentIndex}
-              horizontalSwipe={true}
-              verticalSwipe={false}
-              animateCardOpacity
-              onSwiped={cardIndex => {
-                setCurrentIndex(cardIndex + 1);
-              }}
-              containerStyle={{
-                background: 'transparent',
-                backgroundColor: 'white',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-              cards={userInfo}
-              // jumpToCardIndex={(index) => {
-              //   console.log(index,'index');
-              // }}
-              renderCard={(card: any) => {
-                return (
-                  <>
-                    {card?.profilePic && (
-                      <View style={tw('bg-white h-[50%] rounded-xl')}>
-                        <Image
-                          resizeMode="cover"
-                          source={{uri: card.profilePic}}
-                          style={tw('h-full w-full rounded-xl')}
-                        />
-                      </View>
-                    )}
-                  </>
-                );
-              }}
-            />
-          </View>
-          <View style={tw('flex-col justify-between gap-y-2 bg-white z-40')}>
-            <View style={tw('flex-row justify-center items-center gap-14')}>
-              <Image source={AllImages.Close} style={tw('object-cover')} />
-              <Image source={AllImages.Heart} style={tw('object-cover')} />
-              <Image source={AllImages.Info} style={tw('object-cover')} />
-            </View>
-            <Pressable
-              onPress={() => {
-                navigation.navigate('SwipeUserInfo');
-              }}>
-              <Text
-                style={tw('text-center text-[#4B164C] font-bold text-base')}>
-                {userInfo[currentIndex].username}
-              </Text>
-            </Pressable>
-            <View style={tw('flex-row justify-center items-center gap-2')}>
-              <Text style={tw('text-black')}>Art manager</Text>
-              <View style={tw('flex-row justify-start gap-1 items-center')}>
-                <Image source={AllImages.Location} style={tw('object-cover')} />
-                <Text style={tw('text-black')}>10 km</Text>
+        <>
+          {isUserInfoScreen ? (
+            <SwipeUserInfo data={userInfo[currentIndex]} />
+          ) : (
+            <View
+              style={tw(
+                'flex-1 justify-between pb-24 px-2 pt-2 h-full bg-white',
+              )}>
+              <Image
+                source={AllImages.LovelineText}
+                style={tw('w-40 h-9 mx-auto object-cover rounded-2xl')}
+              />
+              <View style={tw('flex-1 h-[20%]')}>
+                <Swiper
+                  stackSize={userInfo.length}
+                  cardIndex={currentIndex}
+                  horizontalSwipe={true}
+                  verticalSwipe={false}
+                  animateCardOpacity
+                  onSwiped={cardIndex => {
+                    setCurrentIndex(cardIndex + 1);
+                  }}
+                  containerStyle={{
+                    background: 'transparent',
+                    backgroundColor: 'white',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                  cards={userInfo}
+                  renderCard={(card: any) => {
+                    return (
+                      <>
+                        {card?.profilePic && (
+                          <View style={tw('bg-white h-[50%] rounded-xl')}>
+                            <Image
+                              resizeMode="cover"
+                              source={{uri: card.profilePic}}
+                              style={tw('h-full w-full rounded-xl')}
+                            />
+                          </View>
+                        )}
+                      </>
+                    );
+                  }}
+                />
+              </View>
+              <View
+                style={tw('flex-col justify-between gap-y-2 bg-white z-40')}>
+                <View style={tw('flex-row justify-center items-center gap-14')}>
+                  <Image source={AllImages.Close} style={tw('object-cover')} />
+                  <Image source={AllImages.Heart} style={tw('object-cover')} />
+                  <Image source={AllImages.Info} style={tw('object-cover')} />
+                </View>
+                <Pressable
+                  onPress={() => {
+                    setIsUserInfoScreen(true);
+                    // navigation.navigate('SwipeUserInfo');
+                  }}>
+                  <Text
+                    style={tw(
+                      'text-center text-[#4B164C] font-bold text-base',
+                    )}>
+                    {userInfo[currentIndex]?.username || ''}
+                  </Text>
+                </Pressable>
+                <View style={tw('flex-row justify-center items-center gap-2')}>
+                  <Text style={tw('text-black')}>Art manager</Text>
+                  <View style={tw('flex-row justify-start gap-1 items-center')}>
+                    <Image
+                      source={AllImages.Location}
+                      style={tw('object-cover')}
+                    />
+                    <Text style={tw('text-black')}>10 km</Text>
+                  </View>
+                </View>
+                <Text style={tw('text-center font-normal text-sm text-black')}>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s,
+                </Text>
               </View>
             </View>
-            <Text style={tw('text-center font-normal text-sm text-black')}>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s,
-            </Text>
-          </View>
-        </View>
+          )}
+        </>
       )}
     </>
   );
