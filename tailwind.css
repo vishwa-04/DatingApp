@@ -34,10 +34,6 @@
   top: 25%
 }
 
-.top-2 {
-  top: 0.5rem
-}
-
 .top-20 {
   top: 5rem
 }
@@ -58,16 +54,8 @@
   top: 13rem
 }
 
-.top-\[10px\] {
-  top: 10px
-}
-
 .top-\[40\%\] {
   top: 40%
-}
-
-.top-\[70px\] {
-  top: 70px
 }
 
 .z-40 {
@@ -229,10 +217,6 @@
   height: 12rem
 }
 
-.h-5 {
-  height: 1.25rem
-}
-
 .h-6 {
   height: 1.5rem
 }
@@ -309,10 +293,6 @@
   width: 10rem
 }
 
-.w-5 {
-  width: 1.25rem
-}
-
 .w-52 {
   width: 13rem
 }
@@ -343,18 +323,6 @@
 
 .w-\[100\] {
   width: 100
-}
-
-.w-\[47\%\] {
-  width: 47%
-}
-
-.w-\[63\%\] {
-  width: 63%
-}
-
-.w-\[66\%\] {
-  width: 66%
 }
 
 .w-\[88\%\] {
@@ -453,10 +421,6 @@
   gap: 1.5rem
 }
 
-.gap-64 {
-  gap: 16rem
-}
-
 .gap-y-2 {
   row-gap: 0.5rem
 }
@@ -467,6 +431,10 @@
 
 .gap-y-6 {
   row-gap: 1.5rem
+}
+
+.rounded {
+  border-radius: 0.25rem
 }
 
 .rounded-2xl {
@@ -489,10 +457,6 @@
   border-radius: 0.75rem
 }
 
-.rounded {
-  border-radius: 0.25rem
-}
-
 .rounded-t-3xl {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem
@@ -512,10 +476,6 @@
 
 .border-2 {
   border-width: 2px
-}
-
-.border-4 {
-  border-width: 4px
 }
 
 .border-b {
@@ -618,10 +578,6 @@
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
-}
-
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5)
 }
 
 .object-cover {
@@ -798,11 +754,6 @@
   line-height: 1.25rem
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
@@ -919,10 +870,6 @@
 .placeholder-gray-500::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(107 114 128 / var(--tw-placeholder-opacity))
-}
-
-.opacity-50 {
-  opacity: 0.5
 }
 
 .opacity-70 {
