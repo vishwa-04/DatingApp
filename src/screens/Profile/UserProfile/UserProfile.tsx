@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  Pressable,[]
+  Pressable
 } from 'react-native';
 import React, {useState} from 'react';
 import {AllImages} from '@assets';
