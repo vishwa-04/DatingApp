@@ -25,7 +25,7 @@ export const UserProfile = ({
     try {
       await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
     } catch (error) {
-      COSNO
+      console.log(error)
       
     }
     finally{}
