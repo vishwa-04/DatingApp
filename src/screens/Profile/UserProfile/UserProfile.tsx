@@ -84,7 +84,7 @@ export const UserProfile = ({
         <View style={tw('gap-3 ')}>
           <TouchableOpacity
             style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}
-            disabled={logoutLoader} onPress={()=>}>
+            disabled={logoutLoader} onPress={()=>logoutFunc()}>
             {logoutLoader ? (
               <ButtonLoader />
             ) : (
