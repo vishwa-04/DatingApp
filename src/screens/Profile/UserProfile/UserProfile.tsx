@@ -25,8 +25,8 @@ export const UserProfile = ({
 
   const logoutFunc = async () => {
     try {
-      await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
       const response: any = await userLogout();
+      await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
       console.log(response);
       Toast.showWithGravityAndOffset(
         response?.data?.message || '',
