@@ -4,19 +4,32 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  Pressable,
+  Pressable,[]
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {AllImages} from '@assets';
 import {useTailwind} from 'tailwind-rn';
-import {HorizontalLine} from '@components';
+import {ButtonLoader, HorizontalLine} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackUserList} from '@types';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { asyncStorageConst } from '@constants';
 
 export const UserProfile = ({
   navigation,
 }: NativeStackScreenProps<RootStackUserList>) => {
   const tw = useTailwind();
+  const [logoutLoader, setLogoutLoader] = useState(false)
+
+  const logoutFunc = async ()=>{
+    try {
+      await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
+    } catch (error) {
+      COSNO
+      
+    }
+    finally{}
+  }
 
   return (
     <ImageBackground
@@ -70,8 +83,14 @@ export const UserProfile = ({
       <View style={tw('flex-1 justify-end py-16 px-3')}>
         <View style={tw('gap-3 ')}>
           <TouchableOpacity
-            style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}>
-            <Text style={tw('text-white text-center')}> Log out</Text>
+            style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}
+            disabled={logoutLoader} onPress={()=>}>
+            {logoutLoader ? (
+              <ButtonLoader />
+            ) : (
+              <Text style={tw('text-white text-center')}>Log out</Text>
+
+            )}
           </TouchableOpacity>
           <Text style={tw('text-[#4B164C] text-center font-medium text-sm')}>
             Delete Account
