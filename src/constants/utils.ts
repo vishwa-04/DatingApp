@@ -41,6 +41,7 @@ export const asyncStorageConst = {
   ForgotPasswordOTP: 'ForgotPasswordOTP',
   loggedInUserData :"loggedInUserData",
   latLogUser :"latLogUser",
+  RegisterOTP :"RegisterOTP",
 };
 
 export const genderConst = {

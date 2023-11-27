@@ -36,7 +36,7 @@ export const Home = ({
           {
             title: 'Location Access Required',
             message: 'This App needs to Access your location',
-            buttonPositive: '',
+            // buttonPositive: '',
           },
         )
           .then(granted => {

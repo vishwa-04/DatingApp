@@ -79,7 +79,7 @@ export const GoogleAuth = () => {
   return (
     // <div className='w-'></div>
     <View style={tw('flex-row justify-between px-5 gap-3')}>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={tw(
           'flex-row justify-center items-center bg-white rounded-3xl font-semibold text-base w-1/2 py-2 border-2 border-[#4B164C] gap-4',
         )}>
@@ -87,7 +87,7 @@ export const GoogleAuth = () => {
         <Text style={tw('text-[#4B164C] text-center font-semibold text-base')}>
           Facebook
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity
         style={tw(
           'flex-row justify-center items-center bg-white rounded-3xl font-semibold text-base w-1/2 py-2 border-2 border-[#4B164C] gap-4',

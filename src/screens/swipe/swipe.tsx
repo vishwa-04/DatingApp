@@ -56,8 +56,8 @@ export const Swipe = ({
     const lat1 = latlogData.lat;
     const lon1 = latlogData.lon;
     const lat2 = userInfo[currentIndex].lat;
-    const lon2 =  userInfo[currentIndex].lon;
-    console.log(lat1,lon1,lat2,lon2,'sdnkjknkjnkn')
+    const lon2 = userInfo[currentIndex].lon;
+    console.log(lat1, lon1, lat2, lon2, 'sdnkjknkjnkn');
     function toRad(x: number) {
       return (x * Math.PI) / 180;
     }
@@ -182,7 +182,9 @@ export const Swipe = ({
                   </Text>
                 </Pressable>
                 <View style={tw('flex-row justify-center items-center gap-2')}>
-                  <Text style={tw('text-black')}>Art manager</Text>
+                  <Text style={tw('text-black')}>
+                    {userInfo[currentIndex]?.occupation || ''}
+                  </Text>
                   {latlogData && (
                     <View
                       style={tw('flex-row justify-start gap-1 items-center')}>
@@ -195,8 +197,7 @@ export const Swipe = ({
                   )}
                 </View>
                 <Text style={tw('text-center font-normal text-sm text-black')}>
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s,
+                {userInfo[currentIndex]?.aboutMe || ''}
                 </Text>
               </View>
             </View>

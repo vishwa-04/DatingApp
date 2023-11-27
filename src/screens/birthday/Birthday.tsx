@@ -82,6 +82,10 @@ export const Birthday = ({
         );
         return;
       }
+      await AsyncStorage.setItem(
+        asyncStorageConst.loggedInUserData,
+        JSON.stringify(response.data.data),
+      );
       navigation.navigate('Home');
     } catch (error: any) {
       Toast.showWithGravityAndOffset(

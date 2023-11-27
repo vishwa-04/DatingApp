@@ -11,6 +11,7 @@ import {IRegister} from '@validations';
 import {ForgotPasswordPhoneApi, RegisterApi} from '@services';
 import Toast from 'react-native-simple-toast';
 import {apiResponse, asyncStorageConst} from '@constants';
+import {useHideGooglAuth} from '../../../hooks';
 
 export const ForgotPasswordPhone = ({
   navigation,
@@ -24,6 +25,8 @@ export const ForgotPasswordPhone = ({
     resolver: yupResolver(IRegister),
   });
   const [loader, setLoader] = useState(false);
+  const isKeyboardVisible = useHideGooglAuth();
+
   const onSubmit = async (data: any) => {
     try {
       setLoader(true);
@@ -49,7 +52,6 @@ export const ForgotPasswordPhone = ({
         asyncStorageConst.ForgotPasswordOTP,
         `${response.data.data}`,
       );
-      console.log(response)
       navigation.navigate('OtpPasswordScreen');
     } catch (error: any) {
       console.log(error, 'error');
@@ -69,37 +71,50 @@ export const ForgotPasswordPhone = ({
       header="What's your phone number"
       para="What's your phone number"
       onbackFunc={() => navigation.navigate('Welcome')}>
-      <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
-        <View
-          style={tw(
-            'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
-          )}>
-          <TextInputCommon
-            style={'h-10 rounded-3xl border text-black px-16'}
-            control={control}
-            error={errors?.phoneNumber}
-            phoneField={true}
-            viewClass={'relative'}
-            keyboardType={'number-pad'}
-            name="phoneNumber"
-          />
-          <TouchableOpacity
+      <>
+        <View style={tw('flex-1 justify-between absolute top-52 w-full')}>
+          <View
             style={tw(
-              `py-3 bg-[#4B164C] rounded-3xl ${loader ? 'opacity-70' : ''}`,
-            )}
-            onPress={handleSubmit(onSubmit)}
-            disabled={loader}>
-            {loader ? (
-              <ButtonLoader />
-            ) : (
-              <Text
-                style={tw('text-white text-center font-semibold text-base')}>
-                Continue
-              </Text>
-            )}
-          </TouchableOpacity>
+              'flex justify-between bg-white rounded-2xl gap-2 px-3 py-9 mx-4',
+            )}>
+            <TextInputCommon
+              style={'h-10 rounded-3xl border text-black px-16'}
+              control={control}
+              error={errors?.phoneNumber}
+              phoneField={true}
+              viewClass={'relative'}
+              keyboardType={'number-pad'}
+              name="phoneNumber"
+            />
+            <TouchableOpacity
+              style={tw(
+                `py-3 bg-[#4B164C] rounded-3xl ${loader ? 'opacity-70' : ''}`,
+              )}
+              onPress={handleSubmit(onSubmit)}
+              disabled={loader}>
+              {loader ? (
+                <ButtonLoader />
+              ) : (
+                <Text
+                  style={tw('text-white text-center font-semibold text-base')}>
+                  Continue
+                </Text>
+              )}
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+        {!isKeyboardVisible && (
+          <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
+            <View style={tw('flex-row justify-center gap-1 mt-2')}>
+              <Text
+                style={tw('text-[#4B164C] font-semibold')}
+                onPress={() => navigation.navigate('Login')}>
+                Back to login
+              </Text>
+            </View>
+          </View>
+        )}
+      </>
     </AuthBackground>
   );
 };

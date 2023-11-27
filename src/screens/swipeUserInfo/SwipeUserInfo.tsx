@@ -35,7 +35,7 @@ export const SwipeUserInfo = ({data}: {data: any}) => {
           <View style={tw('flex-row justify-center items-center gap-2')}>
             <Image source={AllImages.Flag} style={tw('object-cover')} />
             <Image source={AllImages.UserIcon} style={tw('object-cover')} />
-            <Text style={tw('font-medium text-base')}>28</Text>
+            <Text style={tw('font-medium text-base')}>{data.age}</Text>
           </View>
         </View>
         <HorizontalLine />
@@ -45,15 +45,14 @@ export const SwipeUserInfo = ({data}: {data: any}) => {
           </Text>
           <View style={tw('flex-row justify-end items-center gap-2')}>
             <Image source={AllImages.Plus} style={tw('object-cover')} />
-            <Text style={tw('font-medium text-sm')}>Art Manager</Text>
+            <Text style={tw('font-medium text-sm')}>{data.occupation}</Text>
           </View>
         </View>
         <HorizontalLine />
         <View style={tw('gap-3 py-2')}>
           <Text style={tw('font-medium text-sm text-[#161616]')}>About me</Text>
           <Text style={tw('text-[#3D4260]')}>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s,
+           {data.aboutMe}
           </Text>
         </View>
         <HorizontalLine />
