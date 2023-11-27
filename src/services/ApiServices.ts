@@ -10,6 +10,7 @@ import {
   REGISTER_FINAL_ENDPOINT,
   SWIPE_FIND_NEAR_USER,
   UPDATE_USER_LOCATION,
+  USER_LOGOUT,
 } from '@env';
 import {getBearerToken} from '@services';
 type ApiResponse<T> = {
@@ -123,5 +124,8 @@ export const postGmailSignUp = async (data: any) => {
   return await apiRequest(GMAIL_SIGNUP, 'post', data, {}, true);
 };
 
+export const userLogout = async () => {
+  return await apiRequest(USER_LOGOUT, 'post', {}, {}, true);
+};
 // Exporting the API functions
 export {apiRequest};
