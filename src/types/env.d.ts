@@ -9,5 +9,6 @@ declare module '@env' {
   export const SWIPE_FIND_NEAR_USER: string;
   export const SWIPE_FIND_NEAR_USER: string;
   export const UPDATE_USER_LOCATION: string;
+  export const GMAIL_SIGNUP:string;
 
 }

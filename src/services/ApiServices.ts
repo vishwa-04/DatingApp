@@ -3,6 +3,7 @@ import {
   BASE_URL,
   FORGOT_PASSWORD_CHANGE_ENDPOINT,
   FORGOT_PASSWORD_ENDPOINT,
+  GMAIL_SIGNUP,
   LOGIN_ENDPOINT,
   OTP_ENDPOINT,
   REGISTER_ENDPOINT,
@@ -116,6 +117,10 @@ export const findNearestUsers = async () => {
 
 export const updateUserLocation = async (data: any) => {
   return await apiRequest(UPDATE_USER_LOCATION, 'post', data, {}, true);
+};
+
+export const postGmailSignUp = async (data: any) => {
+  return await apiRequest(GMAIL_SIGNUP, 'post', data, {}, true);
 };
 
 // Exporting the API functions
