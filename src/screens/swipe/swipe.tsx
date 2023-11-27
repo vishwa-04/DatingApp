@@ -57,7 +57,6 @@ export const Swipe = ({
     const lon1 = latlogData.lon;
     const lat2 = userInfo[currentIndex].lat;
     const lon2 = userInfo[currentIndex].lon;
-    console.log(lat1, lon1, lat2, lon2, 'sdnkjknkjnkn');
     function toRad(x: number) {
       return (x * Math.PI) / 180;
     }
@@ -197,7 +196,7 @@ export const Swipe = ({
                   )}
                 </View>
                 <Text style={tw('text-center font-normal text-sm text-black')}>
-                {userInfo[currentIndex]?.aboutMe || ''}
+                  {userInfo[currentIndex]?.aboutMe || ''}
                 </Text>
               </View>
             </View>
