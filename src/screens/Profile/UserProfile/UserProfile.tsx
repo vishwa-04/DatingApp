@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  Pressable
+  Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
 import {AllImages} from '@assets';
@@ -13,23 +13,35 @@ import {ButtonLoader, HorizontalLine} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackUserList} from '@types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { asyncStorageConst } from '@constants';
+import {apiResponse, asyncStorageConst} from '@constants';
+import {userLogout} from '@services';
+import Toast from 'react-native-simple-toast';
 
 export const UserProfile = ({
   navigation,
 }: NativeStackScreenProps<RootStackUserList>) => {
   const tw = useTailwind();
-  const [logoutLoader, setLogoutLoader] = useState(false)
+  const [logoutLoader, setLogoutLoader] = useState(false);
 
-  const logoutFunc = async ()=>{
+  const logoutFunc = async () => {
     try {
       await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
+      const response: any = await userLogout();
+      console.log(response);
+      Toast.showWithGravityAndOffset(
+        response?.data?.message || '',
+        Toast.LONG,
+        Toast.TOP,
+        0, // X Offset
+        30, // Y Offset - Adjust this value as needed
+      );
+      navigation.navigate('Login');
     } catch (error) {
-      console.log(error)
-      
+      console.log(error);
+    } finally {
+      setLogoutLoader(false);
     }
-    finally{}
-  }
+  };
 
   return (
     <ImageBackground
@@ -84,12 +96,12 @@ export const UserProfile = ({
         <View style={tw('gap-3 ')}>
           <TouchableOpacity
             style={tw('py-3 bg-[#4B164C] rounded-3xl font-semibold text-base')}
-            disabled={logoutLoader} onPress={()=>logoutFunc()}>
+            disabled={logoutLoader}
+            onPress={() => logoutFunc()}>
             {logoutLoader ? (
               <ButtonLoader />
             ) : (
               <Text style={tw('text-white text-center')}>Log out</Text>
-
             )}
           </TouchableOpacity>
           <Text style={tw('text-[#4B164C] text-center font-medium text-sm')}>
