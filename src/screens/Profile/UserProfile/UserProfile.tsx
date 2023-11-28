@@ -16,6 +16,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {apiResponse, asyncStorageConst} from '@constants';
 import {userLogout} from '@services';
 import Toast from 'react-native-simple-toast';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 export const UserProfile = ({
   navigation,
@@ -28,6 +29,9 @@ export const UserProfile = ({
       const response: any = await userLogout();
       await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
       console.log(response);
+
+      await GoogleSignin.signOut();
+
       Toast.showWithGravityAndOffset(
         response?.data?.message || '',
         Toast.LONG,

@@ -8,9 +8,9 @@ import {
 } from '@react-native-google-signin/google-signin';
 import {postGmailSignUp} from '@services';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { asyncStorageConst } from '@constants';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@types';
+import {asyncStorageConst} from '@constants';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '@types';
 
 GoogleSignin.configure({
   webClientId:
@@ -18,26 +18,28 @@ GoogleSignin.configure({
   offlineAccess: true,
 });
 
-export const GoogleAuth =  () => {
+export const GoogleAuth = (
+  props: NativeStackScreenProps<RootStackParamList>,
+) => {
   GoogleSignin.configure();
   const tw = useTailwind();
- 
 
   const signInGmail = async () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      const insertData:any = await postGmailSignUp({
+      const insertData: any = await postGmailSignUp({
         socialType: 'gmail',
         social_login_token: userInfo?.user?.id,
         email: userInfo?.user?.email,
       });
-
+      console.log(insertData?.data);
       await AsyncStorage.setItem(
         asyncStorageConst.loggedInUserData,
         JSON.stringify(insertData?.data?.data),
       );
-      
+      props?.navigation?.navigate('Home');
+
       console.log(userInfo, 'user info');
     } catch (error: any) {
       console.log(error);
@@ -62,7 +64,6 @@ export const GoogleAuth =  () => {
           Gmail
         </Text>
       </TouchableOpacity>
-     
     </View>
   );
 };
