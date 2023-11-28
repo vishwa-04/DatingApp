@@ -105,7 +105,7 @@ export const Login = ({
           </View>
           {!isKeyboardVisible && (
             <View style={tw('flex-1 justify-end items-center gap-2 py-5')}>
-              <GoogleAuth />
+             <GoogleAuth navigation={navigation} />
               <View style={tw('flex-row justify-center gap-1 mt-2 ')}>
                 <Text style={tw('text-black font-semibold')}>New user?</Text>
                 <Text

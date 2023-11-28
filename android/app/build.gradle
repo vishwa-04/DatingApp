@@ -82,7 +82,7 @@ android {
         versionName "1.0"
     }
     signingConfigs {
-       debug {
+     debug {
             storeFile file('appkeystore.jks')
             storePassword 'Dev@123'
             keyAlias 'loveline'
