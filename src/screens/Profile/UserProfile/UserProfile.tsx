@@ -29,9 +29,7 @@ export const UserProfile = ({
       const response: any = await userLogout();
       await AsyncStorage.removeItem(asyncStorageConst.loggedInUserData);
       console.log(response);
-
       await GoogleSignin.signOut();
-
       Toast.showWithGravityAndOffset(
         response?.data?.message || '',
         Toast.LONG,
