@@ -1,4 +1,11 @@
-import {View, Text, Image, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  TouchableOpacity,
+  BackHandler,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '@assets';
@@ -36,6 +43,21 @@ export const Swipe = ({
     //   });
     findUserData();
   }, []);
+
+  const backFunction = () => {
+    if (isUserInfoScreen) {
+      setIsUserInfoScreen(false);
+      return true;
+    }
+    return false
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', backFunction);
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', backFunction);
+    };
+  }, [isUserInfoScreen]);
 
   const findUserData = async () => {
     try {
@@ -166,7 +188,9 @@ export const Swipe = ({
                 <View style={tw('flex-row justify-center items-center gap-14')}>
                   <Image source={AllImages.Close} style={tw('object-cover')} />
                   <Image source={AllImages.Heart} style={tw('object-cover')} />
-                  <Image source={AllImages.Info} style={tw('object-cover')} />
+                  <TouchableOpacity onPress={() => setIsUserInfoScreen(true)}>
+                    <Image source={AllImages.Info} style={tw('object-cover')} />
+                  </TouchableOpacity>
                 </View>
                 <Pressable
                   onPress={() => {
