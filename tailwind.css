@@ -58,6 +58,30 @@
   top: 40%
 }
 
+.top-10 {
+  top: 2.5rem
+}
+
+.right-5 {
+  right: 1.25rem
+}
+
+.right-\[\%05\] {
+  right: %05
+}
+
+.top-\[50\%\] {
+  top: 50%
+}
+
+.right-\[50\%\] {
+  right: 50%
+}
+
+.right-\[40\%\] {
+  right: 40%
+}
+
 .z-40 {
   z-index: 40
 }
@@ -261,6 +285,10 @@
   height: 100%
 }
 
+.h-52 {
+  height: 13rem
+}
+
 .w-1\/2 {
   width: 50%
 }
@@ -347,6 +375,16 @@
 
 .flex-grow {
   flex-grow: 1
+}
+
+.rotate-12 {
+  --tw-rotate: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.-rotate-12 {
+  --tw-rotate: -12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .transform {
@@ -594,6 +632,11 @@
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5)
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity))
 }
 
 .object-cover {

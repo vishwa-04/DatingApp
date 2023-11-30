@@ -31,6 +31,8 @@ export const Swipe = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isUserInfoScreen, setIsUserInfoScreen] = useState(false);
   const [latlogData, setLatLogData] = useState<any>(null);
+  const [swiping, setSwiping] = useState<any>(null);
+  const [key, setKey] = useState(0);
 
   useEffect(() => {
     // findNearestUsers()
@@ -49,7 +51,7 @@ export const Swipe = ({
       setIsUserInfoScreen(false);
       return true;
     }
-    return false
+    return false;
   };
 
   useEffect(() => {
@@ -151,13 +153,22 @@ export const Swipe = ({
               />
               <View style={tw('flex-1 h-[20%]')}>
                 <Swiper
+                  key={key}
                   stackSize={userInfo.length}
                   cardIndex={currentIndex}
                   horizontalSwipe={true}
                   verticalSwipe={false}
                   animateCardOpacity
+                  onSwiping={x => {
+                    if (x > 0) {
+                      setSwiping('liked');
+                    } else if (x < 0) {
+                      setSwiping('disLiked');
+                    }
+                  }}
                   onSwiped={cardIndex => {
                     setCurrentIndex(cardIndex + 1);
+                    setSwiping(null);
                   }}
                   containerStyle={{
                     background: 'transparent',
@@ -165,17 +176,46 @@ export const Swipe = ({
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
+                  onSwipedAborted={() => {
+                    setSwiping(null);
+                    setKey(key => key + 1);
+                  }}
                   cards={userInfo}
-                  renderCard={(card: any) => {
+                  renderCard={(card: any, index: number) => {
+                    console.log(swiping, 'swiping');
                     return (
                       <>
                         {card?.profilePic && (
-                          <View style={tw('bg-white h-[50%] rounded-xl')}>
+                          <View
+                            style={tw('bg-white h-[50%] rounded-xl relative')}>
                             <Image
                               resizeMode="cover"
                               source={{uri: card.profilePic}}
                               style={tw('h-full w-full rounded-xl')}
                             />
+                            {/* <div className='rot'></div>                   */}
+                            {swiping && currentIndex === index && (
+                              <>
+                                {swiping === 'liked' ? (
+                                  <View
+                                    style={tw(
+                                      'object-cover absolute top-[40%] right-[40%] p-5 rounded-full bg-white',
+                                    )}>
+                                    <Image
+                                      source={AllImages.SwipeLike}
+                                      style={tw('object-cover')}
+                                    />
+                                  </View>
+                                ) : (
+                                  <Image
+                                    source={AllImages.SwipeDislike}
+                                    style={tw(
+                                      'object-cover absolute top-[40%] right-[40%]',
+                                    )}
+                                  />
+                                )}
+                              </>
+                            )}
                           </View>
                         )}
                       </>

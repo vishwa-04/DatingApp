@@ -59,5 +59,7 @@ export const AllImages={
     CallingUserBackground:require('../images/CallingUserBackground.png'),
     Info:require('../images/Info.png'),
     CloseEye:require('../images/CloseEye.png'),
-    OpenEye:require('../images/OpenEye.png')
+    OpenEye:require('../images/OpenEye.png'),
+    SwipeLike:require('../images/SwipeLike.png'),
+    SwipeDislike:require('../images/SwipeDislike.png'),
 }
