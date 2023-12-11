@@ -11,4 +11,6 @@ declare module '@env' {
   export const UPDATE_USER_LOCATION: string;
   export const GMAIL_SIGNUP:string;
   export const USER_LOGOUT: string;
+  export const USER_SWIPE_LIKE: string;
+  export const USER_SWIPE_DISLIKE: string;
 }

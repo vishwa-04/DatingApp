@@ -11,6 +11,8 @@ import {
   SWIPE_FIND_NEAR_USER,
   UPDATE_USER_LOCATION,
   USER_LOGOUT,
+  USER_SWIPE_DISLIKE,
+  USER_SWIPE_LIKE,
 } from '@env';
 import {getBearerToken} from '@services';
 type ApiResponse<T> = {
@@ -54,7 +56,7 @@ const apiRequest = async <T>(
 ): Promise<ApiResponse<T>> => {
   try {
     const bearerToken = requireBearerToken ? await getBearerToken() : '';
-    console.log(requireBearerToken, bearerToken, 'bearerToken');
+    // console.log(requestData, 'requestData');
     const config: AxiosRequestConfig = {
       method,
       url: endpoint,
@@ -126,6 +128,14 @@ export const postGmailSignUp = async (data: any) => {
 
 export const userLogout = async () => {
   return await apiRequest(USER_LOGOUT, 'post', {}, {}, true);
+};
+
+export const userSwipeLike = async (data: any) => {
+  return await apiRequest(USER_SWIPE_LIKE, 'post', data, {}, true);
+};
+
+export const userSwipeDisLike = async (data: any) => {
+  return await apiRequest(USER_SWIPE_DISLIKE, 'post', data, {}, true);
 };
 // Exporting the API functions
 export {apiRequest};

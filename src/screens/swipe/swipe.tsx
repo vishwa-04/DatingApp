@@ -6,13 +6,13 @@ import {
   TouchableOpacity,
   BackHandler,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import {useTailwind} from 'tailwind-rn';
 import {AllImages} from '@assets';
 import Swiper from 'react-native-deck-swiper';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackCardList} from '@types';
-import {findNearestUsers} from '@services';
+import {findNearestUsers, userSwipeDisLike, userSwipeLike} from '@services';
 import {SwipeLoading} from '../SwipeLoading';
 import {SwipeUserInfo} from '../swipeUserInfo';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -33,16 +33,9 @@ export const Swipe = ({
   const [latlogData, setLatLogData] = useState<any>(null);
   const [swiping, setSwiping] = useState<any>(null);
   const [key, setKey] = useState(0);
+  const swiperRef: any = useRef(null);
 
   useEffect(() => {
-    // findNearestUsers()
-    //   .then((data: any) => {
-    //     setUserInfo(data?.data?.data || []);
-    //   })
-    //   .catch(e => console.log(e))
-    //   .finally(() => {
-    //     setLoader(false);
-    //   });
     findUserData();
   }, []);
 
@@ -99,8 +92,6 @@ export const Swipe = ({
     return `${parseInt(d)} km`;
   };
 
-  console.log(latlogData);
-
   // const DUMMY_DATA: dataProps[] = [
   //   {
   //     firstname: 'John',
@@ -153,20 +144,34 @@ export const Swipe = ({
               />
               <View style={tw('flex-1 h-[20%]')}>
                 <Swiper
+                  ref={swiperRef}
                   key={key}
                   stackSize={userInfo.length}
                   cardIndex={currentIndex}
                   horizontalSwipe={true}
                   verticalSwipe={false}
                   animateCardOpacity
-                  onSwiping={x => {
+                  onSwiping={(x, index) => {
                     if (x > 0) {
                       setSwiping('liked');
                     } else if (x < 0) {
                       setSwiping('disLiked');
                     }
                   }}
-                  onSwiped={cardIndex => {
+                  onSwiped={() => {
+                    setSwiping(null);
+                  }}
+                  onSwipedLeft={async cardIndex => {
+                    await userSwipeDisLike({
+                      dislikedUserId: userInfo[currentIndex]._id,
+                    });
+                    setCurrentIndex(cardIndex + 1);
+                    setSwiping(null);
+                  }}
+                  onSwipedRight={async cardIndex => {
+                    await userSwipeLike({
+                      likedUserId: userInfo[currentIndex]._id,
+                    });
                     setCurrentIndex(cardIndex + 1);
                     setSwiping(null);
                   }}
@@ -182,7 +187,6 @@ export const Swipe = ({
                   }}
                   cards={userInfo}
                   renderCard={(card: any, index: number) => {
-                    console.log(swiping, 'swiping');
                     return (
                       <>
                         {card?.profilePic && (
@@ -226,8 +230,31 @@ export const Swipe = ({
               <View
                 style={tw('flex-col justify-between gap-y-2 bg-white z-40')}>
                 <View style={tw('flex-row justify-center items-center gap-14')}>
-                  <Image source={AllImages.Close} style={tw('object-cover')} />
-                  <Image source={AllImages.Heart} style={tw('object-cover')} />
+                  <TouchableOpacity
+                    onPress={() => {
+                      setSwiping('disLiked');
+                      setTimeout(() => {
+                        swiperRef.current?.swipeLeft();
+                      }, 500);
+                    }}>
+                    <Image
+                      source={AllImages.Close}
+                      style={tw('object-cover')}
+                    />
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    onPress={() => {
+                      setSwiping('liked');
+                      setTimeout(() => {
+                        swiperRef.current?.swipeRight();
+                      }, 500);
+                    }}>
+                    <Image
+                      source={AllImages.Heart}
+                      style={tw('object-cover')}
+                    />
+                  </TouchableOpacity>
                   <TouchableOpacity onPress={() => setIsUserInfoScreen(true)}>
                     <Image source={AllImages.Info} style={tw('object-cover')} />
                   </TouchableOpacity>
