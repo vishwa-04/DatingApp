@@ -14,7 +14,7 @@ import {ButtonLoader, HorizontalLine} from '@components';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackUserList} from '@types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {apiResponse, asyncStorageConst} from '@constants';
+import { asyncStorageConst} from '@constants';
 import {userLogout} from '@services';
 import Toast from 'react-native-simple-toast';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';

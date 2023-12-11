@@ -62,4 +62,6 @@ export const AllImages={
     OpenEye:require('../images/OpenEye.png'),
     SwipeLike:require('../images/SwipeLike.png'),
     SwipeDislike:require('../images/SwipeDislike.png'),
+    Rectangle74:require('../images/Rectangle74.png'),
+
 }
